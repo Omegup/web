@@ -1,0 +1,51 @@
+.container5{
+    padding: 10px;
+    gap: 10px;
+    margin-left: 107px;
+}
+
+#text2 {
+    margin-top: 50px;
+    font-size: 18px;
+    color: #FC7557;
+}
+
+#titrebis {
+    font-size: 28px;
+    font: bold;
+    
+}
+
+#texte3 {
+    font-size: 19px;
+    margin-bottom: 20px ;
+}
+
+#boxgrande {
+    border:1px solid ;
+    border-radius: 30px;
+    width: 100px
+    
+    
+}
+
+.container6 {
+    background-color: aliceblue;
+    height: 50dvh;
+    background-image: url(image1.jpeg);
+    width: 152dvh;
+    border: 0.5px solid;
+    border-radius: 30px;
+    margin-left: 117px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+#texteimage1 {
+    font-size: 40px;
+    font-weight: bold;
+    
+    color: #FC7557;
+
+    
+}
