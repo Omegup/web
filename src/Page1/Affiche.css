@@ -1,0 +1,165 @@
+
+.container4{
+    overflow: hidden;
+    background: #22232508;
+    margin-top: 10px;
+    height: 100%;
+    border-bottom: 0.5px solid #999999
+    
+    
+
+}
+
+.container2 {
+    
+    
+       
+    height: 240px;
+    display: flex;
+    justify-content:center;
+    
+  }
+
+h3{
+    font-size: 30px;
+    
+}
+
+p{
+    overflow: hidden;
+    font-size: 20px;
+}
+
+
+
+
+
+
+#box1 {
+    
+    position: relative;
+    width: 33dvh;
+    background: #FAF9F6;
+
+    border: 0.5px solid;
+    border-radius: 30px;
+    padding-left: 3dvh;
+    align-self: flex-start;
+    margin-top: 4dvh;
+    margin-right: 5dvh;
+    margin-left: 3dvh;
+    box-shadow: -8px 8px 0px 0px #FEC63A;
+}
+
+#box2 {
+    
+    position: relative;
+    background: #FAF9F6;
+
+    width: 33dvh;
+    border: 0.5px solid;
+    border-radius: 30px;
+    padding-left: 3dvh;
+    align-self: flex-start;
+    margin-top: 4dvh;
+    margin-right: 5dvh;
+    margin-left: 3dvh;
+    box-shadow: -8px 8px 0px 0px #FC7557;
+
+}
+
+#box3 {
+    
+    position: relative;
+    background: #FAF9F6;
+
+    width: 33dvh;
+    flex-shrink: 0;
+    border: 0.5px solid;
+    border-radius: 30px;
+    padding-left: 3dvh;
+    align-self: flex-start;
+    margin-top: 4dvh;
+    margin-right: 5dvh;
+    margin-left: 3dvh;
+    box-shadow: -8px 8px 0px 0px #949CFF;
+
+    
+}
+
+
+
+#box4 {
+    
+    position: relative;
+    background: #FAF9F6;
+
+    width: 33dvh;
+    border: 0.5px solid;
+    border-radius: 30px;
+    padding-left: 3dvh;
+    align-self: flex-start  ;
+    margin-top: 4dvh;
+    margin-right: 5dvh;
+    margin-left: 3dvh;
+    box-shadow: -8px 8px 0px 0px #64C67E;
+
+}
+
+#text1 {
+    margin-top: 8dvh;
+    display: block;
+    text-align: center
+    
+}
+.container3{
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2dvh;
+}
+#button1 {
+    background: #FAF9F6;
+
+    border: 0.5px solid;
+    border-radius: 30px;
+    align-self: center;
+    padding: 7px;
+    margin: 10px;
+    
+}
+
+#button2 {
+    background: #FEC63A;
+
+    border: 0.5px solid;
+    border-radius: 30px;
+   
+    padding: 7px;
+    margin:10px
+    
+}
+
+#button1:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    
+    transition: 0.3s ease-out
+    
+
+}
+
+#button2:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    
+    transition: 0.3s ease-in-out;
+    
+
+}
+
+
+#button2:hover::after, #button1:hover::after {
+    box-shadow: none;
+    transition: 0.3s ease-in-out;
+    
+}
