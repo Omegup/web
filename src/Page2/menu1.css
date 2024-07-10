@@ -27,6 +27,46 @@
     
 
 }
+.container1-2 {
+    align-self: center;
+    height: 50vh;
+    width: 140vh;
+    border: 1px solid #222325;
+    border-radius: 30px;
+    box-shadow: -8px 8px 0px 0px #949CFF;
+}
+
+.container1-3 {
+    align-self: center;
+    height: 50vh;
+    width: 140vh;
+    border: 1px solid #222325;
+    border-radius: 30px;
+    box-shadow: -8px 8px 0px 0px #FC7557;
+    ;
+}
+
+.container1-2.affiché {
+    display: block;
+}
+
+
+.container1-3.affiché {
+    display: block;
+}
+
+
+.container1-1.masqué {
+    display: none;
+}
+
+.container1-2.masqué {
+    display: none;
+}
+
+.container1-3.masqué {
+    display: none;
+}
 .container2-1 {
     gap: 5px;
 }
@@ -55,7 +95,7 @@
     padding: 20px 50px 20px 50px;
 }
 
-#img2 {
+.img2 {
     align-self: center;
     margin: 100px;
     height: 250px;
@@ -83,11 +123,48 @@
     cursor: pointer;
 
 }
+#buttonbis22 {
+    background-color: #949CFF;
+    ;
+    border-radius: 22px;
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+#buttonbis22:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    cursor: pointer;
+
+}
+
+#buttonbis33 {
+    background-color: #FC7557;
+    ;
+    border-radius: 22px;
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+#buttonbis33:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    cursor: pointer;
+
+}
 
 #button2bis {
+    text-decoration: none;
     margin: 20px;
     cursor: pointer;
-    transition: border-bottom 0.3s ease-in-out;
+    padding-bottom: 5px;
+    
 }
 
 #button2bis:hover {
@@ -123,21 +200,6 @@
 }
 
 
-.droite {
-    position: relative;
-    display: flex;
-    width: 22px;
-    border-top: 5px solid #222325;
-    
-    border-radius: 30px;
-    
-    align-items: center;
-    top:16.5px;
-    left: 8px;
-    transition: border-top 0.3s ease-in-out;
 
-}
 
-.droite:hover {
-    border-top:5px solid #F7F5ED;
-}
+

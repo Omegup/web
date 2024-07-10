@@ -5,7 +5,12 @@ import Head from './Page1/App3'
 import Services from './Page1/Services'
 import Footer from './Page1/Footer'
 import Menu_1 from './Page2/Menu1'
-import TripleBulle from './Page1/triplebulle'
+import TourneImage from './Page2/triplebulle'
+import ContactUs from './Page2/ContactUs'
+import Footer2 from './Page2/footer2'
+
+
+
 
 const Page1 : React.FC = () => {
     return (
@@ -18,8 +23,11 @@ const Page1 : React.FC = () => {
         <Footer />
         </>
         <Menu_1 />
-        <TripleBulle />
+        <TourneImage />
+        <ContactUs />
+        <Footer2 />
         </>
+        
     )
 }
 

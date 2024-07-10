@@ -28,11 +28,19 @@ const Footer : React.FC = () => {
 
                     <div className="slide">
 
-                            <div id="slide1"></div>
-                            <div id="slide2"></div>
-                            <div id="slide3"></div>
-                            <div id="slide4"></div>
-                            <div id="slide5"></div>
+                            <div className='slide1'><img src='src/footer1.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 25.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 26.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 44.svg' alt='' className='imgfooter'></img></div>                            
+                            <div className='slide1'><img src='src/Group 50.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 61.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 62.svg' alt='' className='imgfooter'></img></div>       
+                            <div className='slide1'><img src='src/Group 65.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 70.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 76.svg' alt='' className='imgfooter'></img></div>                            
+                            <div className='slide1'><img src='src/Group 78.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 79.svg' alt='' className='imgfooter'></img></div>
+                            <div className='slide1'><img src='src/Group 84.svg' alt='' className='imgfooter'></img></div>                     
 
                     </div>
                 </div>

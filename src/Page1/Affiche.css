@@ -36,11 +36,12 @@ p{
 
 
 #box1 {
-    
+    overflow: scroll;
+    box-sizing: border-box; 
     position: relative;
-    width: 33dvh;
+    width: calc(18%);
     background: #FAF9F6;
-
+    height: calc(100%);
     border: 0.5px solid;
     border-radius: 30px;
     padding-left: 3dvh;
@@ -52,11 +53,12 @@ p{
 }
 
 #box2 {
-    
+    overflow: scroll;
+    box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
-
-    width: 33dvh;
+    height: calc(100%);
+    width: calc(18%);
     border: 0.5px solid;
     border-radius: 30px;
     padding-left: 3dvh;
@@ -69,11 +71,12 @@ p{
 }
 
 #box3 {
-    
+    overflow: scroll;
+    box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
-
-    width: 33dvh;
+    height: calc(100%);
+    width: calc(18%);
     flex-shrink: 0;
     border: 0.5px solid;
     border-radius: 30px;
@@ -90,11 +93,12 @@ p{
 
 
 #box4 {
-    
+    overflow: scroll;
+    box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
-
-    width: 33dvh;
+    height: calc(100%);
+    width: calc(18%);
     border: 0.5px solid;
     border-radius: 30px;
     padding-left: 3dvh;
@@ -107,6 +111,7 @@ p{
 }
 
 #text1 {
+    overflow: scroll;
     margin-top: 8dvh;
     display: block;
     text-align: center
@@ -163,3 +168,4 @@ p{
     transition: 0.3s ease-in-out;
     
 }
+
