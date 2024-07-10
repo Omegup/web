@@ -2,7 +2,7 @@ import React from 'react'
 import './Affiche.css'
 
 
-function Acceuil () {
+const Acceuil : React.FC = () => {
     return(
     <div className='container4'>
     <div className='container2'>

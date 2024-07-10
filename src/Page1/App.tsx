@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 
 
-function NavBar() {
+const NavBar : React.FC = () => {
   return (
 
     

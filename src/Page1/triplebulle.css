@@ -1,0 +1,132 @@
+.container3-1 {
+    margin-top: 100px;
+    margin-left: 117px;
+    margin-right: 117px;
+}
+
+
+.Bulle1-1 {
+    margin-top: 20px;
+    display: flex;
+    
+    width: calc(100% - 24vh);
+    margin-left: 117px;
+    margin-right: 117px;
+    height: 60vh;
+    margin-bottom: 20vh;
+    /*background-color: aqua;*/
+    justify-content: space-between;
+    
+
+    
+}
+
+.containerbulle {
+    
+
+}
+
+
+#rond1-1 {
+    margin-top: 2%;
+    margin-left: 48%;
+    width: calc(10px);
+    height: calc(10px);
+    border: 0.5px solid;
+    border-radius: 50px;
+    background-color: #FC7557;
+}
+
+#rond2-2 {
+    margin-top: 2%;
+    margin-left: 47.3%;
+    width: calc(20px);
+    height: calc(20px);
+    border: 0.5px solid;
+    border-radius: 50px;
+    background-color: #FC7557;
+}
+
+#rond1-2 {
+    background-color: #949CFF;
+    margin-top: 2%;
+    margin-left: 48%;
+    width: calc(10px);
+    height: calc(10px);
+    border: 0.5px solid;
+    border-radius: 50px;
+}
+#rond2-3 {
+    margin-top: 2%;
+    margin-left: 47.3%;
+    width: calc(20px);
+    height: calc(20px);
+    border: 0.5px solid;
+    border-radius: 50px;
+    background-color: #949CFF;
+}
+
+#rond1-3{
+    background-color: #FEC63A;
+    margin-top: 2%;
+    z-index: 2;
+    margin-left: 50%;
+    width: calc(10px);
+    height: calc(10px);
+    border: 0.5px solid;
+    border-radius: 50px;
+}
+#rond2-4 {
+    margin-top: 2%;
+    margin-left: 49%;
+    width: calc(20px);
+    height: calc(20px);
+    border: 0.5px solid;
+    border-radius: 50px;
+    background-color: #FEC63A;
+}
+
+#bulle1-2 {
+    margin-top: 30%;
+    margin-left: 9%;
+    
+    border: 1px solid;
+    width: calc(80%);
+    height: calc(35%);
+    border-radius: 22px;
+    align-self: center;
+    box-shadow: -6px 6px 0px 0px #FC7557;
+    
+}
+
+#bulle1-3 {
+    margin-top: 30px;
+    margin-left: 50px;
+    border: 1px solid;
+    width: calc(80%);
+    height: calc(35%);
+    border-radius: 22px;
+    
+    box-shadow: -6px 6px 0px 0px #949CFF;
+    
+
+}
+
+#bulle1-4 {
+    margin-top: 30%;
+    margin-left: 9%;
+    border: 1px solid;
+    width: calc(80%);
+    height: calc(35%);
+    border-radius: 22px;
+    align-self: center;
+    box-shadow: -6px 6px 0px 0px #FEC63A;
+    
+}
+
+.textbulle {
+    text-wrap: wrap;
+    font-size: 130%;
+    line-height: 130%;
+    padding: 18px;
+}

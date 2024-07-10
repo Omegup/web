@@ -1,8 +1,11 @@
+
 .container4{
+    overflow: hidden;
     background: #22232508;
     margin-top: 10px;
     height: 100%;
     border-bottom: 0.5px solid #999999
+    
     
 
 }
@@ -10,6 +13,7 @@
 .container2 {
     
     
+       
     height: 240px;
     display: flex;
     justify-content:center;
@@ -22,7 +26,7 @@ h3{
 }
 
 p{
-
+    overflow: hidden;
     font-size: 20px;
 }
 
@@ -32,6 +36,7 @@ p{
 
 
 #box1 {
+    
     position: relative;
     width: 33dvh;
     background: #FAF9F6;
@@ -47,6 +52,7 @@ p{
 }
 
 #box2 {
+    
     position: relative;
     background: #FAF9F6;
 
@@ -63,6 +69,7 @@ p{
 }
 
 #box3 {
+    
     position: relative;
     background: #FAF9F6;
 
@@ -83,6 +90,7 @@ p{
 
 
 #box4 {
+    
     position: relative;
     background: #FAF9F6;
 
@@ -147,4 +155,11 @@ p{
     transition: 0.3s ease-in-out;
     
 
+}
+
+
+#button2:hover::after, #button1:hover::after {
+    box-shadow: none;
+    transition: 0.3s ease-in-out;
+    
 }

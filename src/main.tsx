@@ -1,18 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import NavBar from './App'
-import Acceuil from './App2'
-import Head from './App3'
-import Services from './Services'
-import Footer from './Footer'
+import Page1 from './page1'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <NavBar />
-    <Acceuil />
-    <Head />
-    <Services />
-    <Footer />
+    <Page1 />
   </React.StrictMode>,
 )

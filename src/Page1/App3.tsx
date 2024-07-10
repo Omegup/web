@@ -1,3 +1,4 @@
+import React from 'react'
 import './head.css'
 import { useState } from 'react'
 
@@ -21,7 +22,7 @@ function Animion() {
 }
 
 
-function Head () {
+const Head : React.FC = () => {
     return (
         <>
         <div className='container5'>

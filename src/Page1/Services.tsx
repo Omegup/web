@@ -1,6 +1,6 @@
 import './Service.css'
 
-function Services () {
+const Services : React.FC = () => {
     return(
         <>
         <div className='container10'>
