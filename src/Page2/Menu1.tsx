@@ -1,7 +1,20 @@
+import { useState } from "react";
+
 import React from "react";
 import './menu1.css'
 
 const Menu_1 : React.FC = () => {
+    const [tableau,setTableau] = useState('tableau1');
+
+    const PivotDroit = (tableau:any) => {
+        setTableau(tableau);
+    }
+
+    const PivotGauche =(tableau:any) => {
+        setTableau(tableau);
+    }
+
+
     return (
         <>
         <div className="header">
@@ -14,8 +27,8 @@ const Menu_1 : React.FC = () => {
         </p>
         </div>
         <div className="containerPere">
-        <div className="container1-1">
-            <img src="img1.png" alt="bonjour" id="img2" />
+        <div className={`container1-1 ${tableau === 'tableau1' ? 'affiché' : 'masqué'}`}>
+            <img src="img1.png" alt="bonjour" className="img2" />
             <div className="sansimage">
             <h3 id="titre1-1">Atéliers - 77</h3>
             <p id="text1-1">Technologies Utilisées :</p>
@@ -31,11 +44,60 @@ const Menu_1 : React.FC = () => {
                 impressive portfolio of projects.</p>
             <div id="buttonbis">View case studies</div>
             
-            <a id="button2bis" href="intro.tsx" target="_blank">More case studies</a>
-            <div>
-                <div id="flècheDr"><div className="droite"></div></div>
-                <div id="flècheGh"><div className="gauche"></div></div>
+            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            
+            
+                <div id="flècheDr" onClick={() => PivotDroit('tableau2')}><div className="droite"></div></div>
+                <div id="flècheGh" onClick={() => PivotGauche('tableau3')}><div className="gauche"></div></div>
+            
             </div>
+        </div>
+
+        <div className={`container1-2 ${tableau === 'tableau2' ? 'affiché' : 'masqué'}`}>
+        
+            <img src="src/pc2.png" alt="bonjour" className="img2" />
+            <div className="sansimage">
+            <h3 id="titre1-1">School Online Tn</h3>
+            <p id="text1-1">Technologies Utilisées :</p>
+            <div className="container2-1">
+                <span className="container2-2">React</span>
+                <span className="container2-2">NextJS</span>
+                <span className="container2-2">NodeJS</span>
+                <span className="container2-2">MongoDB</span>
+            </div>
+            <p>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust 
+                tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
+            <div id="buttonbis22">View case studies</div>
+            
+            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            
+            
+                <div id="flècheDr" onClick={() => PivotDroit('tableau3')}><div className="droite"></div></div>
+                <div id="flècheGh" onClick={() => PivotGauche('tableau1')}><div className="gauche"></div></div>
+            
+            </div>
+        </div>
+
+        <div className={`container1-3 ${tableau === 'tableau3' ? 'affiché' : 'masqué'}`}>
+            <img src="src/pc3.png" alt="bonjour" className="img2" />
+            <div className="sansimage">
+            <h3 id="titre1-1">DSF Fr</h3>
+            <p id="text1-1">Technologies Utilisées :</p>
+            <div className="container2-1">
+                <span className="container2-2">React</span>
+                <span className="container2-2">NodeJS</span>
+                <span className="container2-2">NodeJS</span>
+            </div>
+            <p>DSF Déménagement Services France is your trusted partner for all your moving needs in France. 
+                With many years of experience, we provide tailor-made moving solutions for businesses and individuals.</p>
+            <div id="buttonbis33">View case studies</div>
+            
+            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            
+            
+                <div id="flècheDr" onClick={() => PivotDroit('tableau1')}><div className="droite"></div></div>
+                <div id="flècheGh" onClick={() => PivotGauche('tableau2')}><div className="gauche"></div></div>
+            
             </div>
         </div>
         </div>

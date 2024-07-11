@@ -2,3 +2,21 @@ body {
     background-color: #F7F5ED;
     ;
 }
+
+h3,p {
+    font-family: Krona One;
+}
+
+
+/*@media (400px <= width <= 600px) {
+    body {
+        font-size: 100px;
+    }
+}
+
+
+@media (400px > width) {
+    body {
+        font-size: 10px;
+    }
+}

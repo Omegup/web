@@ -8,8 +8,9 @@
 
 .containfooter {
     
+    
     background-color: #222325;
-    height : 33dvh
+    height : 5%
     
     
 }
@@ -29,12 +30,12 @@
     margin-left: -117px;
     margin-top: 35px;
     display: flex;
-    height: 70px;
+    height: 77px;
     width: 200%;
-    background-color: aqua;
-    justify-content: space-around;
     
     
+    
+    justify-content: space-evenly;
     animation: slide 15s linear infinite ;
 
 }
@@ -53,29 +54,16 @@
     }
 }
 
-#slide1 {
-    width: 30px;
-    height: 50px;
-    background-color: #FAF9F6;
-}
-#slide2 {
-    width: 30px;
-    height: 50px;
+.slide1 {
+    
+    height: 100%;
+    width: 2.2%;
     background-color: #222325;
+    border-radius: 22px;
+    
+    
 }
-#slide3 {
-    width: 30px;
-    height: 50px;
-    background-color:bisque;
-}
-#slide4 {
-    width: 30px;
-    height: 50px;
-    background-color:yellow;
-}
-#slide5 {
-    width: 30px;
-    height: 50px;
-    background-color:violet;
-}
+
+
+
 
