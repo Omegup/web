@@ -27,6 +27,46 @@
     
 
 }
+.container1-2 {
+    align-self: center;
+    height: 50vh;
+    width: 140vh;
+    border: 1px solid #222325;
+    border-radius: 30px;
+    box-shadow: -8px 8px 0px 0px #949CFF;
+}
+
+.container1-3 {
+    align-self: center;
+    height: 50vh;
+    width: 140vh;
+    border: 1px solid #222325;
+    border-radius: 30px;
+    box-shadow: -8px 8px 0px 0px #FC7557;
+    ;
+}
+
+.container1-2.affiché {
+    display: block;
+}
+
+
+.container1-3.affiché {
+    display: block;
+}
+
+
+.container1-1.masqué {
+    display: none;
+}
+
+.container1-2.masqué {
+    display: none;
+}
+
+.container1-3.masqué {
+    display: none;
+}
 .container2-1 {
     gap: 5px;
 }
@@ -41,7 +81,7 @@
 
 }
 
-#titre1-1 {
+.titre1-1 {
     text-align:start;
     
 }
@@ -55,7 +95,7 @@
     padding: 20px 50px 20px 50px;
 }
 
-#img2 {
+.img2 {
     align-self: center;
     margin: 100px;
     height: 250px;
@@ -67,7 +107,7 @@
     
 }
 
-#buttonbis {
+.buttonbismenu {
     background-color: #FEC63A;
     border-radius: 22px;
     border: 1px solid;
@@ -78,66 +118,91 @@
 
 }
 
-#buttonbis:hover {
+.buttonbismenu:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    cursor: pointer;
+
+}
+.buttonbis22menu {
+    background-color: #949CFF;
+    ;
+    border-radius: 22px;
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.buttonbis22menu:hover {
     box-shadow: -4px 4px 0px 0px #222325;
     cursor: pointer;
 
 }
 
-#button2bis {
-    margin: 20px;
-    cursor: pointer;
-    transition: border-bottom 0.3s ease-in-out;
+.buttonbis33menu {
+    background-color: #FC7557;
+    ;
+    border-radius: 22px;
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+
 }
 
-#button2bis:hover {
+.buttonbis33menu:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    cursor: pointer;
+
+}
+
+.button2bismenu {
+    text-decoration: none;
+    margin: 20px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    
+}
+
+.button2bismenu:hover {
     border-bottom: 1px solid;
     
 }
 
 
-#flècheDr {
-    height: 38px;
-    width: 38px;
-    border: 1px solid #222325;
-    border-radius: 30px;
-    margin-top: 70px;
+.flècheDrMenu {
+    height: 48px;
+    width: 7.8%;
+    
+    margin-top: 0;
     float: right;
-    transition: background-color 0.3s ease-in-out;
+    background-image: url(src/assets/arrow-left.png);
+    transition: background-image 0.3s ease-in-out;
 }
 
-#flècheGh {
-    height: 38px;
-    width: 38px;
-    border: 1.5px solid #222325;
-    border-radius: 30px;
-    margin-top: 70px;
+.flècheGhMenu {
+    height: 48px;
+    width: 7.8%;
+    
+    background-image: url(src/assets/arrow-right.png);
+    
     float: right;
-    margin-right: 10px;
-    transition: background-color 0.3s ease-in-out;
+    margin-right: 5px;
+    transition: background-image 0.3s ease-in-out;
+    
 }
 
-#flècheDr:hover , #flècheGh:hover {
-    background-color: #222325;
+.flècheDrMenu:hover {
+    background-image: url(src/assets/arrowrighthover.png);
+    cursor: pointer;
+}
+.flècheGhMenu:hover {
+    background-image: url(src/assets/arrow-left2-hover.png);
     cursor: pointer;
 }
 
 
-.droite {
-    position: relative;
-    display: flex;
-    width: 22px;
-    border-top: 5px solid #222325;
-    
-    border-radius: 30px;
-    
-    align-items: center;
-    top:16.5px;
-    left: 8px;
-    transition: border-top 0.3s ease-in-out;
 
-}
-
-.droite:hover {
-    border-top:5px solid #F7F5ED;
-}

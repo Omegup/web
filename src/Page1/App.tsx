@@ -15,10 +15,10 @@ const NavBar : React.FC = () => {
       <a href='#' className='nav2'>About Us</a>
       <a href='#' className='nav2'>Services</a>
       <a href='#' className='nav2'>References</a>
-      <a href='#' id='button'>Get in Touch</a>
+      <a href='#' className='buttonnav'>Get in Touch</a>
     </div>
     <div className='texte'>
-      <h1>Welcome to <span id='titre1'>Omegup</span> :<br/>Where <span id='titre2'>Imagination</span> meets <span id='titre3'>Code </span>&lt; / &gt;</h1>
+      <h1>Welcome to <span className='titre1nav'>Omegup</span> :<br/>Where <span className='titre2nav'>Imagination</span> meets <span className='titre3nav'>Code </span>&lt; / &gt;</h1>
     </div>
     </div>
   )
