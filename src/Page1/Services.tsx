@@ -9,7 +9,7 @@ const Services : React.FC = () => {
         </div>
         <div className='boxing'> 
             
-            <span id='grid1'><div id='circle1'></div><h3 className='titreservices'>Web Development<span id='point1'>.</span></h3> 
+            <span className='grid1service'><div className='circle1service'></div><h3 className='titreservices'>Web Development<span className='point1service'>.</span></h3> 
             <p className='texteservices'>
                 🌐 Website Design & Development: Craft 
                  websites that leave a lasting impression and 
@@ -19,7 +19,7 @@ const Services : React.FC = () => {
                 unique needs.<br/>
                 📱 Responsive Design: Ensure your web 
                 presence is seamless across all devices.</p></span>
-            <span id='grid2'><div id='circle2'></div><h3 className='titreservices'>UC/UI Design<span id='point2'>.</span></h3>
+            <span className='grid2service'><div className='circle2service'></div><h3 className='titreservices'>UC/UI Design<span className='point2service'>.</span></h3>
             <p className='texteservices '>🎨 User-Centric Design: We create intuitive 
             and visually stunning user interfaces that 
             captivate and engage.<br/>    
@@ -28,7 +28,7 @@ const Services : React.FC = () => {
                 experiences.<br/>
                 🚀 Prototyping & Testing: Refine designs
                 through iterative prototyping and user testing.</p></span>
-            <span id='grid3'><div id='circle3'></div><h3 className='titreservices'>Mobile Development<span id='point3'>.</span></h3> 
+            <span className='grid3service'><div className='circle3service'></div><h3 className='titreservices'>Mobile Development<span className='point3service'>.</span></h3> 
             <p className='texteservices'>
             📱 iOS & Android Apps: Develop mobile apps 
             that shine on every platform and provide

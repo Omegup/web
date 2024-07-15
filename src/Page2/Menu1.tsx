@@ -28,10 +28,10 @@ const Menu_1 : React.FC = () => {
         </div>
         <div className="containerPere">
         <div className={`container1-1 ${tableau === 'tableau1' ? 'affiché' : 'masqué'}`}>
-            <img src="img1.png" alt="bonjour" className="img2" />
+            <img src="src/assets/img1.png" alt="bonjour" className="img2" />
             <div className="sansimage">
-            <h3 id="titre1-1">Atéliers - 77</h3>
-            <p id="text1-1">Technologies Utilisées :</p>
+            <h3 className="titre1-1menu">Atéliers - 77</h3>
+            <p className="text1-1menu">Technologies Utilisées :</p>
             <div className="container2-1">
                 <span className="container2-2">HTML5</span>
                 <span className="container2-2">CSS3</span>
@@ -42,23 +42,23 @@ const Menu_1 : React.FC = () => {
             <p>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in 
                 signage and digital printing. The website provides an intuitive user experience and highlights their 
                 impressive portfolio of projects.</p>
-            <div id="buttonbis">View case studies</div>
+            <div className="buttonbismenu">View case studies</div>
             
-            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            <a className="button2bismenu" href="#" target="_blank">More case studies</a>
             
             
-                <div id="flècheDr" onClick={() => PivotDroit('tableau2')}><div className="droite"></div></div>
-                <div id="flècheGh" onClick={() => PivotGauche('tableau3')}><div className="gauche"></div></div>
+                <div className="flècheDrMenu" onClick={() => PivotDroit('tableau2')}><div className="droite"></div></div>
+                <div className="flècheGhMenu" onClick={() => PivotGauche('tableau3')}><div className="gauche"></div></div>
             
             </div>
         </div>
 
         <div className={`container1-2 ${tableau === 'tableau2' ? 'affiché' : 'masqué'}`}>
         
-            <img src="src/pc2.png" alt="bonjour" className="img2" />
+            <img src="src/assets/pc2.png" alt="bonjour" className="img2" />
             <div className="sansimage">
-            <h3 id="titre1-1">School Online Tn</h3>
-            <p id="text1-1">Technologies Utilisées :</p>
+            <h3 className="titre1-1menu">School Online Tn</h3>
+            <p className="text1-1menu">Technologies Utilisées :</p>
             <div className="container2-1">
                 <span className="container2-2">React</span>
                 <span className="container2-2">NextJS</span>
@@ -67,22 +67,22 @@ const Menu_1 : React.FC = () => {
             </div>
             <p>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust 
                 tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
-            <div id="buttonbis22">View case studies</div>
+            <div className="buttonbis22menu">View case studies</div>
             
-            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            <a className="button2bismenu" href="#" target="_blank">More case studies</a>
             
             
-                <div id="flècheDr" onClick={() => PivotDroit('tableau3')}><div className="droite"></div></div>
-                <div id="flècheGh" onClick={() => PivotGauche('tableau1')}><div className="gauche"></div></div>
+                <div className="flècheDrMenu" onClick={() => PivotDroit('tableau3')}><div className="droite"></div></div>
+                <div className="flècheGhMenu" onClick={() => PivotGauche('tableau1')}><div className="gauche"></div></div>
             
             </div>
         </div>
 
         <div className={`container1-3 ${tableau === 'tableau3' ? 'affiché' : 'masqué'}`}>
-            <img src="src/pc3.png" alt="bonjour" className="img2" />
+            <img src="src/assets/pc3.png" alt="bonjour" className="img2" />
             <div className="sansimage">
-            <h3 id="titre1-1">DSF Fr</h3>
-            <p id="text1-1">Technologies Utilisées :</p>
+            <h3 className="titre1-1menu">DSF Fr</h3>
+            <p className="text1-1menu">Technologies Utilisées :</p>
             <div className="container2-1">
                 <span className="container2-2">React</span>
                 <span className="container2-2">NodeJS</span>
@@ -90,13 +90,13 @@ const Menu_1 : React.FC = () => {
             </div>
             <p>DSF Déménagement Services France is your trusted partner for all your moving needs in France. 
                 With many years of experience, we provide tailor-made moving solutions for businesses and individuals.</p>
-            <div id="buttonbis33">View case studies</div>
+            <div className="buttonbis33menu">View case studies</div>
             
-            <a id="button2bis" href="#" target="_blank">More case studies</a>
+            <a className="button2bismenu" href="#" target="_blank">More case studies</a>
             
             
-                <div id="flècheDr" onClick={() => PivotDroit('tableau1')}><div className="droite"></div></div>
-                <div id="flècheGh" onClick={() => PivotGauche('tableau2')}><div className="gauche"></div></div>
+                <div className="flècheDrMenu" onClick={() => PivotDroit('tableau1')}><div className="droite"></div></div>
+                <div className="flècheGhMenu" onClick={() => PivotGauche('tableau2')}><div className="gauche"></div></div>
             
             </div>
         </div>

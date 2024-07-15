@@ -51,7 +51,7 @@
 }
 
 
-#rond1-1 {
+.rond1-1 {
     margin-top: 2%;
     margin-left: 48%;
     width: calc(10px);
@@ -61,7 +61,7 @@
     background-color: #FC7557;
 }
 
-#rond2-2 {
+.rond2-2 {
     margin-top: 2%;
     margin-left: 47.3%;
     width: calc(20px);
@@ -70,7 +70,7 @@
     border-radius: 50px;
     background-color: #FC7557;
 }
-#rond3-3 {
+.rond3-3 {
     
     margin-top: 2%;
     margin-left: 41.7%;
@@ -80,14 +80,14 @@
     border-radius: 50px;
     
 }
-#imgbulle,#imgbulle2 {
+.imgbulle,.imgbulle2 {
     width: 80px; 
     height: 80px; 
     border-radius: 50%;
     object-fit: cover;
     
 }
-#rond1-2 {
+.rond1-2 {
     background-color: #949CFF;
     margin-top: 2%;
     margin-left: 48%;
@@ -96,7 +96,7 @@
     border: 0.5px solid;
     border-radius: 50px;
 }
-#rond2-3 {
+.rond2-3 {
     margin-top: 2%;
     margin-left: 47.3%;
     width: calc(20px);
@@ -105,7 +105,7 @@
     border-radius: 50px;
     background-color: #949CFF;
 }
-#rond3-4 {
+.rond3-4 {
     margin-top: 2%;
     margin-left: 42%;
     width: calc(80px);
@@ -115,7 +115,7 @@
     
 }
 
-#rond1-3{
+.rond1-3{
     background-color: #FEC63A;
     margin-top: 2%;
     z-index: 2;
@@ -125,7 +125,7 @@
     border: 0.5px solid;
     border-radius: 50px;
 }
-#rond2-4 {
+.rond2-4 {
     margin-top: 2%;
     margin-left: 49%;
     width: calc(20px);
@@ -134,7 +134,7 @@
     border-radius: 50px;
     background-color: #FEC63A;
 }
-#rond3-5 {
+.rond3-5 {
     margin-top: 2%;
     margin-left: 44%;
     width: calc(80px);
@@ -144,7 +144,7 @@
     
 }
 
-#bulle1-2 {
+.bulle1-2 {
     margin-top: 30%;
     margin-left: 9%;
     box-sizing: border-box;
@@ -157,7 +157,7 @@
     
 }
 
-#bulle1-3 {
+.bulle1-3 {
     
     box-sizing: border-box;
     margin-top: 30%;
@@ -172,7 +172,7 @@
 
 }
 
-#bulle1-4 {
+.bulle1-4 {
     overflow: auto;
     
     box-sizing: border-box;
@@ -189,7 +189,7 @@
 
 .textbulle {
     text-wrap: wrap;
-    font-size: 130%;
+    font-size: 1vw;
     line-height: 130%;
     padding: 18px;
 }
@@ -207,11 +207,11 @@
     
 }
 
-#flèchedroite {
+.flèchedroitetriplebulle {
     
     background-position: 50%;
     background-repeat: no-repeat;
-    background-image: url(src/arrow-right.png);
+    background-image: url(src/assets/arrow-right.png);
     background-color: #F7F5ED;
     border: none;
     height: 40px;
@@ -223,17 +223,17 @@
     
 }
 
-#flèchedroite:hover {
+.flèchedroitetriplebulle:hover {
    
-    background-image: url(src/arrow-right-hover.png);
+    background-image: url(src/assets/arrow-right-hover.png);
     cursor: pointer;
     
 }
 
-#flèchegauche {
+.flèchegauchetriplebulle {
     background-position: 50%;
     background-repeat: no-repeat;
-    background-image: url(arrow-left.png);
+    background-image: url(src/assets/arrow-left.png);
     background-color: #F7F5ED;
     border-radius: 22px;
     height: 40px;
@@ -244,11 +244,11 @@
     transition: background-image 0.3s ease-in-out;
 }
 
-#flèchegauche:hover {
+.flèchegauchetriplebulle:hover {
    border: none;
     background-position: 50%;
     background-repeat: no-repeat;
-    background-image: url(src/arrow-left-hover.png);
+    background-image: url(src/assets/arrow-left-hover.png);
     cursor: pointer;
     
 }

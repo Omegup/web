@@ -21,13 +21,13 @@
   }
 
 h3{
-    font-size: 30px;
+    font-size: 1.8vw;
     
 }
 
 p{
     overflow: hidden;
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 
@@ -35,8 +35,8 @@ p{
 
 
 
-#box1 {
-    overflow: scroll;
+.box1 {
+    
     box-sizing: border-box; 
     position: relative;
     width: calc(18%);
@@ -49,11 +49,15 @@ p{
     margin-top: 4dvh;
     margin-right: 5dvh;
     margin-left: 3dvh;
+    box-shadow: -8px 8px 0px 0px #ffecb6;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.box1:hover {
     box-shadow: -8px 8px 0px 0px #FEC63A;
 }
 
-#box2 {
-    overflow: scroll;
+.box2 {
     box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
@@ -66,12 +70,17 @@ p{
     margin-top: 4dvh;
     margin-right: 5dvh;
     margin-left: 3dvh;
-    box-shadow: -8px 8px 0px 0px #FC7557;
+    box-shadow: -8px 8px 0px 0px #ffa38e;
+    transition: box-shadow 0.3s ease-in-out;
 
 }
 
-#box3 {
-    overflow: scroll;
+.box2:hover {
+    box-shadow: -8px 8px 0px 0px #FC7557;
+    
+}
+
+.box3 {
     box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
@@ -85,15 +94,18 @@ p{
     margin-top: 4dvh;
     margin-right: 5dvh;
     margin-left: 3dvh;
-    box-shadow: -8px 8px 0px 0px #949CFF;
+    box-shadow: -8px 8px 0px 0px #acb2ff;
+    transition: box-shadow 0.3s ease-in-out;
 
     
 }
 
+.box3:hover {
+    box-shadow: -8px 8px 0px 0px #949CFF;
+}
 
 
-#box4 {
-    overflow: scroll;
+.box4 {
     box-sizing: border-box; 
     position: relative;
     background: #FAF9F6;
@@ -106,11 +118,16 @@ p{
     margin-top: 4dvh;
     margin-right: 5dvh;
     margin-left: 3dvh;
-    box-shadow: -8px 8px 0px 0px #64C67E;
+    box-shadow: -8px 8px 0px 0px #96c7a2;
+    transition: box-shadow 0.3s ease-in-out;
 
 }
 
-#text1 {
+.box4:hover {
+    box-shadow: -8px 8px 0px 0px #64C67E;
+}
+
+.text1affiche {
     overflow: scroll;
     margin-top: 8dvh;
     display: block;
@@ -124,7 +141,7 @@ p{
     justify-content:center;
     margin-bottom: 2dvh;
 }
-#button1 {
+.button1affiche {
     background: #FAF9F6;
 
     border: 0.5px solid;
@@ -132,40 +149,36 @@ p{
     align-self: center;
     padding: 7px;
     margin: 10px;
-    
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-#button2 {
+.button2affiche {
     background: #FEC63A;
 
     border: 0.5px solid;
     border-radius: 30px;
    
     padding: 7px;
-    margin:10px
-    
+    margin:10px;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-#button1:hover {
+.button1affiche:hover {
+    
     box-shadow: -4px 4px 0px 0px #222325;
     
-    transition: 0.3s ease-out
     
 
 }
 
-#button2:hover {
+.button2affiche:hover {
     box-shadow: -4px 4px 0px 0px #222325;
     
-    transition: 0.3s ease-in-out;
+    
     
 
 }
 
 
-#button2:hover::after, #button1:hover::after {
-    box-shadow: none;
-    transition: 0.3s ease-in-out;
-    
-}
+
 

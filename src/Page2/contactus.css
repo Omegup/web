@@ -1,12 +1,13 @@
 .bigContainer {
     margin: auto;
     width: 80%;
-    height: 46vh;
+    height: calc(43vh);
     box-shadow: -8px 8px 0px 0px #222325;
     background-color: #FAF9F6;
     border: 1px solid;
     border-radius: 22px;
     margin-bottom: 10%;
+    position: relative;
 }
 
 .formtext {
@@ -14,15 +15,31 @@
     margin: 0 40px;
 }
 
-label {
-    margin: 30px;
+.form {
+    display: flex;
+    flex : 4
 }
 
 
+label {
+    font-size: 15px;
+    position: absolute;
+    top: 36%;
+}
+#Full-Name,#e-mail {
+    width: 50%;
+}
 
+input {
+    border: 1px solid #222325;
+    border-radius: 22px;
+    padding: 10px;
+    
+    
+}
 
-
-#Full-Name,#e-mail,#p-number {
+.form-group {
+    
     border-style: none;
     margin: 30px 20px;
     border-radius: 22px;
@@ -44,22 +61,22 @@ label {
     gap: 10px;
     background-color: #FAF9F6;
     background-position: 6%;
-    background-image: url(send-2.png);
+    background-image: url(src/assets/send-2.png);
     background-repeat: no-repeat;
     border-radius: 22px;
     transition: box-shadow 0.3s ease-in-out;
     transition: background-image 0.3s ease-in-out;
     border: 1px;
     opacity: 0px;
-    border: 1px solid #222325
-    
+    border: 1px solid #222325;
+    position: absolute;
     
 }
 
 #submit:hover {
     
     box-shadow: -4px 4px 0px 0px #000000;
-    background-image: url(send-3.png);
+    background-image: url(src/assets/send-3.png);
     background-repeat: no-repeat;
 }
 
@@ -74,3 +91,4 @@ label {
     
 
 }
+

@@ -6,30 +6,30 @@
     margin-left: 107px;
 }
 
-#text2 {
+.text2head {
     margin-top: 50px;
     font-size: 18px;
     color: #FC7557;
 }
 
-#titrebis {
+.titrebishead {
     font-size: 28px;
     font: bold;
     
 }
 
-#texte3 {
+.texte3head {
     font-size: 19px;
     margin-bottom: 20px ;
 }
 
-#boxgrande {
+/*#boxgrande {
     border:1px solid ;
     border-radius: 30px;
     width: 100px
     
     
-}
+}*/
 
 /*.container6 {
     
@@ -43,7 +43,7 @@
     padding-top: 60px;
 }*/
 
-#texteimage1 {
+.texteimage1head {
     font-size: 40px;
     font-weight: bold;
     
@@ -85,14 +85,14 @@
     position: relative;
     border-top-left-radius: 22px;
     border-bottom-left-radius: 22px;
-    background-image: url(image1.jpeg);
+    background-image: url(src/assets/image1.jpeg);
     background-size: 100%;
     background-attachment: fixed;
   }
 
   .button2{
     position: relative;
-    background-image: url(image2.jpeg);
+    background-image: url(src/assets/image2.jpeg);
     background-size: 100%;
     background-attachment: fixed;
     
@@ -100,7 +100,7 @@
   
   .button3{
     position: relative;
-    background-image: url(image3.jpeg);
+    background-image: url(src/assets/image3.jpeg);
     background-size: 100%;
     background-position: 50%;
     background-attachment: fixed;
@@ -108,7 +108,7 @@
 
   .button4{
     position: relative;
-    background-image: url(image4.jpeg);
+    background-image: url(src/assets/image4.jpeg);
     background-size: 100%;
     background-attachment: fixed;
     border-top-right-radius: 22px;
@@ -128,9 +128,11 @@
    text-wrap: nowrap;
     left: 0;
     bottom: 13%;
+    height: 12%;
+    
     color: #e0e0e0;
     position: absolute;
-    font-size: 30px;
+    font-size: 20px;
     transform: rotate(-90deg);
 }
 

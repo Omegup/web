@@ -81,7 +81,7 @@
 
 }
 
-#titre1-1 {
+.titre1-1 {
     text-align:start;
     
 }
@@ -107,7 +107,7 @@
     
 }
 
-#buttonbis {
+.buttonbismenu {
     background-color: #FEC63A;
     border-radius: 22px;
     border: 1px solid;
@@ -118,12 +118,12 @@
 
 }
 
-#buttonbis:hover {
+.buttonbismenu:hover {
     box-shadow: -4px 4px 0px 0px #222325;
     cursor: pointer;
 
 }
-#buttonbis22 {
+.buttonbis22menu {
     background-color: #949CFF;
     ;
     border-radius: 22px;
@@ -135,13 +135,13 @@
 
 }
 
-#buttonbis22:hover {
+.buttonbis22menu:hover {
     box-shadow: -4px 4px 0px 0px #222325;
     cursor: pointer;
 
 }
 
-#buttonbis33 {
+.buttonbis33menu {
     background-color: #FC7557;
     ;
     border-radius: 22px;
@@ -153,13 +153,13 @@
 
 }
 
-#buttonbis33:hover {
+.buttonbis33menu:hover {
     box-shadow: -4px 4px 0px 0px #222325;
     cursor: pointer;
 
 }
 
-#button2bis {
+.button2bismenu {
     text-decoration: none;
     margin: 20px;
     cursor: pointer;
@@ -167,39 +167,42 @@
     
 }
 
-#button2bis:hover {
+.button2bismenu:hover {
     border-bottom: 1px solid;
     
 }
 
 
-#flècheDr {
-    height: 38px;
-    width: 38px;
-    border: 1px solid #222325;
-    border-radius: 30px;
-    margin-top: 70px;
+.flècheDrMenu {
+    height: 48px;
+    width: 7.8%;
+    
+    margin-top: 0;
     float: right;
-    transition: background-color 0.3s ease-in-out;
+    background-image: url(src/assets/arrow-left.png);
+    transition: background-image 0.3s ease-in-out;
 }
 
-#flècheGh {
-    height: 38px;
-    width: 38px;
-    border: 1.5px solid #222325;
-    border-radius: 30px;
-    margin-top: 70px;
+.flècheGhMenu {
+    height: 48px;
+    width: 7.8%;
+    
+    background-image: url(src/assets/arrow-right.png);
+    
     float: right;
-    margin-right: 10px;
-    transition: background-color 0.3s ease-in-out;
+    margin-right: 5px;
+    transition: background-image 0.3s ease-in-out;
+    
 }
 
-#flècheDr:hover , #flècheGh:hover {
-    background-color: #222325;
+.flècheDrMenu:hover {
+    background-image: url(src/assets/arrowrighthover.png);
     cursor: pointer;
 }
-
-
+.flècheGhMenu:hover {
+    background-image: url(src/assets/arrow-left2-hover.png);
+    cursor: pointer;
+}
 
 
 

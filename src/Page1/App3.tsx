@@ -15,16 +15,16 @@ const Head : React.FC = () => {
         <>
         <div className='container5'>
             
-            <p id='text2'>What shapes our identity !</p>
-            <h4 id='titrebis'>Our objectives have remained unwavering</h4>
-            <p id='texte3'>Imagine, explore, delve into particulars, chase the next wild adventure, forever <br/>
+            <p className='text2head'>What shapes our identity !</p>
+            <h4 className='titrebishead'>Our objectives have remained unwavering</h4>
+            <p className='texte3head'>Imagine, explore, delve into particulars, chase the next wild adventure, forever <br/>
              absorb wisdom, and leave an indelible mark on the world !</p>
         </div>
         <div className='container6'>
             
             <div className="buttons-container">
             <button className={`button1 ${panel === 'panel1' ? 'expanded' : ''}`}onClick={() => Handleclick('panel1')}>
-                <div id='imganim1'>
+                <div className='imganim1head'>
                 <div className='numerogh'>01</div><div className='textgauche'>Our Mission</div>
                 <div className={`textanim1 ${panel === 'panel1' ? 'expanded' : 'retracted'}`}><h3 style={{color: "#FC7557"}}>🚀 Unleashing Digital Dreams 🌟</h3>
                 <h3>Eradicate regrets. Fuel ambitions. Ignite dreams.</h3><p>At Omegup, our mission is to turn your digital dreams into extraordinary realities.

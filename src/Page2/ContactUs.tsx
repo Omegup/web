@@ -14,8 +14,8 @@ const ContactUs : React.FC = () => {
                 <form>
                     
                     
-                        <legend>Full Name</legend>
-                        <input type="text" name="Full-Name" id="Full-Name" />
+                    <label htmlFor="text"> Full Name </label>
+                    <input type="text" name="Full-Name" id="Full-Name" />
                     <label htmlFor="e-mail">E-mail</label>
                     <input type="email" name="e-mail" id="e-mail" />
                     <label htmlFor="p-number">Mobile Number</label>
