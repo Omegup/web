@@ -1,9 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import './triplebulle.css'
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
-</style>
 
 
 
@@ -73,9 +70,9 @@ const TourneImage : React.FC  = () => {
                  
         </div>
         <div className="containerflèche1-1">
-                <button onClick={tourneDroite} className="flèchedroitetriplebulle"></button>
-                <button onClick={tourneGauche} className="flèchegauchetriplebulle"></button>
-             </div> 
+        <button onClick={tourneDroite} className="flèchedroitetriplebulle"></button>
+        <button onClick={tourneGauche} className="flèchegauchetriplebulle"></button>
+        </div> 
         
         </>
     )
