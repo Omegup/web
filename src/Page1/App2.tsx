@@ -98,8 +98,7 @@ const StyledDiv = styled.div`
 const Acceuil = () => {
   return (
     <Container>
-      <GlobalStyle2></GlobalStyle2>
-      <GlobalStyle/>
+    
       <Container2>
         <Box shadowColor="-8px 8px 0px 0px #FEC63A">
           <BoxTitle>💡 Innovate & <br />Create :</BoxTitle>

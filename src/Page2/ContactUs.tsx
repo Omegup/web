@@ -175,7 +175,7 @@ const ContactUS = () => {
         <MessageLabel>Message</MessageLabel>
       </InputContainer>
       <StyledButton>Get in touch now!</StyledButton>
-      <GlobalStyles />
+     
     </FormStyled>
   );
 };

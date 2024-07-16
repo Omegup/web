@@ -7,6 +7,12 @@ const Container = styled.div`
     margin-left: 10%;
     margin-right: 10%;
     border-radius: 22px;
+    @media (max-width: 1700px) {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+  
   
 `;
 
@@ -19,7 +25,7 @@ const ButtonsContainer = styled.div`
     @media (max-width: 1200px) {
         width: 100%;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
         height: auto;
     }
@@ -39,19 +45,32 @@ const Button = styled.button<{ expanded: boolean; backgroundImage: string; first
     border-bottom-left-radius: ${(props) => (props.first ? '22px' : '0')};
     border-top-right-radius: ${(props) => (props.last ? '22px' : '0')};
     border-bottom-right-radius: ${(props) => (props.last ? '22px' : '0')};
-    @media (max-width:900px) {
+     flex: ${(props) => (props.expanded ? 'none' : 'none')};
+     width: ${(props) => (props.expanded ? '90%' : '100px')};
+        padding: ${(props) => (props.expanded ? '20px' : '0px')};
+        @media (max-width: 1700px) {
+            width: ${(props) => (props.expanded ? '70%' : '100px')};
+    }
+   
+    @media (max-width:1000px) {
+        width: auto;
         flex: ${(props) => (props.expanded ? 'none' : 'none')};
         height: ${(props) => (props.expanded ? 'auto' : '100px')};
         padding: ${(props) => (props.expanded ? '20px' : '0px')};
+        border-top-left-radius: ${(props) => (props.first ? '22px' : '0')};
+        border-bottom-left-radius: ${(props) => (props.last ? '22px' : '0')};
+       border-bottom-right-radius: ${(props) => (props.last ? '22px' : '0')};
+       border-top-right-radius: ${(props) => (props.first ? '22px' : '0')};
+    
     }
 `;
 
 const TextContainer = styled.div<{ expanded: boolean }>`
-    margin: 10%;
+    margin: 5%;
     color: #f7f5ed;
     opacity: ${(props) => (props.expanded ? 1 : 0)};
     transition: opacity 0.1s ease-out;
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         margin: 5%;
     }
 `;
@@ -63,12 +82,12 @@ const TextOverlay = styled.div`
     line-height: 26.4px;
     letter-spacing: -6.4%;
     white-space: nowrap;
-    left: 0;
-    bottom: 10%;
+    left: -45px;
+    bottom: 15%;
     color: #f7f5ed;
     position: absolute;
     transform: rotate(-90deg);
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         transform: rotate(0deg);
         bottom: 0;
         left: 9%;
@@ -85,7 +104,7 @@ const NumberOverlay = styled.div`
     line-height: 26.4px;
     letter-spacing: -6.4%;
     position: absolute;  
-    @media (max-width:900px) {
+    @media (max-width:1000px) {
         left: 10%;
         top: 10%;
     }
@@ -97,7 +116,7 @@ const Hstyled = styled.h1`
     font-weight: 400;
     line-height: 37.4px;
     letter-spacing: -6.4%;
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         font-size: 28px;
         line-height: 30px;
     }
@@ -105,7 +124,7 @@ const Hstyled = styled.h1`
 
 const Title = styled.div`
     margin-left: 10%;
-    @media (max-width:900px) {
+    @media (max-width:1000px) {
         margin-left: 5%;
         text-align: center;
     }
@@ -118,7 +137,7 @@ const Title1 = styled.h3`
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         font-size: 14px;
         line-height: 20px;
     }
@@ -131,7 +150,7 @@ const Title2 = styled.h1`
     font-weight: 400;
     line-height: 26.4px;
     letter-spacing: -6.4%;
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         font-size: 20px;
         line-height: 22px;
     }
@@ -152,7 +171,7 @@ const Title21 = styled(Title1)`
     font-weight: 400;
     line-height: 26.4px;
     letter-spacing: -6.4%;
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         font-size: 20px;
         line-height: 22px;
     }
@@ -174,8 +193,7 @@ const Head = () => {
 
     return (
         <>
-        <GlobalStyle/>
-        <GlobalStyle2/>
+  
         <Title>
         <Title1> What shapes our identity !</Title1>
            <Title2> Our objectives have remained unwavering</Title2>

@@ -117,8 +117,7 @@ const stylesp = {
 const Services: React.FC = () => {
   return (
     <>
-      <GlobalStyle />
-      <GlobalStyle2 />
+      
       <Container>
         <h3 style={styles}>Our Services</h3>
         <p style={stylesp}>At Omegup, we specialize in crafting exceptional digital experiences. Our core services include:</p>

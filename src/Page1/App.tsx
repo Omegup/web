@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import GlobalStyle2 from '../GlobalStyle2';
-import GlobalStyle from '../Globalstyles';
+
 
 const Title = styled.h1`
    font-family: 'Krona One', sans-serif;
-  font-size: 24px;
+   font-size: 24px;
   font-weight: 400;
   line-height: 26.4px;
   letter-spacing:-6.4%;
@@ -95,6 +94,7 @@ const Texte = styled.div`
 
 const Titre1 = styled.span`
   color: #fc7557;
+
   font-family: 'Krona One', sans-serif;
    
 `;
@@ -113,8 +113,7 @@ function NavBar() {
   return (
     
     <Container1>
-      < GlobalStyle2/>
-      <GlobalStyle/>
+   
       <Affiche>
         <Title>Omegup</Title>
         <Container>

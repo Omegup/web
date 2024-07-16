@@ -122,9 +122,9 @@ const TextCenter = styled.div`
   h3 {
     text-align: center;
     font-family: 'Krona One', sans-serif;
-    font-size: 2.4vw;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 2.64vw;
+    line-height:26.4px;
     letter-spacing: -6.4%;
   }
   p {
@@ -162,8 +162,7 @@ const TourneImage: React.FC = () => {
 
   return (
     <>
-      <GlobalStyle />
-      <GlobalStyle2 />
+   
       <Container>
         <h3>What Our Clients Say</h3>
         <p>Discover why our clients trust us. Read what they have to say about our services, solutions, and dedication to 
