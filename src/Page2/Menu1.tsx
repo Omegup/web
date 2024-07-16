@@ -4,13 +4,24 @@ import styled from "styled-components";
 // Styled components
 const ContainerTitle = styled.div`
     margin-top: 100px;
-    margin-left: 100px;
-`;
+    margin-left: 100px;`;
+    const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26.4px;
+    letter-spacing: -6.4%;`
+    
+
 
 const MainContainer = styled.div`
     height: 500px;
     width: 80%;
     margin-left: 10%;
+    @media (max-width: 900px) {
+        width: auto;
+    }
+
+
 `;
 
 const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
@@ -22,6 +33,10 @@ const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
     box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
    
     display: ${(props) => (props.isVisible ? 'block' : 'none')};
+    @media (max-width: 900px) {
+        width: auto;
+        height: auto;
+    }
 `;
 
 const TextImage = styled.div<{ isVisible: boolean }>`
@@ -39,22 +54,60 @@ const Img = styled.img<{ isVisible: boolean }>`
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
     transition: opacity 5s ease;
     transform: scale(1.5);
-    float: left;
+   
+    @media (max-width:1500px) {
+        margin: 30px;
+        height: 200px;
+        width: 220px;
+    }
+    @media (max-width:1200px) {
+        margin: 20px;
+        height: 160px;
+        width: 180px;
+    }
+    @media (max-width:500px) {
+        margin: 20px;
+        height: 150px;
+        width: 140px;
+    }
+    @
 `;
 
 const Container2 = styled.div`
     display: flex;
-    gap: 5px;
+    
+@media (max-width:900px ) {
+    flex-wrap:wrap;
+}
+   
 `;
 
 const ContainerItem = styled.span`
+    
     border-radius: 22px;
-    gap: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
     margin-right: 10px;
     border: 0.5px solid rgb(32, 32, 32);
     padding: 10px 20px;
     background-color: rgb(32, 32, 32);
-    color: #f7f5ed;
+    color:#F7F5ED;
+
+    @media (max-width: 1300px) {
+        font-size: 16px;
+        padding:7px ;
+    }
+    @media (max-width: 1000px) {
+        font-size: 15px;
+        padding:6px ;
+    }
+    @media (max-width: 500px) {
+        font-size: 14px;
+        padding:5px ;
+        
+    }
 `;
 
 const Button = styled.div<{ bgColor: string }>`
@@ -65,6 +118,7 @@ const Button = styled.div<{ bgColor: string }>`
     width: 120px;
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
+    position: fixed;
 
     &:hover {
         box-shadow: -4px 4px 0px 0px #222325;
@@ -102,10 +156,31 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
         cursor: pointer;
         background-size: 120% 120%;
     }
+    @media (max-width: 1000px) {
+        margin-top:30px;
+        
+    }
 `;
 
+const styles = {
+    fontFamily: "'Quicksand', sans-serif",
+    fontSize: "16px",
+    fontWeight: "500",
+    lineHeight: "24px",
+    "@media (max-width: 1000px)":{
+        fontSize:"14px"
 
-
+    }
+};
+const  Displaycontainer=styled.div`
+display:flex;
+flex-direction: row;
+@media (max-width:900px) {
+    flex-direction: column;
+  
+    
+}
+`
 const Menu_1: React.FC = () => {
     const [tableau, setTableau] = useState('tableau1');
 
@@ -117,18 +192,19 @@ const Menu_1: React.FC = () => {
     return (
         <>
             <ContainerTitle>
-                <h3>Explore Our Work</h3>
-                <p>
+                <H3Styled>Explore Our Work</H3Styled>
+                <p style={styles}>
                     At Omegup, we take pride in the work we do for our clients. Our dedicated team of talented web developers has created innovative solutions for a wide range of businesses. Here's an overview of some of our recent references:
                 </p>
             </ContainerTitle>
 
             <MainContainer>
                 <Container shadowColor="#FEC63A" isVisible={tableau === 'tableau1'}>
+                    <Displaycontainer>
                     <Img isVisible={tableau === 'tableau1'} src="src/img1.png" alt="Ateliers - 77" />
                     <TextImage isVisible={tableau === 'tableau1'}>
-                        <h3>Ateliers - 77</h3>
-                        <p>Technologies Utilisées :</p>
+                        <H3Styled>Atéliers-77</H3Styled>
+                        <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
                             <ContainerItem>HTML5</ContainerItem>
                             <ContainerItem>CSS3</ContainerItem>
@@ -136,49 +212,51 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>Tailwind</ContainerItem>
                         </Container2>
-                        <p>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
+                        <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
                         <Button bgColor="#FEC63A">View case studies</Button>
                         <StyledLink href="#" target="_blank">More case studies</StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau3')}></ArrowButton>
-                    </TextImage>
+                    </TextImage></Displaycontainer>
                 </Container>
 
                 <Container shadowColor="#949CFF" isVisible={tableau === 'tableau2'}>
-                    <Img isVisible={tableau === 'tableau2'} src="src/pc2.png" alt="School Online Tn" />
+                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="src/pc2.png" alt="School Online Tn" />
                     <TextImage isVisible={tableau === 'tableau2'}>
-                        <h3>School Online Tn</h3>
-                        <p>Technologies Utilisées :</p>
+                        <H3Styled>School Online Tn</H3Styled>
+                        <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
                             <ContainerItem>React</ContainerItem>
                             <ContainerItem>NextJS</ContainerItem>
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>MongoDB</ContainerItem>
                         </Container2>
-                        <p>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
+                        <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
                         <Button bgColor="#949CFF">View case studies</Button>
                         <StyledLink href="#" target="_blank">More case studies</StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau1')}></ArrowButton>
-                    </TextImage>
+                    </TextImage></Displaycontainer>
                 </Container>
-
+                
                 <Container shadowColor="#FC7557" isVisible={tableau === 'tableau3'}>
+                    <Displaycontainer>
                     <Img isVisible={tableau === 'tableau3'} src="src/pc3.png" alt="DSF Fr" />
                     <TextImage isVisible={tableau === 'tableau3'}>
-                        <h3>DSF Fr</h3>
-                        <p>Technologies Utilisées :</p>
+                        <H3Styled>DSF Fr</H3Styled>
+                        <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
                             <ContainerItem>React</ContainerItem>
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>NodeJS</ContainerItem>
                         </Container2>
-                        <p>DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals.</p>
+                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals.<br /> <br /></p>
                         <Button bgColor="#FC7557">View case studies</Button>
+                        
                         <StyledLink href="#" target="_blank">More case studies</StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau1')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau2')}></ArrowButton>
-                    </TextImage>
+                    </TextImage></Displaycontainer>
                 </Container>
             </MainContainer>
         </>

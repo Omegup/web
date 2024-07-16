@@ -1,31 +1,69 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import GlobalStyle from "../Globalstyles";
+import GlobalStyle2 from "../GlobalStyle2";
 
 // Styled components
 const Container = styled.div`
-  margin: 100px 117px 0;
-  text-align: center;
 
-  h3, p {
-    font-family: "Krona One", sans-serif;
+  text-align: left;
+margin-left:10%;
+  h3 {
+    font-family: 'Krona One', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26.4px;
+    letter-spacing: -6.4%;
+    text-align: left;
+    margin-bottom:20px;
+    
   }
+  p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 150px;
+    margin-bottom:50px;
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 600px) {
+    margin-top: 180px;
+    margin-bottom:50px;
+  }
+
+
 `;
 
 const BulleContainer = styled.div`
-  margin: 20px 117px 10vh;
+  margin: 2vw 10vw ;
   display: flex;
-  width: calc(100% - 24vh);
-  height: 60vh;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction:row;
+  width: calc(100% - 24%);
+  height: auto;
 `;
 
 const Bulle = styled.div<{ center: boolean }>`
   transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
   transform: ${(props) => (props.center ? "translateY(-15%)" : "none")};
   opacity: ${(props) => (props.center ? 1 : 0.4)};
+ 
+
 `;
 
 const BulleContent = styled.div<{ boxShadowColor: string }>`
-  margin: 30% 9% 0;
+  margin: 5vw 3vw 0;
   box-sizing: border-box;
   border: 1px solid;
   width: 80%;
@@ -33,7 +71,13 @@ const BulleContent = styled.div<{ boxShadowColor: string }>`
   border-radius: 22px;
   box-shadow: -6px 6px 0 0 ${(props) => props.boxShadowColor};
   padding: 18px;
-  line-height: 130%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 2.1vw;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const Circle = styled.div<{ size: string; marginLeft: string; backgroundColor: string; borderColor?: string; backgroundImage?: string }>`
@@ -75,11 +119,33 @@ const FlecheButton = styled.button<{ backgroundImage: string }>`
 `;
 
 const TextCenter = styled.div`
-  text-align: center;
-
-  h3, p {
-    font-family: "Krona One", sans-serif;
+  h3 {
+    text-align: center;
+    font-family: 'Krona One', sans-serif;
+    font-size: 2.4vw;
+    font-weight: 400;
+    line-height: 2.64vw;
+    letter-spacing: -6.4%;
   }
+  p {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2.1vw;
+  }
+ 
+  @media (max-width: 600px) {
+    margin-top: 150px;
+    margin-bottom:50px;
+    margin-top:0px;
+    h3 {
+    
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+    }}
 `;
 
 // Component
@@ -96,6 +162,8 @@ const TourneImage: React.FC = () => {
 
   return (
     <>
+      <GlobalStyle />
+      <GlobalStyle2 />
       <Container>
         <h3>What Our Clients Say</h3>
         <p>Discover why our clients trust us. Read what they have to say about our services, solutions, and dedication to 
