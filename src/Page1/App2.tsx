@@ -1,90 +1,137 @@
-import React from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
+import GlobalStyle2 from '../GlobalStyle2';
+import GlobalStyle from '../Globalstyles';
 
 const Container = styled.div`
-    background: #22232508;
-    margin-top: 10px;
-    height: 100%;
-    border-bottom: 0.5px solid #999999;
+  background: #22232508;
+  margin-top: 10px;
+  height: 100%;
+  border-bottom: 0.5px solid #999999;
 `;
+
 const Container2 = styled.div`
-display:flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  justify-content: center;
 
-flex-direction:row;
-`
+  @media (max-width: 800px) {
+    flex-wrap: wrap; 
+  }
+`;
+const BoxTitle=styled.h3`
+   color: #222325;
+  font-family: 'Krona One', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26.4px;
+  letter-spacing:-6.4%;
+  `
+const Box = styled.div<{ shadowColor: string }>`
+  background: #faf9f6;
+  width: 33%;
+  border: 0.5px solid;
+  border-radius: 30px;
+  padding: 0 3vh;
+  align-self: flex-start;
+  margin: 4vh 5vh 0 3vh;
+  box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
+    width: 45%;
+    margin: 2vh 3vh; 
+  
 
-
-const Box = styled.div<{shadowColor:string}>`
-    background: #FAF9F6;
-    width: 33%;
-    border: 0.5px solid;
-    border-radius: 30px;
-    padding: 0 3vh;
-    align-self: flex-start;
-    margin: 4vh 5vh 0 3vh;
-    box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
+ 
 `;
 
 const Text = styled.p`
-    font-size: 20px;
+ font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
 `;
 
-const Button = styled.span<{secondary:string}>`
-    background: ${props => props.secondary==='true' ? '#FEC63A' : '#FAF9F6'};
-    border: 0.5px solid;
-    border-radius: 30px;
-    padding: 7px;
-    margin: 10px;
-    cursor: pointer;
-    
-    &:hover {
-        box-shadow: -4px 4px 0px 0px #222325;
-        transition: 0.3s ease-out;
-    }
+const Button = styled.span<{ secondary: string }>`
+ font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  background: ${props => props.secondary === 'true' ? '#FEC63A' : '#FAF9F6'};
+  border: 0.5px solid;
+  border-radius: 30px;
+  padding: 7px;
+  margin: 10px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: -4px 4px 0px 0px #222325;
+    transition: 0.3s ease-out;
+  }
+
+ 
 `;
+
 const Text1 = styled.p`
-    margin-top: 8vh;
-    display: block;
-    text-align: center;
+ font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  text-align: center;
+  
 `;
+
 const StyledDiv = styled.div`
-margin-top:20px;`
+  margin-top: 20px;
+  line-height:24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  @media (max-width: 576px) {
+    flex-direction: column; 
+  }
+`;
 
 const Acceuil = () => {
-    return (
-        <Container>
-            <Container2 >
-                <Box shadowColor="-8px 8px 0px 0px #FEC63A">
-                    <h3>💡 Innovate & <br/>Create :</h3>
-                    <Text>Our team of tech visionaries <br />thrives on innovation, crafting<br /> cutting-edge websites that lead <br/> the way in your industry.</Text>
-                </Box>
+  return (
+    <Container>
+      <GlobalStyle2></GlobalStyle2>
+      <GlobalStyle/>
+      <Container2>
+        <Box shadowColor="-8px 8px 0px 0px #FEC63A">
+          <BoxTitle>💡 Innovate & <br />Create :</BoxTitle>
+          <Text>Our team of tech visionaries <br />thrives on innovation, crafting<br /> cutting-edge websites that lead <br /> the way in your industry.</Text>
+        </Box>
 
-                <Box shadowColor="-8px 8px 0px 0px #FC7557">
-                    <h3>🤝 Partners in <br/>Success :</h3>
-                    <Text>Your success is our mission. We <br/> collaborate closely with you, <br/> ensuring our solutions align <br/> perfectly with your goals</Text>
-                </Box>
+        <Box shadowColor="-8px 8px 0px 0px #FC7557">
+          <BoxTitle>🤝 Partners in <br />Success :</BoxTitle>
+          <Text>Your success is our mission. We <br /> collaborate closely with you, <br /> ensuring our solutions align <br /> perfectly with your goals</Text>
+        </Box>
 
-                <Box shadowColor="-8px 8px 0px 0px #949CFF">
-                    <h3>🚀 Code that <br/>Performs :</h3>
-                    <Text>Behind every stunning website <br/> and mobile app lies impeccable <br/> code. We engineer seamless <br/> experiences that set you apart.</Text>
-                </Box>
+        <Box shadowColor="-8px 8px 0px 0px #949CFF">
+          <BoxTitle>🚀 Code that <br />Performs :</BoxTitle>
+          <Text>Behind every stunning website <br /> and mobile app lies impeccable <br /> code. We engineer seamless <br /> experiences that set you apart.</Text>
+        </Box>
 
-                <Box shadowColor="-8px 8px 0px 0px #64C67E">
-                    <h3>🎨 Design <br/>Brilliance :</h3>
-                    <Text>Our UX/UI designs aren't just <br/> visually stunning: they're user-<br/> centric masterpieces that <br/> captivate your audience.</Text>
-                </Box>
-            </Container2>
+        <Box shadowColor="-8px 8px 0px 0px #64C67E">
+          <BoxTitle>🎨 Design <br />Brilliance :</BoxTitle>
+          <Text>Our UX/UI designs aren't just <br /> visually stunning: they're user-<br /> centric masterpieces that <br /> captivate your audience.</Text>
+        </Box>
+      </Container2>
 
-            <Text1>At Omegup, we are the architects of your digital dreams. We blend creativity, technology, and <br/>
-            expertise to deliver awe-inspiring web solutions that redefine the online landscape.
+      <Text1>At Omegup, we are the architects of your digital dreams. We blend creativity, technology, and <br />
+        expertise to deliver awe-inspiring web solutions that redefine the online landscape.
 
-             <StyledDiv>
-                <Button secondary='false'>Get in touch</Button>
-               <Button secondary='true'>Explore Our Services</Button>
-               </StyledDiv>  </Text1>
-        </Container>
-    );
+        <StyledDiv>
+          <Button secondary='false'>Get in touch</Button>
+          <Button secondary='true'>Explore Our Services</Button>
+        </StyledDiv>
+      </Text1>
+    </Container>
+  );
 };
 
 export default Acceuil;

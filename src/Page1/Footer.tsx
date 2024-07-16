@@ -1,35 +1,65 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`// Represents the main footer container with a dark background.
+const Container = styled.div`
   background-color: #222325;
+  margin-top: 50px;
 `;
 
-const MainContainer = styled.div`//Styles the main content area of the footer with margin and padding.
+const MainContainer = styled.div`
   margin-top: 70px;
   padding-top: 20px;
-  padding-bottom:40px;
+  padding-bottom: 40px;
   overflow: hidden;
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    padding: 10px;
+  }
 `;
 
-const Title = styled.h1`//Styles the footer title.
+const Title = styled.h1`
   margin-left: 117px;
   color: #faf9f6;
+  font-family: 'Krona One', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26.4px;
+  letter-spacing: -6.4%;
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    font-size: 20px;
+  }
 `;
 
-const Text = styled.p`//Styles the paragraph text in the footer.
+const Text = styled.p`
   margin-left: 117px;
   color: #faf9f6;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
-const Slider = styled.div`//Contains the sliding animation for the images.
+const Slider = styled.div`
   margin-left: -117px;
-  margin-top: 35px;
+  margin-top: -25px;
+  margin-bottom: 25px;
   display: flex;
-  height: 77px;
+  height: 100px;
   width: 200%;
   justify-content: space-evenly;
   animation: slide 15s linear infinite;
+
+  @media (max-width: 768px) {
+    margin-left: -20px;
+    height: 80px;
+  }
+
   @keyframes slide {
     0% {
       transform: translate(0);
@@ -43,11 +73,15 @@ const Slider = styled.div`//Contains the sliding animation for the images.
   }
 `;
 
-const SlideItem = styled.div`////Represents each sliding image item.
+const SlideItem = styled.div`
   height: 100%;
   width: 2.2%;
   background-color: #222325;
   border-radius: 22px;
+
+  @media (max-width: 768px) {
+    width: 3%;
+  }
 `;
 
 const Footer = () => {
@@ -80,7 +114,7 @@ const Footer = () => {
         <Slider>
           {images.map((src, index) => (
             <SlideItem key={index}>
-              <img src={src} alt="" style={{ width: '100%', height: '100%' }} />
+              <img src={src} alt="" style={{ width: '120%', height: '120%' }} />
             </SlideItem>
           ))}
         </Slider>

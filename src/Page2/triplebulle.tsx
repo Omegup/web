@@ -33,8 +33,6 @@ const BulleContent = styled.div<{ boxShadowColor: string }>`
   border-radius: 22px;
   box-shadow: -6px 6px 0 0 ${(props) => props.boxShadowColor};
   padding: 18px;
-  text-wrap: wrap;
-  font-size: 130%;
   line-height: 130%;
 `;
 
