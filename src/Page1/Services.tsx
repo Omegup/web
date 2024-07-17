@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import GlobalStyle from '../Globalstyles';
-import GlobalStyle2 from '../GlobalStyle2';
+
 
 const Container = styled.div`
   margin-top: 70px;

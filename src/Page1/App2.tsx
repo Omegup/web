@@ -1,7 +1,5 @@
 
 import styled from 'styled-components';
-import GlobalStyle2 from '../GlobalStyle2';
-import GlobalStyle from '../Globalstyles';
 
 const Container = styled.div`
   background: #22232508;

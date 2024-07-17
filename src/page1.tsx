@@ -12,7 +12,6 @@ import Footer2 from './Page2/footer2'
 
 
 
-
 const Page1 : React.FC = () => {
     return (
         <>

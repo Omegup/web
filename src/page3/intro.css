@@ -1,0 +1,14 @@
+.intro1 {
+    margin-left: 117px;
+    margin-right: 117px;
+}
+
+.GrosTableau {
+    display: flex;
+    flex-direction: column;
+}
+
+.MiniTableau {
+    border: 1px solid;
+    border-radius: 22px;
+}
