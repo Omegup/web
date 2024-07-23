@@ -1,40 +1,217 @@
-import React from "react";
-import './contactus.css'
+import styled, { createGlobalStyle } from 'styled-components';
 
+const FormStyled = styled.form`
+  position: relative;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 30px;
+  width: 80%;
+  height: 50vh;
+  margin-left: 10%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  box-shadow: -8px 8px black;
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    height : 60vh; 
+  }
 
-const ContactUs : React.FC = () => {
-    return (
-        <>
-        <div className="bigContainer">
-            <div className="formtext"><h3>Contact Us - Let's Start Building Together</h3>
-            <p>At Omegup, we believe in open communication. Whether you have an inquiry, need a quote, 
-                or want to discuss a project, we're here to help. Reach out to us and discover the power of web development expertise.
-            </p></div>
-            <div className="form">
-                <form>
-                    
-                    
-                    <label htmlFor="text"> Full Name </label>
-                    <input type="text" name="Full-Name" id="Full-Name" />
-                    <label htmlFor="e-mail">E-mail</label>
-                    <input type="email" name="e-mail" id="e-mail" />
-                    <label htmlFor="p-number">Mobile Number</label>
-                    <input type="number" name="p-number" id="p-number" />
-                    <br/>
-                    <label htmlFor="message">Message</label>
-                    <input type="text" name="message" id="message" />
-                    <br/>
-                    <div className="submit2">
-                    
-                    <input type="submit" value="Get In Touch Now !" id="submit"/>
-                    
-                    </div>
-                </form>
-            </div>
+  
 
-        </div>
-        </>
-    )
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    padding: 20px;
+  }
+`;
+
+const PStyled = styled.p`
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 5px;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+`;
+
+const Title = styled.h1`
+  font-family: 'Krona One', sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 37.4px;
+  letter-spacing: -6.4%;
+  text-align: center;
+  @media only screen and (min-width: 769px) and (max-width:1500px) {
+    font-size : 28px; 
+  }
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+`;
+
+const StyledInput = styled.input`
+  border-radius: 15px;
+  margin: 10px;
+  height: 30px;
+  width: 90%;
+  border : none;
+  border : 1px solid #222325;
+  @media (max-width: 768px) {
+    width: calc(100% - 20px);
+  }
+`;
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    background-color: #FAF9F6;
+  }
+`;
+
+const StyledLabel = styled.label`
+  position: absolute;
+  top: -0.1em;
+  left: 0.75em;
+  background: white;
+  padding: 0 0.25em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #222325;
+`;
+
+const StyledMessage = styled(StyledInput)`
+ ::placeholder {
+  position: absolute;
+  color:red;
+  top:0;
+ }
+ position : relative;
+  width: 78%;
+  height: 13vh;
+  margin-left: 10.5%; 
+  border : none;
+  border : 1px solid #222325;
+
+  @media only screen and (min-width: 769px) and (max-width:1100px) {
+    height : 15vh;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 20px);
+    height : 20vh;
+    margin-left: 0;
+  }
+`;
+
+const MessageLabel = styled(StyledLabel)`
+  left: 11%;
+
+  @media (max-width: 768px) {
+    left: 1.5%;
+  }
+`;
+
+const StyledDiv = styled.div`
+  width: 80%;
+  
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 768px) {
+   
+    width: 80%;
+    margin-left: 10%;
+    grid-template-columns: 1fr;
+  }
+`;
+
+const StyledButton = styled.button`
+  border : none;
+  
+  border : 1px solid #222325;
+  background-image: url('src/images/image3.png');
+  background-color: #FAF9F6;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 8%;
+  background-size: 20px;
+  border-radius: 20px;
+  width: 188px;
+  height: 44px;
+  position: absolute;
+  text-align : center;
+  left: 40%;
+  bottom: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  &:hover {
+    box-shadow: -5px 5px black;
+    background-image: url('src/images/image2.png');
+    transition: box-shadow 0.3s ease, background-image 0.3s ease;
+  }
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    left: 38%;
 }
+  @media (max-width: 768px) {
+    left: calc(50% - 95.5px);
+    bottom: 0px;
+    position: relative;
+  }
+`;
 
-export default ContactUs;
+const InputContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+const Textbutton = styled.div`
+
+  margin-left : 10px;
+
+`
+
+const ContactUS = () => {
+  return (
+    <FormStyled>
+      <Title>Contact Us - Let's Start Building Together</Title>
+      <PStyled>
+        At Omegup, we believe in open communication. Whether you have an inquiry, need a quote,
+        or want to discuss a project, we're here <br />to help. Reach out to us and discover the power of
+        web development expertise.
+      </PStyled>
+      <StyledDiv>
+        <InputContainer>
+          <StyledInput type='text' placeholder='Walid Georgy' />
+          <StyledLabel>Full Name</StyledLabel>
+        </InputContainer>
+        <InputContainer>
+          <StyledInput type='email' placeholder='WalidGeorgy@Gmail.com' />
+          <StyledLabel>E-mail</StyledLabel>
+        </InputContainer>
+        <InputContainer>
+          <StyledInput type='text' placeholder='00 33 212 34 56 78' />
+          <StyledLabel>Mobile number</StyledLabel>
+        </InputContainer>
+      </StyledDiv>
+      <InputContainer>
+        <StyledMessage type='textarea' placeholder='your message here !' />
+        <MessageLabel>Message</MessageLabel>
+      </InputContainer>
+      <StyledButton> <Textbutton>Get in touch now! </Textbutton></StyledButton>
+     
+    </FormStyled>
+  );
+};
+
+export default ContactUS;
