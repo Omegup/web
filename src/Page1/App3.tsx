@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GlobalStyle from '../Globalstyles';
-import GlobalStyle2 from '../GlobalStyle2';
+
 
 const Container = styled.div`
     margin-left: 10%;
@@ -17,6 +16,7 @@ const Container = styled.div`
 `;
 
 const ButtonsContainer = styled.div`
+    transition: flex 0.3s ease-in-out;
     height: 641px;
     width: 1206px;
     display: flex;
@@ -35,7 +35,7 @@ const Button = styled.button<{ expanded: boolean; backgroundImage: string; first
     flex: ${(props) => (props.expanded ? 5 : 0.1)};
     padding: ${(props) => (props.expanded ? 'auto' : '20px,0px,20px,0px')};
     border: 1px solid #e0e0e0;
-    transition: flex 0.6s ease-in-out;
+    transition: flex 0.3s ease-in-out;
     cursor: pointer;
     position: relative;
     background-image: url(${(props) => props.backgroundImage});
@@ -48,8 +48,9 @@ const Button = styled.button<{ expanded: boolean; backgroundImage: string; first
      flex: ${(props) => (props.expanded ? 'none' : 'none')};
      width: ${(props) => (props.expanded ? '90%' : '100px')};
         padding: ${(props) => (props.expanded ? '20px' : '0px')};
-        @media (max-width: 1700px) {
-            width: ${(props) => (props.expanded ? '70%' : '100px')};
+      @media (max-width: 1700px) {
+            width: ${(props) => (props.expanded ? '80%' : '100px')};
+            
     }
    
     @media (max-width:1000px) {
@@ -69,7 +70,7 @@ const TextContainer = styled.div<{ expanded: boolean }>`
     margin: 5%;
     color: #f7f5ed;
     opacity: ${(props) => (props.expanded ? 1 : 0)};
-    transition: opacity 0.6s ease-out;
+    transition: opacity 0.3s ease-out;
     @media (max-width: 1000px) {
         margin: 5%;
     }

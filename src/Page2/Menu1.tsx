@@ -14,11 +14,18 @@ const ContainerTitle = styled.div`
 
 
 const MainContainer = styled.div`
-    height: 500px;
-    width: 80%;
+    height: 40vh;
+    margin-bottom:20%;
+    width: 90%;
     margin-left: 10%;
-    @media (max-width: 900px) {
-        width: auto;
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+        margin-bottom:20%;
+        
+    }
+    @media (max-width: 1000px) {
+        margin-bottom:15%;
+        width: 90%;
+        
     }
 
 
@@ -27,13 +34,22 @@ const MainContainer = styled.div`
 const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
     align-self: center;
     width: 90%;
-    height: 450px;
+    height: 55vh;
     border: 1px solid #222325;
     border-radius: 30px;
     box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
-   
+
+    @media only screen and (min-width: 1301px) and (max-width:1700px) {
+        margin-bottom:20%;
+        height : 63vh;
+    }
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+        margin-bottom:20%;
+        height : 68vh;
+    }
     display: ${(props) => (props.isVisible ? 'block' : 'none')};
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+        margin-bottom:20%;
         width: auto;
         height: auto;
     }
@@ -118,7 +134,7 @@ const Button = styled.div<{ bgColor: string }>`
     width: 120px;
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
-    position: fixed;
+    
 
     &:hover {
         box-shadow: -4px 4px 0px 0px #222325;
@@ -128,7 +144,7 @@ const Button = styled.div<{ bgColor: string }>`
 
 const StyledLink = styled.a`
     text-decoration: none;
-    margin: 20px;
+    margin-left: 20px;
     cursor: pointer;
     padding-bottom: 5px;
 
@@ -144,7 +160,7 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
     margin-top: 70px;
     float: ${(props) => props.float};
     margin-right: ${(props) => props.marginRight || '0'};
-    background-image: url(${(props) => props.marginRight ? 'src/image-right.png' : 'src/image-left.png'});
+    background-image: url(${(props) => props.marginRight ? 'src/assets/arrow-right.png' : 'src/assets/arrow-left.png'});
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -152,7 +168,7 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-        background-image: url(${(props) => props.marginRight ? 'src/image-right-hover.png' : 'src/image-left-hover.png'});
+        background-image: url(${(props) => props.marginRight ? 'src/assets/arrow-left2-hover.png' : 'src/assets/arrowrighthover.png'});
         cursor: pointer;
         background-size: 120% 120%;
     }
@@ -221,7 +237,7 @@ const Menu_1: React.FC = () => {
                 </Container>
 
                 <Container shadowColor="#949CFF" isVisible={tableau === 'tableau2'}>
-                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="src/pc2.png" alt="School Online Tn" />
+                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="src/assets/pc2.png" alt="School Online Tn" />
                     <TextImage isVisible={tableau === 'tableau2'}>
                         <H3Styled>School Online Tn</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
@@ -241,7 +257,7 @@ const Menu_1: React.FC = () => {
                 
                 <Container shadowColor="#FC7557" isVisible={tableau === 'tableau3'}>
                     <Displaycontainer>
-                    <Img isVisible={tableau === 'tableau3'} src="src/pc3.png" alt="DSF Fr" />
+                    <Img isVisible={tableau === 'tableau3'} src="src/assets/pc3.png" alt="DSF Fr" />
                     <TextImage isVisible={tableau === 'tableau3'}>
                         <H3Styled>DSF Fr</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>

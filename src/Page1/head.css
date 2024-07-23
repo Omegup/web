@@ -96,6 +96,7 @@
     background-size: 100%;
     background-attachment: fixed;
     
+    
   }
   
   .button3{
@@ -120,9 +121,12 @@
   }
   
   .button1:not(.expanded),.button2:not(.expanded),.button3:not(.expanded),.button4:not(.expanded) {
-    flex: 0.1;
-    width: 10%;
+    flex: 0.5;
+    width: 25%;
   }
+
+  
+
 .textgauche {
   overflow: hidden;
    text-wrap: nowrap;
@@ -152,20 +156,91 @@
     overflow: scroll;
     color: #e0e0e0;
     opacity: 0%;
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out, font-size 0.6s ease-in-out;
+    
   }
 
 
   
 
   .textanim1.expanded {
-    
+    font-size: 20px;
     margin: 10%;
     color: #e0e0e0;
     opacity: 100%;
-    transition: opacity 1.3s ease-in-out;
+    transition: opacity 1.3s ease-in-out, font-size 0.6s ease-in-out;
   }
 
   .textanim2 {
 
   }
+
+  @media only screen and (min-width: 800px) and (max-width:1100px) {
+    .textanim1.expanded {
+      font-size: 17px;
+    }
+
+    .button2 {
+      background-size: 120%;
+
+    }
+  }
+
+  @media (max-width: 800px) {
+    .container6 {
+      display: flex;
+      height: auto;
+      
+      margin: auto;
+      
+      border-radius: 22px;
+    }
+    .buttons-container{
+      flex-direction: column;
+      height: auto;
+    }
+    .button1{
+      border-top-right-radius: 22px;
+      border-bottom-left-radius: 0px;
+    }
+    .button2 {
+      background-size: 200%;
+
+    }
+
+    .button4 {
+      border-bottom-left-radius: 22px;
+      border-top-right-radius: 0px;
+    }
+
+    .button1:not(.expanded),.button2:not(.expanded),.button3:not(.expanded),.button4:not(.expanded) {
+      flex: 1;
+      width: 100%;
+      height: 2.5vh;
+    }
+    .numerogh {
+      left: 3%;
+      top: 5%;
+      color: #e0e0e0;
+      position: absolute;
+      font-size: 20px;
+      transform: rotate(1800deg);
+    }
+
+    .textgauche {
+      overflow: hidden;
+       text-wrap: nowrap;
+        
+        top: 5%;
+        height: auto;
+        right: 0;
+        color: #e0e0e0;
+        position: absolute;
+        font-size: 20px;
+        transform: rotate(1800deg);
+    }
+    .textanim1.expanded {
+      font-size: 17px;
+      
+    }
+}

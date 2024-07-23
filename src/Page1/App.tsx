@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import './app1.css';
+import { useState } from 'react';
 
 
 const Title = styled.h1`
@@ -10,15 +12,21 @@ const Title = styled.h1`
   
 `
 
-const Container = styled.div`
+const Container = styled.div<{open:boolean}>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    max-height: ${props=> (props.open ? '40vh' : '0' )};
+    transition: max-height 0.6s ease-in-out;
+
   }
+
 `;
+
 
 const Nav = styled.a`
 font-family: 'Quicksand', sans-serif;
@@ -29,12 +37,13 @@ font-family: 'Quicksand', sans-serif;
   padding: 15px;
   align-self: center;
   font-size:16px;
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
     color: aliceblue;
-    background-color: #222325;
-    transform: scale(1.15);
-    transition: 0.3s ease-in-out;
+    
+    transform: scale(1.1);
+    
   }
 
   @media (max-width: 576px) {
@@ -48,6 +57,7 @@ const Container1 = styled.div`
 `;
 
 const Affiche = styled.div`
+
   height: 50px;
   position: sticky;
   display: flex;
@@ -70,11 +80,14 @@ const Button = styled.button`
   border: 0.5px solid;
   border-radius: 30px;
   padding: 5px;
+  
   cursor: pointer;
+  background-color : #F7F5ED;
+  transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
     box-shadow: -4px 4px 0px 0px #222325;
-    transition: 0.3s ease-in-out;
+    
   }
 
 `;
@@ -82,14 +95,18 @@ const Button = styled.button`
 const Texte = styled.div`
   text-align: center;
   font-size: 30px;
-
+  
   @media (max-width: 768px) {
     font-size: 25px;
   }
 
   @media (max-width: 576px) {
     font-size: 20px;
-  }
+  }h1{ font-family: 'Krona One', sans-serif;
+  font-size: 50px;
+ font-weight: 400;
+ 
+ letter-spacing:-6.4%;}
 `;
 
 const Titre1 = styled.span`
@@ -109,20 +126,91 @@ const Titre3 = styled.span`
   font-family: 'Krona One', sans-serif;
 `;
 
+const Buttonnav = styled.button`
+  position:absolute;
+  top:3%;
+  left:3%;
+  border:none;
+  
+  @media (max-width: 765px) {
+        margin-left: 70vh;
+        z-index: 1;
+        position: absolute;
+        border: none;
+        border-radius: 10px;
+        background-color: #222325;
+        transition: background-color 0.3s ease-in-out;
+        height: 35px;
+        width: 35px;
+        right: 5%;
+        cursor: pointer;
+        top: 6.5%;  
+
+
+        &:hover {
+          background-color: #F7F5ED;
+        }
+        }
+`
+
+const Traitbutton = styled.div `
+  @media (max-width: 765px) {
+    border-bottom: 5px solid #FEC63A;
+    border-radius: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    transition: border-bottom 0.3s ease-in-out;
+  }
+
+`
+
+
 function NavBar() {
+  const [nav,setNav] = useState(false)
+
+  const Handleclick = () => {
+    setNav(!nav);
+}
+
+
   return (
     
     <Container1>
-   
+      <Buttonnav onClick={Handleclick}>
+        
+          <Traitbutton></Traitbutton>
+          <Traitbutton></Traitbutton>
+          <Traitbutton></Traitbutton>
+          
+        </Buttonnav>
       <Affiche>
         <Title>Omegup</Title>
-        <Container>
+        
+       
+        
+          
+        
+              
+        <Container open={nav}>
           <Nav href='#home'>Home</Nav>
           <Nav href='#about'>About Us</Nav>
           <Nav href='#services'>Services</Nav>
           <Nav href='#references'>References</Nav>
+          
         </Container>
         <Button id='button'>Get in Touch</Button>
+        
+
+        
+
+
+
+          
+        
+        
+        
+        
+        
       </Affiche>
       <Texte>
         <h1>
@@ -135,3 +223,13 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
+/*<Container>
+          <Nav href='#home'>Home</Nav>
+          <Nav href='#about'>About Us</Nav>
+          <Nav href='#services'>Services</Nav>
+          <Nav href='#references'>References</Nav>
+        </Container>
+        
+        <Button id='button'>Get in Touch</Button>*/

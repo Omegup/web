@@ -6,11 +6,16 @@ const FormStyled = styled.form`
   border: solid 1px black;
   border-radius: 30px;
   width: 80%;
-  height: 500px;
+  height: 50vh;
   margin-left: 10%;
   margin-top: 60px;
   margin-bottom: 60px;
   box-shadow: -8px 8px black;
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    height : 60vh; 
+  }
+
+  
 
   @media (max-width: 768px) {
     width: 90%;
@@ -27,7 +32,7 @@ const PStyled = styled.p`
   font-weight: 500;
   line-height: 24px;
   margin-top: 5px;
-
+  
   @media (max-width: 768px) {
     font-size: 14px;
     line-height: 20px;
@@ -41,9 +46,11 @@ const Title = styled.h1`
   line-height: 37.4px;
   letter-spacing: -6.4%;
   text-align: center;
-
+  @media only screen and (min-width: 769px) and (max-width:1500px) {
+    font-size : 28px; 
+  }
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 32px;
   }
 `;
@@ -53,7 +60,8 @@ const StyledInput = styled.input`
   margin: 10px;
   height: 30px;
   width: 90%;
-
+  border : none;
+  border : 1px solid #222325;
   @media (max-width: 768px) {
     width: calc(100% - 20px);
   }
@@ -79,18 +87,31 @@ const StyledLabel = styled.label`
 `;
 
 const StyledMessage = styled(StyledInput)`
+ ::placeholder {
+  position: absolute;
+  color:red;
+  top:0;
+ }
+ position : relative;
   width: 78%;
-  height: 70px;
+  height: 13vh;
   margin-left: 10.5%; 
+  border : none;
+  border : 1px solid #222325;
+
+  @media only screen and (min-width: 769px) and (max-width:1100px) {
+    height : 15vh;
+  }
 
   @media (max-width: 768px) {
     width: calc(100% - 20px);
+    height : 20vh;
     margin-left: 0;
   }
 `;
 
 const MessageLabel = styled(StyledLabel)`
-  left: 8%;
+  left: 11%;
 
   @media (max-width: 768px) {
     left: 1.5%;
@@ -114,15 +135,20 @@ const StyledDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
+  border : none;
+  
+  border : 1px solid #222325;
   background-image: url('src/images/image3.png');
   background-color: #FAF9F6;
   background-repeat: no-repeat;
   background-position: left;
+  background-position-x: 8%;
   background-size: 20px;
   border-radius: 20px;
-  width: 191px;
+  width: 188px;
   height: 44px;
   position: absolute;
+  text-align : center;
   left: 40%;
   bottom: 30px;
   font-family: 'Quicksand', sans-serif;
@@ -134,7 +160,9 @@ const StyledButton = styled.button`
     background-image: url('src/images/image2.png');
     transition: box-shadow 0.3s ease, background-image 0.3s ease;
   }
-
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    left: 38%;
+}
   @media (max-width: 768px) {
     left: calc(50% - 95.5px);
     bottom: 0px;
@@ -146,6 +174,12 @@ const InputContainer = styled.div`
   position: relative;
   width: 100%;
 `;
+
+const Textbutton = styled.div`
+
+  margin-left : 10px;
+
+`
 
 const ContactUS = () => {
   return (
@@ -171,10 +205,10 @@ const ContactUS = () => {
         </InputContainer>
       </StyledDiv>
       <InputContainer>
-        <StyledMessage type='message' placeholder='your message here !' />
+        <StyledMessage type='textarea' placeholder='your message here !' />
         <MessageLabel>Message</MessageLabel>
       </InputContainer>
-      <StyledButton>Get in touch now!</StyledButton>
+      <StyledButton> <Textbutton>Get in touch now! </Textbutton></StyledButton>
      
     </FormStyled>
   );

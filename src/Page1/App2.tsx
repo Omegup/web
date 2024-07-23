@@ -10,12 +10,19 @@ const Container = styled.div`
 
 const Container2 = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; 
+  flex-direction : row;
+  flex-wrap : no wrap;
   justify-content: center;
 
-  @media (max-width: 800px) {
-    flex-wrap: wrap; 
+  @media (max-width: 1200px) {
+    display : grid;
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: 900px) {
+    margin-left:15%;
+    display: grid;
+    grid-template-columns: auto;
   }
 `;
 const BoxTitle=styled.h3`
@@ -28,8 +35,10 @@ const BoxTitle=styled.h3`
   `
 const Box = styled.div<{ shadowColor: string }>`
   background: #faf9f6;
-  width: 33%;
+  width: 40%;
+  height:30vh;
   border: 0.5px solid;
+  
   border-radius: 30px;
   padding: 0 3vh;
   align-self: flex-start;
@@ -37,6 +46,25 @@ const Box = styled.div<{ shadowColor: string }>`
   box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
     width: 45%;
     margin: 2vh 3vh; 
+
+    @media (max-width: 1400px) {
+      height : 40vh;
+    }
+
+    @media (max-width: 1200px) {
+      height : 55vh;
+    }
+
+    @media (max-width: 900px) {
+      height: 50vh;
+    }
+
+    @media (max-width: 300px) {
+      height: 80vh;
+      
+    }
+
+    
   
 
  
@@ -62,10 +90,10 @@ const Button = styled.span<{ secondary: string }>`
   padding: 7px;
   margin: 10px;
   cursor: pointer;
-
+  transition: box-shadow 0.3s ease-out;
   &:hover {
     box-shadow: -4px 4px 0px 0px #222325;
-    transition: 0.3s ease-out;
+    
   }
 
  

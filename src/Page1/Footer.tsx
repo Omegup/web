@@ -74,6 +74,7 @@ const Slider = styled.div`
 `;
 
 const SlideItem = styled.div`
+  margin-top : 1.2%;
   height: 100%;
   width: 2.2%;
   background-color: #222325;
@@ -86,19 +87,19 @@ const SlideItem = styled.div`
 
 const Footer = () => {
   const images = [
-    'src/footer1.svg',
-    'src/Group 25.svg',
-    'src/Group 26.svg',
-    'src/Group 44.svg',
-    'src/Group 50.svg',
-    'src/Group 61.svg',
-    'src/Group 62.svg',
-    'src/Group 65.svg',
-    'src/Group 70.svg',
-    'src/Group 76.svg',
-    'src/Group 78.svg',
-    'src/Group 79.svg',
-    'src/Group 84.svg',
+    'src/assets/footer1.svg',
+    'src/assets/Group 25.svg',
+    'src/assets/Group 26.svg',
+    'src/assets/Group 44.svg',
+    'src/assets/Group 50.svg',
+    'src/assets/Group 61.svg',
+    'src/assets/Group 62.svg',
+    'src/assets/Group 65.svg',
+    'src/assets/Group 70.svg',
+    'src/assets/Group 76.svg',
+    'src/assets/Group 78.svg',
+    'src/assets/Group 79.svg',
+    'src/assets/Group 84.svg',
   ];
 
   return (
@@ -114,7 +115,7 @@ const Footer = () => {
         <Slider>
           {images.map((src, index) => (
             <SlideItem key={index}>
-              <img src={src} alt="" style={{ width: '120%', height: '120%' }} />
+              <img src={src} alt="" style={{ width: '100%', height: '100%' }} />
             </SlideItem>
           ))}
         </Slider>

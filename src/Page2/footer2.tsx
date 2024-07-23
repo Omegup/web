@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const Container = styled.div`
   width: 100%;
   min-height: 35vh;
@@ -11,6 +12,7 @@ const Container = styled.div`
   position: relative;
   bottom: 0;
 
+  
   @media (min-width: 768px) {
     flex-direction: row;
     padding-bottom: 0;
@@ -29,11 +31,14 @@ const Container_1 = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    height : 12%;
+}
   @media (max-width: 768px) {
-    height: auto;
+    height: 10vh;
     padding: 10px 0;
     position: static;
-    border-radius: 22px;
+    border-radius: 0 0 22px 22px;
   }
 `;
 
@@ -44,6 +49,10 @@ const FooterText2 = styled.p`
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 11px;
+  }
 `;
 
 const TextFooter2 = styled.div`
@@ -69,14 +78,17 @@ const TextFooter2 = styled.div`
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
-    color:#FAF9F6;}
+    color:#FAF9F6;
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 10px;
+  }}
  
-
+  
   @media (max-width: 768px) {
     width: 100%;
-    margin-left: 0;
-    text-align: center;
     margin-top: 10px;
+    text-align: center;
+    margin-left: 0;
   }
 `;
 
@@ -88,6 +100,10 @@ h2{    font-family: 'Krona One', sans-serif;
     font-weight: 400;
     line-height: 26.4px;
     letter-spacing: -6.4%;
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 15px;
+  }
 }
 
   line-height: 22px;
@@ -108,17 +124,61 @@ h2{    font-family: 'Krona One', sans-serif;
   }
 `;
 
-const TextContainer = styled.p`
+const TextContainer = styled.a`
 color: #999999;
+
+&:hover  {
+  color: #FAF9F6;
+  
+  border-bottom: 0.5px solid;
+  
+  
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
 font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 31px;
+
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 11px;
+  }
   @media (max-width: 768px) {
-    text-align: center;
-    margin: 5px 0;
+    
+   
+    
   }
 `;
+
+const Lienfooter = styled.div `
+
+  display: flex;
+  gap:10px;
+  
+  @media (max-width: 768px) {
+    margin-left : 38%;
+  }
+
+`
+const Lienfootersocialmedia = styled.a `
+
+  cursor: pointer;
+
+
+
+`
+
+
+const Titrefooter = styled.h2 `
+
+font-size : 30px;
+@media only screen and (min-width: 769px) and (max-width:1300px) {
+  font-size : 15px;
+}
+
+`
 
 const Footer2: React.FC = () => {
   return (
@@ -129,33 +189,41 @@ const Footer2: React.FC = () => {
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let's engage!
           </p>
-          <img src="src/Frame 249.png" alt="Social Media" />
+          <Lienfooter>
+          <Lienfootersocialmedia href="#"><img src="src/Social1.png" alt="Social Media" /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><img src="src/Social2.png" alt="Social Media" /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><img src="src/Social3.png" alt="Social Media" /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><img src="src/Social4.png" alt="Social Media" /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><img src="src/Social5.png" alt="Social Media" /></Lienfootersocialmedia>
+          </Lienfooter>
         </TextFooter2>
         <Container2Footer2>
           <div>
-            <h2>Quick Links</h2>
-            <TextContainer>Home</TextContainer>
-            <TextContainer>About Us</TextContainer>
-            <TextContainer>Services</TextContainer>
-            <TextContainer>Get in touch</TextContainer>
+            <Titrefooter>Quick Links</Titrefooter>
+            
+            <TextContainer>Home</TextContainer><br/>
+            
+            <TextContainer>About Us</TextContainer><br/>
+            <TextContainer>Services</TextContainer><br/>
+            <TextContainer>Get in touch</TextContainer><br/>
           </div>
           <div>
-            <h2>Services</h2>
-            <TextContainer>UX/UI Design</TextContainer>
-            <TextContainer>Web development</TextContainer>
-            <TextContainer>Mobile development</TextContainer>
+            <Titrefooter>Services</Titrefooter>
+            <TextContainer>UX/UI Design</TextContainer><br/>
+            <TextContainer>Web development</TextContainer><br/>
+            <TextContainer>Mobile development</TextContainer><br/>
           </div>
           <div>
-            <h2>Contact</h2>
+            <Titrefooter>Contact</Titrefooter>
             <TextContainer>
               <img src="src/map.png" alt="Address" /> 10, Cyber Park Zarzis, Medenine
-            </TextContainer>
+            </TextContainer><br/>
             <TextContainer>
               <img src="src/sms-tracking.png" alt="Email" /> contact@omegup.tn
-            </TextContainer>
+            </TextContainer><br/>
             <TextContainer>
               <img src="src/call-incoming.png" alt="Phone" /> +216 28 827 941
-            </TextContainer>
+            </TextContainer><br/>
           </div>
         </Container2Footer2>
         <Container_1>
