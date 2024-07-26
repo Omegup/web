@@ -90,7 +90,7 @@ const Img = styled.img`
   width: 60px;
 
   @media (max-width: 900px) {
-    margin-top: -90px;
+    margin-top: -60px;
     height: 50px;
     width: 45px;
   }
