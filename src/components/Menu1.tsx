@@ -136,11 +136,7 @@ const Button = styled.p<{ bgColor: string }>`
       
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
-<<<<<<< HEAD:src/Page2/Menu1.tsx
     
-=======
-   
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Menu1.tsx
 
     &:hover {
         box-shadow: -4px 4px 0px 0px #222325;
@@ -166,11 +162,7 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
     margin-top: 70px;
     float: ${(props) => props.float};
     margin-right: ${(props) => props.marginRight || '0'};
-<<<<<<< HEAD:src/Page2/Menu1.tsx
-    background-image: url(${(props) => props.marginRight ? 'src/assets/arrow-right.png' : 'src/assets/arrow-left.png'});
-=======
     background-image: url(${(props) => props.marginRight ? 'image-right.png' : 'image-left.png'});
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Menu1.tsx
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -178,11 +170,7 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-<<<<<<< HEAD:src/Page2/Menu1.tsx
-        background-image: url(${(props) => props.marginRight ? 'src/assets/arrow-left2-hover.png' : 'src/assets/arrowrighthover.png'});
-=======
         background-image: url(${(props) => props.marginRight ? 'image-right-hover.png' : 'image-left-hover.png'});
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Menu1.tsx
         cursor: pointer;
         background-size: 120% 120%;
     }
@@ -254,11 +242,7 @@ const Menu_1: React.FC = () => {
                 </Container>
 
                 <Container shadowColor="#949CFF" isVisible={tableau === 'tableau2'}>
-<<<<<<< HEAD:src/Page2/Menu1.tsx
-                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="src/assets/pc2.png" alt="School Online Tn" />
-=======
                 <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="pc2.png" alt="School Online Tn" />
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Menu1.tsx
                     <TextImage isVisible={tableau === 'tableau2'}>
                         <H3Styled>School Online Tn</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
@@ -278,11 +262,7 @@ const Menu_1: React.FC = () => {
                 
                 <Container shadowColor="#FC7557" isVisible={tableau === 'tableau3'}>
                     <Displaycontainer>
-<<<<<<< HEAD:src/Page2/Menu1.tsx
-                    <Img isVisible={tableau === 'tableau3'} src="src/assets/pc3.png" alt="DSF Fr" />
-=======
                     <Img isVisible={tableau === 'tableau3'} src="pc3.png" alt="DSF Fr" />
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Menu1.tsx
                     <TextImage isVisible={tableau === 'tableau3'}>
                         <H3Styled>DSF Fr</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>

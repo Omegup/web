@@ -152,7 +152,6 @@ font-family: 'Quicksand', sans-serif;
     
   }
 `;
-<<<<<<< HEAD:src/Page2/footer2.tsx
 
 const Lienfooter = styled.div `
 
@@ -182,8 +181,6 @@ font-size : 30px;
 
 `
 
-=======
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/footer2.tsx
 const Footer2: React.FC = () => {
   return (
     <>
@@ -193,7 +190,6 @@ const Footer2: React.FC = () => {
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let&apos;s engage!
           </p>
-<<<<<<< HEAD:src/Page2/footer2.tsx
           <Lienfooter>
           <Lienfootersocialmedia href="#"><img src="src/Social1.png" alt="Social Media" /></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><img src="src/Social2.png" alt="Social Media" /></Lienfootersocialmedia>
@@ -201,9 +197,6 @@ const Footer2: React.FC = () => {
           <Lienfootersocialmedia href="#"><img src="src/Social4.png" alt="Social Media" /></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><img src="src/Social5.png" alt="Social Media" /></Lienfootersocialmedia>
           </Lienfooter>
-=======
-          <img src="Frame249.png" alt="Social Media" />
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/footer2.tsx
         </TextFooter2>
         <Container2Footer2>
           <div>
@@ -224,16 +217,6 @@ const Footer2: React.FC = () => {
           <div>
             <Titrefooter>Contact</Titrefooter>
             <TextContainer>
-<<<<<<< HEAD:src/Page2/footer2.tsx
-              <img src="src/map.png" alt="Address" /> 10, Cyber Park Zarzis, Medenine
-            </TextContainer><br/>
-            <TextContainer>
-              <img src="src/sms-tracking.png" alt="Email" /> contact@omegup.tn
-            </TextContainer><br/>
-            <TextContainer>
-              <img src="src/call-incoming.png" alt="Phone" /> +216 28 827 941
-            </TextContainer><br/>
-=======
               <img src="map.png" alt="Address" width={1} height={1} /> 10, Cyber Park Zarzis, Medenine
             </TextContainer>
             <TextContainer>
@@ -242,7 +225,6 @@ const Footer2: React.FC = () => {
             <TextContainer>
               <img src="call-incoming.png" alt="Phone" width={1} height={1} /> +216 28 827 941
             </TextContainer>
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/footer2.tsx
           </div>
         </Container2Footer2>
         <Container_1>

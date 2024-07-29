@@ -16,15 +16,9 @@ const Container = styled.div`
 `;
 
 const ButtonsContainer = styled.div`
-<<<<<<< HEAD:src/Page1/App3.tsx
-    transition: flex 0.3s ease-in-out;
-    height: 641px;
-    width: 1206px;
-=======
 width: 83.75%;
 margin-left:8.125%;
 height: 466px;
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/App3.tsx
     display: flex;
     border-radius: 22px;
     flex: 1;
@@ -52,17 +46,9 @@ const Button = styled.button<{ expanded: boolean; backgroundImage: string; first
     border-top-right-radius: ${(props) => (props.last ? '22px' : '0')};
     border-bottom-right-radius: ${(props) => (props.last ? '22px' : '0')};
      flex: ${(props) => (props.expanded ? 'none' : 'none')};
-<<<<<<< HEAD:src/Page1/App3.tsx
-     width: ${(props) => (props.expanded ? '90%' : '100px')};
-        padding: ${(props) => (props.expanded ? '20px' : '0px')};
-      @media (max-width: 1700px) {
-            width: ${(props) => (props.expanded ? '80%' : '100px')};
-            
-=======
      width: ${(props) => (props.expanded ? '90%' : '61px')};
         @media (max-width: 1700px) {
             width: ${(props) => (props.expanded ? '70%' : '100px')};
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/App3.tsx
     }
    
     @media (max-width:1000px) {

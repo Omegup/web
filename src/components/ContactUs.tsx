@@ -63,15 +63,8 @@ border:solid 1px;
   margin: 10px;
   height: 30px;
   width: 90%;
-<<<<<<< HEAD:src/Page2/ContactUs.tsx
   border : none;
   border : 1px solid #222325;
-=======
-  ::placeholder{
-  color: red;
-  }
-
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/ContactUs.tsx
   @media (max-width: 768px) {
     width: calc(100% - 20px);
   }
@@ -108,6 +101,9 @@ const StyledMessage = styled(StyledInput)`
   margin-left: 10.5%; 
   border : none;
   border : 1px solid #222325;
+  ::placeholder{
+    background-color: red;
+  }
 
   @media only screen and (min-width: 769px) and (max-width:1100px) {
     height : 15vh;
@@ -149,13 +145,13 @@ const StyledDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
-<<<<<<< HEAD:src/Page2/ContactUs.tsx
+  
   border : none;
   
   border : 1px solid #222325;
   background-image: url('src/images/image3.png');
-=======
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/ContactUs.tsx
+  border : 1px solid #222325;
+  background-image: url('src/images/image3.png');
   background-color: #FAF9F6;
   background-repeat: no-repeat;
   background-position: left;
@@ -257,12 +253,6 @@ const ContactUS = () => {
         </InputContainer>
       </StyledDiv>
       <InputContainer>
-<<<<<<< HEAD:src/Page2/ContactUs.tsx
-        <StyledMessage type='textarea' placeholder='your message here !' />
-        <MessageLabel>Message</MessageLabel>
-      </InputContainer>
-      <StyledButton> <Textbutton>Get in touch now! </Textbutton></StyledButton>
-=======
         <StyledMessage onChange={e=>setMessage(e.target.value)}type='message' placeholder='your message here !' value={message} />
         <MessageLabel>Message</MessageLabel>
       </InputContainer>
@@ -275,7 +265,6 @@ const ContactUS = () => {
         ))}
       </div>
       <StyledButton  type='submit'>Get in touch now!</StyledButton>
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/ContactUs.tsx
      
     </FormStyled>
   );

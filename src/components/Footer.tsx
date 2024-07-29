@@ -90,21 +90,6 @@ const SlideItem = styled.div`
 
 const Footer = () => {
   const images = [
-<<<<<<< HEAD:src/Page1/Footer.tsx
-    'src/assets/footer1.svg',
-    'src/assets/Group 25.svg',
-    'src/assets/Group 26.svg',
-    'src/assets/Group 44.svg',
-    'src/assets/Group 50.svg',
-    'src/assets/Group 61.svg',
-    'src/assets/Group 62.svg',
-    'src/assets/Group 65.svg',
-    'src/assets/Group 70.svg',
-    'src/assets/Group 76.svg',
-    'src/assets/Group 78.svg',
-    'src/assets/Group 79.svg',
-    'src/assets/Group 84.svg',
-=======
     'footer1.svg',
     'Group 25.svg',
     'Group 26.svg',
@@ -119,7 +104,6 @@ const Footer = () => {
     'Group 79.svg',
     'Group 84.svg',
 
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Footer.tsx
   ];
 
   return (
@@ -136,11 +120,7 @@ const Footer = () => {
         <Slider>
           {images.map((src, index) => (
             <SlideItem key={index}>
-<<<<<<< HEAD:src/Page1/Footer.tsx
-              <img src={src} alt="" style={{ width: '100%', height: '100%' }} />
-=======
               <Image src={src} width="10" height="10" alt="" style={{ width: '120%', height: '120%' }} />
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/Footer.tsx
             </SlideItem>
           ))}
         </Slider>

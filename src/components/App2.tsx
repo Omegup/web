@@ -37,42 +37,6 @@ const BoxTitle=styled.h3`
   letter-spacing:-6.4%;
   `
 const Box = styled.div<{ shadowColor: string }>`
-<<<<<<< HEAD:src/Page1/App2.tsx
-  background: #faf9f6;
-  width: 40%;
-  height:30vh;
-  border: 0.5px solid;
-  
-  border-radius: 30px;
-  padding: 0 3vh;
-  align-self: flex-start;
-  margin: 4vh 5vh 0 3vh;
-  box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
-    width: 45%;
-    margin: 2vh 3vh; 
-
-    @media (max-width: 1400px) {
-      height : 40vh;
-    }
-
-    @media (max-width: 1200px) {
-      height : 55vh;
-    }
-
-    @media (max-width: 900px) {
-      height: 50vh;
-    }
-
-    @media (max-width: 300px) {
-      height: 80vh;
-      
-    }
-
-    
-  
-
- 
-=======
 background: #faf9f6;
 width: 286.5px;
 border: 1px solid;
@@ -84,7 +48,6 @@ box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
   width: 45%;
   margin: 2vh 3vh; 
   gap: 10px;
->>>>>>> 8c7b32888e166d429ec9c296e7075ac93f779636:src/components/App2.tsx
 `;
 
 const Text = styled.p`
