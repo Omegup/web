@@ -20,12 +20,12 @@ const Boxing = styled.div`
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
     width: auto;
-    margin-left: 0;
+   
   }
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    margin-left: 0;
+  
   }
 `;
 
@@ -42,7 +42,7 @@ const GridItemWithMargin = styled(GridItem)`
   margin-left: 50px;
 
   @media (max-width: 900px) {
-    margin-left: 0;
+    margin-left: 0px;
   }
 `;
 

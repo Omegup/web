@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Container = styled.div`
   width: 100%;
-  min-height: 35vh;
+  min-height: 285px;
   border-radius: 22px;
   background-color: #222325;
   display: flex;
@@ -81,7 +81,11 @@ const TextFooter2 = styled.div`
     margin-top: 10px;
   }
 `;
-
+const H2Styled=styled.h2`
+margin-bottom:15px;
+@media (max-width: 900px) {
+  
+}`
 
 
 
@@ -112,6 +116,7 @@ h2{    font-family: 'Krona One', sans-serif;
 `;
 
 const TextContainer = styled.p`
+margin-top:5px;
 color: #999999;
 font-family: 'Quicksand', sans-serif;
     font-size: 14px;
@@ -123,7 +128,7 @@ font-family: 'Quicksand', sans-serif;
   }
 `;
 const Lienfooter = styled.div `
-
+  margin-top:10;
   display: flex;
   gap:10px;
   
@@ -144,11 +149,11 @@ const Footer2: React.FC = () => {
     <>
       <Container>
         <TextFooter2>
-          <h2 id="titrefooter2">Omegup</h2>
+          <h2 style={{marginBottom:'15px'}} >Omegup</h2>
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let&apos;s engage!
           </p>
-          <Lienfooter>
+          <Lienfooter >
             
           <Lienfootersocialmedia href="#"> <Image src="/Social1.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><Image src="/Social2.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
@@ -159,28 +164,28 @@ const Footer2: React.FC = () => {
         </TextFooter2>
         <Container2Footer2>
           <div>
-            <h2>Quick Links</h2>
+            <h2 style={{marginBottom:'15px'}}>Quick Links</h2>
             <TextContainer>Home</TextContainer>
             <TextContainer>About Us</TextContainer>
             <TextContainer>Services</TextContainer>
             <TextContainer>Get in touch</TextContainer>
           </div>
           <div>
-            <h2>Services</h2>
+            <h2 style={{marginBottom:'15px'}} >Services</h2>
             <TextContainer>UX/UI Design</TextContainer>
             <TextContainer>Web development</TextContainer>
             <TextContainer>Mobile development</TextContainer>
           </div>
-          <div>
-            <h2>Contact</h2>
-            <TextContainer>
-              <img src="map.png" alt="Address" width={1} height={1} /> 10, Cyber Park Zarzis, Medenine
+          <div style={{marginLeft:'20px'}}>
+            <H2Styled >Contact</H2Styled>
+            <TextContainer style={{position:'relative'}}>
+              <img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> 10, Cyber Park Zarzis, Medenine
             </TextContainer>
-            <TextContainer>
-              <img src="sms-tracking.png" alt="Email" width={1} height={1} /> contact@omegup.tn
+            <TextContainer style={{position:'relative'}}>
+              <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> contact@omegup.tn
             </TextContainer>
-            <TextContainer>
-              <img src="call-incoming.png" alt="Phone" width={1} height={1} /> +216 28 827 941
+            <TextContainer style={{position:'relative'}}>
+              <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> +216 28 827 941
             </TextContainer>
           </div>
         </Container2Footer2>

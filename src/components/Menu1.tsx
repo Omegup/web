@@ -116,9 +116,10 @@ const ContainerItem = styled.span`
 const Button = styled.p<{ bgColor: string }>`
     background-color: ${(props) => props.bgColor};
     border-radius: 22px;
+    margin-top:20px;
     border: 1px solid;
-    width: 120px;
-    padding-left:10px;
+    width: 150px;
+    padding:5px;
       
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
@@ -132,12 +133,12 @@ const Button = styled.p<{ bgColor: string }>`
 
 const StyledLink = styled.p`
     text-decoration: none;
-    margin: 20px;
+    
     cursor: pointer;
     padding-bottom: 5px;
-
+    width: 150px;
     &:hover {
-        border-bottom: 1px solid;
+        border-bottom: 0.5px solid;
     }
 `;
 
@@ -164,8 +165,7 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
         margin-top:30px;
         
     }
-`;
-
+`
 const styles = {
     fontFamily: "'Quicksand', sans-serif",
     fontSize: "16px",
@@ -257,7 +257,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>NodeJS</ContainerItem>
                         </Container2>
-                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals.<br /> <br /></p>
+                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </p><br />
                    
                     <Button bgColor="#FC7557" > View case studies   </Button>
                     

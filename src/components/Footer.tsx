@@ -119,7 +119,7 @@ const Footer = () => {
         <Slider>
           {images.map((src, index) => (
             <SlideItem key={index}>
-              <Image src={src} alt='' width={70} height={70}/>
+              <Image src={src} alt='' width={50} height={50}/>
             </SlideItem>
           ))}
         </Slider>

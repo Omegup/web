@@ -123,7 +123,7 @@ const Title = styled.div`
     margin-left: 8.125%;
 
     @media (max-width:1000px) {
-        margin-left: 5%;
+   
         text-align: center;
     }
 `;
