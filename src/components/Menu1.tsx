@@ -5,8 +5,9 @@ import Link from "next/link";
 // Styled components
 const ContainerTitle = styled.div`
     margin-top: 100px;
-    margin-left: 100px;`;
+     margin-left:10%;`;
     const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
+   
     font-size: 24px;
     font-weight: 400;
     line-height: 26.4px;
@@ -54,6 +55,7 @@ const Img = styled.img<{ isVisible: boolean }>`
     width: 280px;
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
     transition: opacity 5s ease;
+
     transform: scale(1.5);
    
     @media (max-width:1500px) {

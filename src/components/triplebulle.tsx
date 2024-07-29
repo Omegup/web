@@ -80,12 +80,12 @@ const BulleContent = styled.div<{ boxShadowColor: string }>`
   }
 `;
 
-const Circle = styled.div<{ size: string; marginLeft: string; backgroundColor: string; borderColor?: string; backgroundImage?: string }>`
+const Circle = styled.div<{ size: string; marginleft: string; backgroundColor: string; bordercolor?: string; backgroundImage?: string }>`
   margin-top: 2%;
-  margin-left: ${(props) => props.marginLeft};
+  margin-left: ${(props) => props.marginleft};
   width: ${(props) => props.size};
   height: ${(props) => props.size};
-  border: ${(props) => (props.borderColor ? `3px solid ${props.borderColor}` : "0.5px solid")};
+  border: ${(props) => (props.bordercolor ? `3px solid ${props.bordercolor}` : "0.5px solid")};
   border-radius: 50%;
   background-color: ${(props) => props.backgroundColor};
   background-image: ${(props) => (props.backgroundImage ? `url(${props.backgroundImage})` : "none")};
@@ -174,9 +174,9 @@ const TourneImage: React.FC = () => {
           <BulleContent boxShadowColor="#FC7557">
             <p>Working with Omegup was a game-changer for our business. Their web development expertise transformed our online presence, making it not only visually stunning but also incredibly user-friendly.</p>
           </BulleContent>
-          <Circle size="10px" marginLeft="48%" backgroundColor="#FC7557" />
-          <Circle size="20px" marginLeft="47.3%" backgroundColor="#FC7557" />
-          <Circle size="80px" marginLeft="41.7%" borderColor="#FC7557" backgroundImage="p3.png" backgroundColor="" />
+          <Circle size="10px" marginleft="48%" backgroundColor="#FC7557" />
+          <Circle size="20px" marginleft="47.3%" backgroundColor="#FC7557" />
+          <Circle size="80px" marginleft="41.7%" bordercolor="#FC7557" backgroundImage="p3.png" backgroundColor="" />
           <TextCenter>
             <h3>John Smith</h3>
             <p>Founder of EcomSolutions</p>
@@ -186,9 +186,9 @@ const TourneImage: React.FC = () => {
           <BulleContent boxShadowColor="#949CFF">
             <p>Chez Omegup, we found a team that not only takes pride in their work but also delivers outstanding results. Their innovative solutions and dedication to our project exceeded our expectations.</p>
           </BulleContent>
-          <Circle size="10px" marginLeft="48%" backgroundColor="#949CFF" />
-          <Circle size="20px" marginLeft="47.3%" backgroundColor="#949CFF" />
-          <Circle size="80px" marginLeft="42%" borderColor="#949CFF" backgroundImage="p2.png" backgroundColor=""/>
+          <Circle size="10px" marginleft="48%" backgroundColor="#949CFF" />
+          <Circle size="20px" marginleft="47.3%" backgroundColor="#949CFF" />
+          <Circle size="80px" marginleft="42%" bordercolor="#949CFF" backgroundImage="p2.png" backgroundColor=""/>
           <TextCenter>
             <h3>Sarah Johnson</h3>
             <p>CEO of TechWizards Inc</p>
@@ -198,9 +198,9 @@ const TourneImage: React.FC = () => {
           <BulleContent boxShadowColor="#FEC63A">
             <p>Omegup has been a valuable partner in our online journey. Their web development skills have helped us reach new heights. They designed a website that not only looks fantastic but also performs seamlessly.</p>
           </BulleContent>
-          <Circle size="10px" marginLeft="50%" backgroundColor="#FEC63A" />
-          <Circle size="20px" marginLeft="49%" backgroundColor="#FEC63A" />
-          <Circle size="80px" marginLeft="44%" borderColor="#FEC63A" backgroundImage="p1.png" backgroundColor=""/>
+          <Circle size="10px" marginleft="50%" backgroundColor="#FEC63A" />
+          <Circle size="20px" marginleft="49%" backgroundColor="#FEC63A" />
+          <Circle size="80px" marginleft="44%" bordercolor="#FEC63A" backgroundImage="p1.png" backgroundColor=""/>
           <TextCenter>
             <h3>Alex Turner</h3>
             <p>COO of Streamline Logistics</p>

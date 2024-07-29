@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 const Container = styled.div`
   width: 100%;
@@ -83,6 +84,7 @@ const TextFooter2 = styled.div`
 
 
 
+
 const Container2Footer2 = styled.div`
 h2{    font-family: 'Krona One', sans-serif;
     font-size: 24px;
@@ -120,6 +122,23 @@ font-family: 'Quicksand', sans-serif;
     margin: 5px 0;
   }
 `;
+const Lienfooter = styled.div `
+
+  display: flex;
+  gap:10px;
+  
+  @media (max-width: 768px) {
+    margin-left : 38%;
+  }
+
+`
+const Lienfootersocialmedia = styled.a `
+
+  cursor: pointer;
+
+
+
+`
 const Footer2: React.FC = () => {
   return (
     <>
@@ -129,7 +148,14 @@ const Footer2: React.FC = () => {
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let&apos;s engage!
           </p>
-          <img src="Frame249.png" alt="Social Media" />
+          <Lienfooter>
+            
+          <Lienfootersocialmedia href="#"> <Image src="/Social1.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social2.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social3.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social4.png" alt="Social Media" width={24} height={24} /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social5.png" alt="Social Media"width={24} height={24} /></Lienfootersocialmedia>
+          </Lienfooter>
         </TextFooter2>
         <Container2Footer2>
           <div>
@@ -167,3 +193,4 @@ const Footer2: React.FC = () => {
 }
 
 export default Footer2;
+

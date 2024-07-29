@@ -33,12 +33,7 @@ font-family: 'Quicksand', sans-serif;
   align-self: center;
   font-size:16px;
 
-  &:hover {
-    color: aliceblue;
-    background-color: #222325;
-    transform: scale(1.15);
-    transition: 0.3s ease-in-out;
-  }
+
 
   @media (max-width: 576px) {
     padding: 10px;

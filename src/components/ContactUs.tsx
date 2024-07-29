@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { FormEvent, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -126,8 +127,10 @@ const StyledDiv = styled.div`
 const StyledButton = styled.button`
   background-color: #FAF9F6;
   background-repeat: no-repeat;
+  background-image:url('contact.png');
   background-position: left;
   background-size: 20px;
+  border:solid 0.5px;
   border-radius: 20px;
   margin-left:40%;
   margin-bottom:30px;
@@ -140,6 +143,7 @@ const StyledButton = styled.button`
   &:hover {
     box-shadow: -5px 5px black;
     transition: box-shadow 0.3s ease, background-image 0.3s ease;
+    background-image:url('image.png')
   }
 
   @media (max-width: 768px) {
@@ -171,6 +175,7 @@ const ContactUS = () => {
   const [error,setError]=useState([])
   const [success, setSuccess] = useState(false);
    const handelSubmit=async(e:FormEvent)=> {
+  
    e.preventDefault();
      const res=await fetch('api/contact',{
       method:"POST",
@@ -192,7 +197,8 @@ const ContactUS = () => {
     setMessage("");
   }
   };
- 
+ const Img=styled.img`
+ position:left;`
 
 
  
@@ -206,11 +212,11 @@ const ContactUS = () => {
       </PStyled>
       <StyledDiv>
         <InputContainer>
-          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='Walid Georgy' value={fullname} />
+          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='' value={fullname} />
           <StyledLabel htmlFor=''>Full Name</StyledLabel>
         </InputContainer>
         <InputContainer>
-          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='WalidGeorgy@Gmail.com' value={email} />
+          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='...@Gmail.com' value={email} />
           <StyledLabel>E-mail</StyledLabel>
         </InputContainer>
         <InputContainer>
@@ -219,7 +225,7 @@ const ContactUS = () => {
         </InputContainer>
       </StyledDiv>
       <InputContainer>
-        <StyledMessage onChange={e=>setMessage(e.target.value)}type='message' placeholder='your message here !' value={message} />
+        <StyledMessage onChange={e=>setMessage(e.target.value)} placeholder='your message here !' value={message} />
         <MessageLabel>Message</MessageLabel>
       </InputContainer>
  
@@ -230,7 +236,7 @@ const ContactUS = () => {
           </Message>
         ))}
       </div>
-      <StyledButton  type='submit'>Get in touch now!</StyledButton>
+      <StyledButton  type='submit'> <p>Get in touch now!</p></StyledButton>
      
     </FormStyled>
   );

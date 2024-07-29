@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -34,13 +35,18 @@ background: #faf9f6;
 width: 286.5px;
 border: 1px solid;
 border-radius: 30px;
-padding:20px;
+padding: 20px;
 align-self: flex-start;
 
 box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
-  width: 45%;
-  margin: 2vh 3vh; 
+  margin: 2% 0.5%; 
   gap: 10px;
+  @media (max-width: 1000px) {
+    margin: 2% 1%;
+  }
+  @media (max-width: 768px) {
+    margin: 2% 3%;
+  }
 `;
 
 const Text = styled.p`
@@ -124,8 +130,8 @@ const Acceuil = () => {
         expertise to deliver awe-inspiring web solutions that redefine the online landscape.
 
         <StyledDiv>
-          <Button secondary='false'>Get in touch</Button>
-          <Button secondary='true'>Explore Our Services</Button>
+          <Button secondary='false'> <Link href={'#contact'}>Get in touch</Link></Button>
+          <Button secondary='true'> <Link href={'#services'}>Explore Our Services</Link></Button>
         </StyledDiv>
       </Text1>
     </Container>
