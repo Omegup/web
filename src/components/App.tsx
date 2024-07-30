@@ -76,40 +76,6 @@ const Button = styled.button`
 
 `;
 
-const Texte = styled.div`
-margin-top:90px;
- font-family: 'Krona One', sans-serif;
-   font-size: 48px;
-  font-weight: 400;
-  line-height: 52.8px;
-  letter-spacing:-6.4%;
-  text-align:center;
-  @media (max-width: 768px) {
-    font-size: 25px;
-  }
-margin-bottom:90px;
-  @media (max-width: 576px) {
-    font-size: 20px;
-  }
-
-`;
-
-const Titre1 = styled.span`
-  color: #fc7557;
-
-  font-family: 'Krona One', sans-serif;
-   
-`;
-
-const Titre2 = styled.span`
-  color: #fec63a;
-  font-family: 'Krona One', sans-serif;
-`;
-
-const Titre3 = styled.span`
-  color: #64c67e;
-  font-family: 'Krona One', sans-serif;
-`;
 
 
 function NavBar() {
@@ -134,12 +100,7 @@ function NavBar() {
         <Button ><Link href={'#contact'}>
           Get in Touch</Link></Button>
       </Affiche>
-      <Texte>
-        
-          Welcome to <Titre1>Omegup</Titre1>:<br />
-          Where <Titre2>Imagination</Titre2> meets <Titre3>Code </Titre3>&lt; / &gt;
-        
-      </Texte>
+    
     </Container1>
   );
 }

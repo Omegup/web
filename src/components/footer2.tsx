@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 const Container = styled.div`
   width: 100%;
@@ -35,7 +36,7 @@ const Container_1 = styled.div`
     height: auto;
     padding: 10px 0;
     position: static;
-    border-radius: 22px;
+  
   }
 `;
 
@@ -43,9 +44,9 @@ const FooterText2 = styled.p`
   color: #222325;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
 `;
 
 const TextFooter2 = styled.div`
@@ -57,9 +58,9 @@ const TextFooter2 = styled.div`
   margin-left: 10%;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
     h2{
     font-family: 'Krona One', sans-serif;
     font-size: 24px;
@@ -155,7 +156,7 @@ const Footer2: React.FC = () => {
           </p>
           <Lienfooter >
             
-          <Lienfootersocialmedia href="#"> <Image src="/Social1.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="https://www.linkedin.com/company/omegup/?originalSubdomain=tn" target="_blank"> <Image src="/Social1.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><Image src="/Social2.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><Image src="/Social3.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
           <Lienfootersocialmedia href="#"><Image src="/Social4.png" alt="Social Media" width={24} height={24} /></Lienfootersocialmedia>
@@ -165,28 +166,30 @@ const Footer2: React.FC = () => {
         <Container2Footer2>
           <div>
             <h2 style={{marginBottom:'15px'}}>Quick Links</h2>
-            <TextContainer>Home</TextContainer>
-            <TextContainer>About Us</TextContainer>
-            <TextContainer>Services</TextContainer>
-            <TextContainer>Get in touch</TextContainer>
+            <TextContainer><Link href={'#home'}>Home</Link></TextContainer>
+            <TextContainer><Link href={'#about'}>About Us</Link></TextContainer>
+            <TextContainer><Link href={'#services'}>Services</Link></TextContainer>
+            <TextContainer><Link href={'#contact'}>Get in touch</Link></TextContainer>
           </div>
           <div>
             <h2 style={{marginBottom:'15px'}} >Services</h2>
-            <TextContainer>UX/UI Design</TextContainer>
-            <TextContainer>Web development</TextContainer>
-            <TextContainer>Mobile development</TextContainer>
+            <TextContainer><Link href={'#design'}>UX/UI Design</Link></TextContainer>
+            <TextContainer><Link href={'#devweb'}>Web development</Link></TextContainer>
+            <TextContainer><Link href={'#devmobile'}>Mobile development</Link></TextContainer>
+            
           </div>
           <div style={{marginLeft:'20px'}}>
             <H2Styled >Contact</H2Styled>
             <TextContainer style={{position:'relative'}}>
-              <img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> 10, Cyber Park Zarzis, Medenine
+            <Lienfootersocialmedia href="https://www.google.com/maps/place/OmegUp/@33.4966778,11.1157896,17z/data=!3m1!4b1!4m6!3m5!1s0x13aaefeefabcd13f:0xab85ea46c136a0b8!8m2!3d33.4966778!4d11.1157896!16s%2Fg%2F11s_xqyh7x?entry=ttu"target="_blank"><img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'-12%'}} />  10, Cyber Park Zarzis, Medenine</Lienfootersocialmedia>
             </TextContainer>
             <TextContainer style={{position:'relative'}}>
-              <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> contact@omegup.tn
+            <Lienfootersocialmedia href="mailto:contact@omegup.tn"> <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> contact@omegup.tn</Lienfootersocialmedia>
             </TextContainer>
             <TextContainer style={{position:'relative'}}>
-              <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> +216 28 827 941
+            <Lienfootersocialmedia href="tel:+216 28 827 941" >  <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> +216 28 827 941</Lienfootersocialmedia>
             </TextContainer>
+         
           </div>
         </Container2Footer2>
         <Container_1>

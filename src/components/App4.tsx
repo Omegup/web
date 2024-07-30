@@ -1,13 +1,8 @@
-"use client"
-import React, { useState } from "react";
+'use client'
 import styled from "styled-components";
 import Link from "next/link";
 // Styled components
-const ContainerTitle = styled.div`
-    margin-top: 100px;
-  
-     margin-left:10%;
-       width: 80%;`;
+
     const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
    
     font-size: 24px;
@@ -18,61 +13,56 @@ const ContainerTitle = styled.div`
 
 
 const MainContainer = styled.div`
-    height: 500px;
-    width: 90%;
+   
+    width: 80%;
     margin-left: 10%;
+    border: 1px solid rgb(34, 35, 37);
+    border-radius:20px;
     @media (max-width: 900px) {
     }
 
 
 `;
 
-const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
-    align-self: center;
-    width: 90%;
+const Container = styled.div`
+    width: 100%;
     height: 450px;
-    border: 1px solid #222325;
-    border-radius: 30px;
-    box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
-   
-    display: ${(props) => (props.isVisible ? 'block' : 'none')};
-    @media (max-width: 900px) {
+    border-bottom:1px solid;
+    @media (max-width:1500px) {
         width: auto;
         height: auto;
     }
 `;
 
-const TextImage = styled.div<{ isVisible: boolean }>`
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transition: opacity 1.5s ease-in-out;
+const TextImage = styled.div`
+background-color:#222325;
+
     overflow: hidden;
     padding: 20px 50px;
+    color: white;
+    border-bottom:solid 1px white;
+    @media (max-width:1500px) {
+       
+        height: 100%;
+        width: 100%;
+    }
 `;
 
-const Img = styled.img<{ isVisible: boolean }>`
+const Img = styled.img`
     align-self: center;
     margin: 100px;
     height: 250px;
     width: 280px;
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transition: opacity 5s ease;
-
-    transform: scale(1.5);
-   
+ 
     @media (max-width:1500px) {
-        margin: 30px;
-        height: 200px;
-        width: 220px;
-    }
-    @media (max-width:1200px) {
         margin: 20px;
-        height: 160px;
-        width: 180px;
+        height: 250px;
+        width: 280px;
     }
-    @media (max-width:500px) {
+    @media (max-width:700px) {
         margin: 20px;
-        height: 150px;
-        width: 140px;
+        height: 180px;
+        width: 200px;
     }
     
 `;
@@ -96,8 +86,8 @@ const ContainerItem = styled.span`
     margin-right: 10px;
     border: 0.5px solid rgb(32, 32, 32);
     padding: 10px 20px;
-    background-color: rgb(32, 32, 32);
-    color:#F7F5ED;
+    background-color:#FAF9F6;
+    color:#222325;
 
     @media (max-width: 1300px) {
         font-size: 16px;
@@ -113,14 +103,25 @@ const ContainerItem = styled.span`
         
     }
 `;
-
+const Texttitle=styled(TextImage)`
+background-color:#FAF9F6;
+color:black;
+margin-left:8.125%;
+margin-top:80px;
+margin-bottom:10px;
+width:67%;
+@media (max-width: 900px) {
+    width: 90%;
+    
+}`
 const Button = styled.p<{ bgColor: string }>`
     background-color: ${(props) => props.bgColor};
     border-radius: 22px;
     margin-top:20px;
-    border: 1px solid;
+    border:none;
     width: 150px;
     padding:5px;
+    color: ${(props)=>( props.bgColor=== '#FEC63A')?'#222325':'#F7F5ED'};
     @media (max-width:800px) {
         margin-top:${(props)=>( props.bgColor==='#FC7557')?'44px':'20px'};
       }
@@ -132,43 +133,12 @@ const Button = styled.p<{ bgColor: string }>`
         box-shadow: -4px 4px 0px 0px #222325;
         cursor: pointer;
     }
-`;
-
-const StyledLink = styled.p`
-    text-decoration: none;
     
-    cursor: pointer;
-    padding-bottom: 5px;
-    width: 150px;
-    &:hover {
-        border-bottom: 0.5px solid;
-    }
 `;
 
-const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
-    height: 38px;
-    width: 38px;
-    border-radius: 30px;
-    margin-top: 70px;
-    float: ${(props) => props.float};
-    margin-right: ${(props) => props.marginRight || '0'};
-    background-image: url(${(props) => props.marginRight ? 'image-right.png' : 'image-left.png'});
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
 
-    transition: background-color 0.3s ease-in-out;
 
-    &:hover {
-        background-image: url(${(props) => props.marginRight ? 'image-right-hover.png' : 'image-left-hover.png'});
-        cursor: pointer;
-        background-size: 120% 120%;
-    }
-    @media (max-width: 1000px) {
-        margin-top:30px;
-        
-    }
-`
+
 const styles = {
     fontFamily: "'Quicksand', sans-serif",
     fontSize: "16px",
@@ -188,31 +158,25 @@ flex-direction: row;
     
 }
 `
-const Menu_1: React.FC = () => {
-    const [tableau, setTableau] = useState('tableau1');
+function App4() {
+  return (
+    <>
+    <Texttitle>
+    <H3Styled>Project Showcase</H3Styled>
 
-    const pivotDroit = (tableau: string) => {
-        console.log('Switching to:', tableau); 
-        setTableau(tableau);
-    };
-    const handelClick=()=>{
+  
 
-    }
-
-    return (
-        <>
-            <ContainerTitle id="references">
-                <H3Styled>Explore Our Work</H3Styled>
-                <p style={styles}>
-                    At Omegup, we take pride in the work we do for our clients. Our dedicated team of talented web developers has created innovative solutions for a wide range of businesses. Here&apos;s an overview of some of our recent references:
-                </p>
-            </ContainerTitle>
-
-            <MainContainer>
-                <Container shadowColor="#FEC63A" isVisible={tableau === 'tableau1'}>
+    <p>
+    At Omegup, we take pride in our web solutions. 
+    Explore our featured projects to see the results of our
+     collaboration with clients who entrusted us with their web development needs.
+    </p>  
+    </Texttitle>
+      <MainContainer>
+                <Container >
                     <Displaycontainer>
-                    <Img isVisible={tableau === 'tableau1'} src="img1.png" alt="Ateliers - 77" />
-                    <TextImage isVisible={tableau === 'tableau1'}>
+                    <Img src="img1.png" alt="Ateliers - 77" />
+                    <TextImage style={{borderTopRightRadius:'20px'}} >
                         <H3Styled>Atéliers-77</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -224,15 +188,14 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
                         <Button bgColor="#FEC63A">View case studies</Button>
-                        <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau3')}></ArrowButton>
+                        
+                      
                     </TextImage></Displaycontainer>
                 </Container>
 
-                <Container shadowColor="#949CFF" isVisible={tableau === 'tableau2'}>
-                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="pc2.png" alt="School Online Tn" />
-                    <TextImage isVisible={tableau === 'tableau2'}>
+                <Container  >
+                <Displaycontainer> <Img src="pc2.png" alt="School Online Tn" />
+                    <TextImage>
                         <H3Styled>School Online Tn</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -243,16 +206,15 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
                         <Button bgColor="#949CFF">View case studies</Button>
-                        <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau1')}></ArrowButton>
+                        
+                       
                     </TextImage></Displaycontainer>
                 </Container>
                 
-                <Container shadowColor="#FC7557" isVisible={tableau === 'tableau3'}>
+                <Container style={{borderBottom:'0px'}} >
                     <Displaycontainer>
-                    <Img isVisible={tableau === 'tableau3'} src="pc3.png" alt="DSF Fr" />
-                    <TextImage isVisible={tableau === 'tableau3'}>
+                    <Img  src="pc3.png" alt="DSF Fr" />
+                    <TextImage style={{borderBottomRightRadius:'20px'}}>
                         <H3Styled>DSF Fr</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -264,14 +226,14 @@ const Menu_1: React.FC = () => {
                    
                     <Button bgColor="#FC7557" > View case studies   </Button>
                     
-                    <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau1')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau2')}></ArrowButton>
+                    
+                       
                     </TextImage></Displaycontainer>
                 </Container>
             </MainContainer>
-        </>
-    );
-};
+            
+    </>
+  )
+}
 
-export default Menu_1;
+export default App4;
