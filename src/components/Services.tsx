@@ -20,12 +20,12 @@ const Boxing = styled.div`
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
     width: auto;
-    margin-left: 0;
+   
   }
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    margin-left: 0;
+  
   }
 `;
 
@@ -42,7 +42,7 @@ const GridItemWithMargin = styled(GridItem)`
   margin-left: 50px;
 
   @media (max-width: 900px) {
-    margin-left: 0;
+    margin-left: 0px;
   }
 `;
 
@@ -90,7 +90,7 @@ const Img = styled.img`
   width: 60px;
 
   @media (max-width: 900px) {
-    margin-top: -90px;
+    margin-top: -60px;
     height: 50px;
     width: 45px;
   }
@@ -124,9 +124,9 @@ const Services: React.FC = () => {
       </Container>
       <Boxing>
         <GridItem>
-          <Circle bgColor="#949CFF" />
+          <Circle bgColor="#949CFF"  id='devweb'/>
           <Img src="image50.png" alt="" />
-          <Title>Web Development<span>.</span></Title>
+          <Title>Web Development.</Title>
           <Text>
             🌐 Website Design & Development: Craft 
             websites that leave a lasting impression and 
@@ -139,9 +139,9 @@ const Services: React.FC = () => {
           </Text>
         </GridItem>
         <GridItemWithMargin>
-          <Circle bgColor="#FC7557" ></Circle>
+          <Circle bgColor="#FC7557" id='design' ></Circle>
           <Img src="image51.png" alt="" />
-          <Title>UC/UI Design<span>.</span></Title>
+          <Title >UX/UI Design.</Title>
           <Text>
             🎨 User-Centric Design: We create intuitive 
             and visually stunning user interfaces that 
@@ -154,9 +154,9 @@ const Services: React.FC = () => {
           </Text>
         </GridItemWithMargin>
         <GridItemWithMargin>
-          <Circle bgColor="#FEC63A" ></Circle>
+          <Circle bgColor="#FEC63A" id='devmobile'></Circle>
           <Img src="image49.png" alt="" />
-          <Title>Mobile Development .</Title>
+          <Title >Mobile Development .</Title>
           <Text>
             📱 iOS & Android Apps: Develop mobile apps 
             that shine on every platform and provide

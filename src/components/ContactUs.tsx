@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { FormEvent, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -6,9 +7,9 @@ const FormStyled = styled.form`
   position: relative;
   background-color: white;
   border: solid 1px black;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 80%;
-  height: 500px;
+  height: 434px;
   margin-left: 10%;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -29,7 +30,8 @@ const PStyled = styled.p`
   font-weight: 500;
   line-height: 24px;
   margin-top: 5px;
-
+  margin-bottom:20px;
+  
   @media (max-width: 768px) {
     font-size: 14px;
     line-height: 20px;
@@ -43,8 +45,14 @@ const Title = styled.h1`
   line-height: 37.4px;
   letter-spacing: -6.4%;
   text-align: center;
-
+  margin-top:50px;
+  @media (max-width: 1300px) {
+    font-size: 28px;
+    line-height: 32px;
+    margin-top:20px;
+  }
   @media (max-width: 768px) {
+    margin-top:0px;
     font-size: 28px;
     line-height: 32px;
   }
@@ -56,10 +64,8 @@ border:solid 1px;
   margin: 10px;
   height: 30px;
   width: 90%;
-  ::placeholder{
-  color: red;
-  }
 
+  
   @media (max-width: 768px) {
     width: calc(100% - 20px);
   }
@@ -84,27 +90,22 @@ const StyledLabel = styled.label`
   color: #222325;
 `;
 
-const StyledMessage = styled(StyledInput)`
-  width: 78%;
-  height: 70px;
-  margin-left: 10.5%; 
+const StyledMessage = styled.textarea`
+margin-top:50px;
+border:solid 1px;
+  border-radius: 15px;
+  margin: 10px;
+  width: 77%;
+  height:10vh;
+  margin-left: 11%;
 
 
-  @media (max-width: 768px) {
-    width: calc(100% - 20px);
-    margin-left: 0;
-  }
-  ::placeholder{
-    background-color: red;
-  }
 `;
 
 const MessageLabel = styled(StyledLabel)`
-  left: 8%;
+  left: 11.5%;
 
-  @media (max-width: 768px) {
-    left: 1.5%;
-  }
+
 `;
 
 const StyledDiv = styled.div`
@@ -126,14 +127,15 @@ const StyledDiv = styled.div`
 const StyledButton = styled.button`
   background-color: #FAF9F6;
   background-repeat: no-repeat;
+  background-image:url('contact.png');
   background-position: left;
   background-size: 20px;
+  border:solid 0.5px;
   border-radius: 20px;
+  margin-left:40%;
+  margin-bottom:30px;
   width: 191px;
   height: 44px;
-  position: absolute;
-  left: 40%;
-  bottom: 30px;
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -141,18 +143,24 @@ const StyledButton = styled.button`
   &:hover {
     box-shadow: -5px 5px black;
     transition: box-shadow 0.3s ease, background-image 0.3s ease;
+    background-image:url('image.png')
   }
 
   @media (max-width: 768px) {
-    left: calc(50% - 95.5px);
-    bottom: 0px;
-    position: relative;
+    
+    margin-left: calc(50% - 95.5px);
+    margin-bottom:10px;
   }
 `;
 
 const InputContainer = styled.div`
+
+margin-top:10px;
   position: relative;
   width: 100%;
+  @media (max-width:768px) {
+    margin-top:0px;
+  }
 `;
 const Message=styled.div<{success:boolean}>`
 color:${(props)=>(props.success? "green" : "red")};
@@ -167,6 +175,7 @@ const ContactUS = () => {
   const [error,setError]=useState([])
   const [success, setSuccess] = useState(false);
    const handelSubmit=async(e:FormEvent)=> {
+  
    e.preventDefault();
      const res=await fetch('api/contact',{
       method:"POST",
@@ -188,7 +197,8 @@ const ContactUS = () => {
     setMessage("");
   }
   };
- 
+ const Img=styled.img`
+ position:left;`
 
 
  
@@ -202,11 +212,11 @@ const ContactUS = () => {
       </PStyled>
       <StyledDiv>
         <InputContainer>
-          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='Walid Georgy' value={fullname} />
+          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='' value={fullname} />
           <StyledLabel htmlFor=''>Full Name</StyledLabel>
         </InputContainer>
         <InputContainer>
-          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='WalidGeorgy@Gmail.com' value={email} />
+          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='...@Gmail.com' value={email} />
           <StyledLabel>E-mail</StyledLabel>
         </InputContainer>
         <InputContainer>
@@ -215,7 +225,7 @@ const ContactUS = () => {
         </InputContainer>
       </StyledDiv>
       <InputContainer>
-        <StyledMessage onChange={e=>setMessage(e.target.value)}type='message' placeholder='your message here !' value={message} />
+        <StyledMessage onChange={e=>setMessage(e.target.value)} placeholder='your message here !' value={message} />
         <MessageLabel>Message</MessageLabel>
       </InputContainer>
  
@@ -226,7 +236,7 @@ const ContactUS = () => {
           </Message>
         ))}
       </div>
-      <StyledButton  type='submit'>Get in touch now!</StyledButton>
+      <StyledButton  type='submit'> <p>Get in touch now!</p></StyledButton>
      
     </FormStyled>
   );
