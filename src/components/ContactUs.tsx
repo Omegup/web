@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const FormStyled = styled.form`
   position: relative;
-  background-color: white;
+  background-color: #FAF9F6;
   border: solid 1px black;
   border-radius: 20px;
   width: 80%;
@@ -86,7 +86,7 @@ const StyledLabel = styled.label`
   position: absolute;
   top: -0.1em;
   left: 0.75em;
-  background: white;
+  background: #FAF9F6;
   padding: 0 0.25em;
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
@@ -153,9 +153,10 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
+  transition: box-shadow 0.3s ease, background-image 0.3s ease;
   &:hover {
     box-shadow: -5px 5px black;
-    transition: box-shadow 0.3s ease, background-image 0.3s ease;
+    
     background-image:url('image.png')
   }
   @media only screen and (min-width: 769px) and (max-width:1300px) {
@@ -233,7 +234,7 @@ const ContactUS = () => {
       </PStyled>
       <StyledDiv>
         <InputContainer>
-          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='' value={fullname} />
+          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='Your Name' value={fullname} />
           <StyledLabel htmlFor=''>Full Name</StyledLabel>
         </InputContainer>
         <InputContainer>

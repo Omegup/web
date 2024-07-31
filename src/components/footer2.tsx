@@ -135,15 +135,16 @@ h2{    font-family: 'Krona One', sans-serif;
 const TextContainer = styled.p`
 margin-top:5px;
 color: #999999;
-
+transition: color 0.5s ease-in-out, scale 0.3s ease-in-out;
+width:auto;
 &:hover  {
   color: #FAF9F6;
+  scale:1.05;
   
-  border-bottom: 0.5px solid;
   
   
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
+  
 }
 font-family: 'Quicksand', sans-serif;
     font-size: 14px;

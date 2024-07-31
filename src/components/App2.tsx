@@ -45,7 +45,7 @@ const BoxTitle=styled.h3`
   letter-spacing:-6.4%;
   `
 const Box = styled.div<{ shadowColor: string }>`
-background: #faf9f6;
+background: #FAF9F6;
 width: 286.5px;
 
 border: 1px solid;
