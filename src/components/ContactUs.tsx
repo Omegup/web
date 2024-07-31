@@ -1,11 +1,11 @@
 'use client'
-import Image from 'next/image';
 import { FormEvent, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const FormStyled = styled.form`
   position: relative;
-  background-color: white;
+  background-color: 
+  #FAF9F6;
   border: solid 1px black;
   border-radius: 20px;
   width: 80%;
@@ -59,6 +59,7 @@ const Title = styled.h1`
 `;
 
 const StyledInput = styled.input`
+background-color: #FAF9F6;
 border:solid 1px;
   border-radius: 15px;
   margin: 10px;
@@ -71,26 +72,24 @@ border:solid 1px;
   }
 `;
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    background-color: #FAF9F6;
-  }
-`;
+
 
 const StyledLabel = styled.label`
   position: absolute;
   top: -0.1em;
   left: 0.75em;
-  background: white;
+  background-color: #FAF9F6;
   padding: 0 0.25em;
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
   color: #222325;
+  
 `;
 
 const StyledMessage = styled.textarea`
+background-color: #FAF9F6;
 margin-top:50px;
 border:solid 1px;
   border-radius: 15px;
@@ -125,7 +124,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background-color: #FAF9F6;
+  background-color: #F7F5ED;
   background-repeat: no-repeat;
   background-image:url('contact.png');
   background-position: left;

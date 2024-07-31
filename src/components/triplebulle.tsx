@@ -25,7 +25,7 @@ margin-left:10%;
     line-height: 24px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     margin-top: 150px;
     margin-bottom:50px;
     h3 {

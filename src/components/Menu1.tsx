@@ -21,8 +21,7 @@ const MainContainer = styled.div`
     height: 500px;
     width: 90%;
     margin-left: 10%;
-    @media (max-width: 900px) {
-    }
+   
 
 
 `;
@@ -31,6 +30,7 @@ const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
     align-self: center;
     width: 90%;
     height: 450px;
+    background-color: #FAF9F6;
     border: 1px solid #222325;
     border-radius: 30px;
     box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
@@ -121,9 +121,6 @@ const Button = styled.p<{ bgColor: string }>`
     border: 1px solid;
     width: 150px;
     padding:5px;
-    @media (max-width:800px) {
-        margin-top:${(props)=>( props.bgColor==='#FC7557')?'44px':'20px'};
-      }
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
    
@@ -169,7 +166,28 @@ const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
         
     }
 `
+const PStyled=styled.p`
+    height: 100px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight:500;
+    line-height:24px;
+    @media (max-width: 700px) {
+        height: 130px;
+        
+    }
+    @media (max-width: 1000px) {
+   
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+`
 const styles = {
+  
     fontFamily: "'Quicksand', sans-serif",
     fontSize: "16px",
     fontWeight: "500",
@@ -222,7 +240,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>Tailwind</ContainerItem>
                         </Container2>
-                        <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
+                        <PStyled>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</PStyled>
                         <Button bgColor="#FEC63A">View case studies</Button>
                         <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
@@ -241,7 +259,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>MongoDB</ContainerItem>
                         </Container2>
-                        <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
+                        <PStyled>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</PStyled>
                         <Button bgColor="#949CFF">View case studies</Button>
                         <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
@@ -260,7 +278,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>NodeJS</ContainerItem>
                             <ContainerItem>NodeJS</ContainerItem>
                         </Container2>
-                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </p>
+                        <PStyled> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </PStyled>
                    
                     <Button bgColor="#FC7557" > View case studies   </Button>
                     
