@@ -1,3 +1,4 @@
+'use server'
 import "./g2.css"
 import "./g.css"
 import NavBar from "@/components/App";
@@ -9,7 +10,7 @@ import Footer2 from "@/components/footer2";
 import Menu_1 from "@/components/Menu1";
 import Services from "@/components/Services";
 import TourneImage from "@/components/triplebulle";
-export default function Home() {
+export default  async function Home() {
   return (
   <>
   <NavBar/>

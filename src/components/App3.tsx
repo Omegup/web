@@ -7,8 +7,7 @@ import styled from 'styled-components';
 const Container = styled.div`
     border-radius: 22px;
     @media (max-width: 1700px) {
-        margin-left: 5%;
-        margin-right: 5%;
+       
     }
 
   
@@ -21,9 +20,9 @@ margin-left:8.125%;
 height: 466px;
     display: flex;
     border-radius: 22px;
-    flex: 1;
+    
     @media (max-width: 1200px) {
-        width: 100%;
+      
     }
     @media (max-width: 1000px) {
         flex-direction: column;
@@ -32,10 +31,9 @@ height: 466px;
 `;
 
 const Button = styled.button<{ expanded: boolean; backgroundImage: string; first: boolean; last: boolean }>`
-    flex: ${(props) => (props.expanded ? 5 : 0.1)};
     padding-right: ${(props) => (props.expanded ? 'auto' : '20px')};
     border: 1px solid #e0e0e0;
-    transition: flex 0.3s ease-in-out;
+  
     cursor: pointer;
     position: relative;
     background-image: url(${(props) => props.backgroundImage});
@@ -45,16 +43,15 @@ const Button = styled.button<{ expanded: boolean; backgroundImage: string; first
     border-bottom-left-radius: ${(props) => (props.first ? '22px' : '0')};
     border-top-right-radius: ${(props) => (props.last ? '22px' : '0')};
     border-bottom-right-radius: ${(props) => (props.last ? '22px' : '0')};
-     flex: ${(props) => (props.expanded ? 'none' : 'none')};
+     flex: ${(props) => (props.expanded ? 5: 0.2)};
+   
      width: ${(props) => (props.expanded ? '90%' : '61px')};
-        @media (max-width: 1700px) {
-            width: ${(props) => (props.expanded ? '70%' : '100px')};
-    }
+ 
    
     @media (max-width:1000px) {
         width: auto;
         flex: ${(props) => (props.expanded ? 'none' : 'none')};
-        height: ${(props) => (props.expanded ? 'auto' : '100px')};
+        height: ${(props) => (props.expanded ? 'auto' : '61px')};
         padding: ${(props) => (props.expanded ? '20px' : '0px')};
         border-top-left-radius: ${(props) => (props.first ? '22px' : '0')};
         border-bottom-left-radius: ${(props) => (props.last ? '22px' : '0')};
@@ -68,11 +65,12 @@ const TextContainer = styled.div<{ expanded: boolean }>`
     margin: 5%;
     color: #f7f5ed;
     opacity: ${(props) => (props.expanded ? 1 : 0)};
-    transition: opacity 0.3s ease-out;
+    transition: opacity ${(props) => (props.expanded ? '0.4s' : '0s')} ease-in-out;
     @media (max-width: 1000px) {
         margin: 5%;
     }
 `;
+
 
 const TextOverlay = styled.div<{Num:number}>`
     font-family: 'Krona One', sans-serif;
@@ -122,9 +120,10 @@ const Hstyled = styled.h1`
 `;
 
 const Title = styled.div`
-    margin-left: 10%;
+    margin-left: 8.125%;
+
     @media (max-width:1000px) {
-        margin-left: 5%;
+   
         text-align: center;
     }
 `;

@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -9,23 +10,30 @@ const Container = styled.div`
 `;
 
 const Container2 = styled.div`
-width: 83.75%;
-margin-left:8.125%;
+width: 80%;
+margin-left:10%;
 height: 49.5%;
-  display: flex;
-  flex-direction : row;
-  flex-wrap : no wrap;
-  justify-content: center;
 
-  @media (max-width: 1200px) {
-    display : grid;
-    grid-template-columns: auto auto;
+  display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr ;
+
+
+  @media (max-width: 1700px) {
+    margin-left:20%;
+    width: 70%;
+   display: grid;
+
+    grid-template-columns: 2fr 2fr ;
   }
 
   @media (max-width: 900px) {
-    margin-left:15%;
-    display: grid;
-    grid-template-columns: auto;
+    margin-left:10%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  @media (max-width: 760px) {
+    margin-left:25%;
   }
 `;
 const BoxTitle=styled.h3`
@@ -39,15 +47,25 @@ const BoxTitle=styled.h3`
 const Box = styled.div<{ shadowColor: string }>`
 background: #faf9f6;
 width: 286.5px;
+
 border: 1px solid;
 border-radius: 30px;
-padding:20px;
+padding: 20px;
 align-self: flex-start;
 
 box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
-  width: 45%;
-  margin: 2vh 3vh; 
+  margin: 2% 0.5%; 
   gap: 10px;
+  @media (max-width: 1300px) {
+    
+   
+  }
+  @media (max-width: 1000px) {
+    margin: 2% 1%;
+  }
+  @media (max-width: 768px) {
+    margin: 2% 3%;
+  }
 `;
 
 const Text = styled.p`
@@ -100,11 +118,52 @@ const StyledDiv = styled.div`
     flex-direction: column; 
   }
 `;
+const Texte = styled.div`
+margin-top:90px;
+ font-family: 'Krona One', sans-serif;
+   font-size: 48px;
+  font-weight: 400;
+  line-height: 52.8px;
+  letter-spacing:-6.4%;
+  text-align:center;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+margin-bottom:90px;
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
+
+`;
+
+const Titre1 = styled.span`
+  color: #fc7557;
+
+  font-family: 'Krona One', sans-serif;
+   
+`;
+
+const Titre2 = styled.span`
+  color: #fec63a;
+  font-family: 'Krona One', sans-serif;
+`;
+
+const Titre3 = styled.span`
+  color: #64c67e;
+  font-family: 'Krona One', sans-serif;
+`;
 
 const Acceuil = () => {
   return (
+    <>
+        <Texte>
+        
+        Welcome to <Titre1>Omegup</Titre1>:<br />
+        Where <Titre2>Imagination</Titre2> meets <Titre3>Code </Titre3>&lt; / &gt;
+      
+    </Texte>
     <Container>
-    
+  
       <Container2>
         <Box shadowColor="-8px 8px 0px 0px #FEC63A">
           <BoxTitle>💡 Innovate & <br />Create :</BoxTitle>
@@ -131,11 +190,11 @@ const Acceuil = () => {
         expertise to deliver awe-inspiring web solutions that redefine the online landscape.
 
         <StyledDiv>
-          <Button secondary='false'>Get in touch</Button>
-          <Button secondary='true'>Explore Our Services</Button>
+          <Button secondary='false'> <Link href={'#contact'}>Get in touch</Link></Button>
+          <Button secondary='true'> <Link href={'#services'}>Explore Our Services</Link></Button>
         </StyledDiv>
       </Text1>
-    </Container>
+    </Container></>
   );
 };
 

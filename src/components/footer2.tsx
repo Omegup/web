@@ -1,11 +1,13 @@
 "use client"
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
+import Link from "next/link";
 
 
 const Container = styled.div`
   width: 100%;
-  min-height: 35vh;
+  min-height: 285px;
   border-radius: 22px;
   background-color: #222325;
   display: flex;
@@ -39,7 +41,7 @@ const Container_1 = styled.div`
     height: 10vh;
     padding: 10px 0;
     position: static;
-    border-radius: 0 0 22px 22px;
+  
   }
 `;
 
@@ -65,9 +67,9 @@ const TextFooter2 = styled.div`
   margin-left: 10%;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
     h2{
     font-family: 'Krona One', sans-serif;
     font-size: 24px;
@@ -92,6 +94,11 @@ const TextFooter2 = styled.div`
     margin-left: 0;
   }
 `;
+const H2Styled=styled.h2`
+margin-bottom:15px;
+@media (max-width: 900px) {
+  
+}`
 
 
 
@@ -125,7 +132,8 @@ h2{    font-family: 'Krona One', sans-serif;
   }
 `;
 
-const TextContainer = styled.a`
+const TextContainer = styled.p`
+margin-top:5px;
 color: #999999;
 
 &:hover  {
@@ -152,9 +160,8 @@ font-family: 'Quicksand', sans-serif;
     
   }
 `;
-
 const Lienfooter = styled.div `
-
+  margin-top:10px;
   display: flex;
   gap:10px;
   
@@ -186,45 +193,46 @@ const Footer2: React.FC = () => {
     <>
       <Container>
         <TextFooter2>
-          <h2 id="titrefooter2">Omegup</h2>
+          <h2 style={{marginBottom:'15px'}} >Omegup</h2>
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let&apos;s engage!
           </p>
-          <Lienfooter>
-          <Lienfootersocialmedia href="#"><img src="src/Social1.png" alt="Social Media" /></Lienfootersocialmedia>
-          <Lienfootersocialmedia href="#"><img src="src/Social2.png" alt="Social Media" /></Lienfootersocialmedia>
-          <Lienfootersocialmedia href="#"><img src="src/Social3.png" alt="Social Media" /></Lienfootersocialmedia>
-          <Lienfootersocialmedia href="#"><img src="src/Social4.png" alt="Social Media" /></Lienfootersocialmedia>
-          <Lienfootersocialmedia href="#"><img src="src/Social5.png" alt="Social Media" /></Lienfootersocialmedia>
+          <Lienfooter >
+            
+          <Lienfootersocialmedia href="https://www.linkedin.com/company/omegup/?originalSubdomain=tn" target="_blank"> <Image src="/Social1.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social2.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social3.png" alt="Social Media" width={24} height={24}/></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social4.png" alt="Social Media" width={24} height={24} /></Lienfootersocialmedia>
+          <Lienfootersocialmedia href="#"><Image src="/Social5.png" alt="Social Media"width={24} height={24} /></Lienfootersocialmedia>
           </Lienfooter>
         </TextFooter2>
         <Container2Footer2>
           <div>
-            <Titrefooter>Quick Links</Titrefooter>
-            
-            <TextContainer>Home</TextContainer><br/>
-            
-            <TextContainer>About Us</TextContainer><br/>
-            <TextContainer>Services</TextContainer><br/>
-            <TextContainer>Get in touch</TextContainer><br/>
+            <h2 style={{marginBottom:'15px'}}>Quick Links</h2>
+            <TextContainer><Link href={'#home'}>Home</Link></TextContainer>
+            <TextContainer><Link href={'#about'}>About Us</Link></TextContainer>
+            <TextContainer><Link href={'#services'}>Services</Link></TextContainer>
+            <TextContainer><Link href={'#contact'}>Get in touch</Link></TextContainer>
           </div>
           <div>
-            <Titrefooter>Services</Titrefooter>
-            <TextContainer>UX/UI Design</TextContainer><br/>
-            <TextContainer>Web development</TextContainer><br/>
-            <TextContainer>Mobile development</TextContainer><br/>
+            <h2 style={{marginBottom:'15px'}} >Services</h2>
+            <TextContainer><Link href={'#design'}>UX/UI Design</Link></TextContainer>
+            <TextContainer><Link href={'#devweb'}>Web development</Link></TextContainer>
+            <TextContainer><Link href={'#devmobile'}>Mobile development</Link></TextContainer>
+            
           </div>
-          <div>
-            <Titrefooter>Contact</Titrefooter>
-            <TextContainer>
-              <img src="map.png" alt="Address" width={1} height={1} /> 10, Cyber Park Zarzis, Medenine
+          <div style={{marginLeft:'20px'}}>
+            <H2Styled >Contact</H2Styled>
+            <TextContainer style={{position:'relative'}}>
+            <Lienfootersocialmedia href="https://www.google.com/maps/place/OmegUp/@33.4966778,11.1157896,17z/data=!3m1!4b1!4m6!3m5!1s0x13aaefeefabcd13f:0xab85ea46c136a0b8!8m2!3d33.4966778!4d11.1157896!16s%2Fg%2F11s_xqyh7x?entry=ttu"target="_blank"><img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'-12%'}} />  10, Cyber Park Zarzis, Medenine</Lienfootersocialmedia>
             </TextContainer>
-            <TextContainer>
-              <img src="sms-tracking.png" alt="Email" width={1} height={1} /> contact@omegup.tn
+            <TextContainer style={{position:'relative'}}>
+            <Lienfootersocialmedia href="mailto:contact@omegup.tn"> <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> contact@omegup.tn</Lienfootersocialmedia>
             </TextContainer>
-            <TextContainer>
-              <img src="call-incoming.png" alt="Phone" width={1} height={1} /> +216 28 827 941
+            <TextContainer style={{position:'relative'}}>
+            <Lienfootersocialmedia href="tel:+216 28 827 941" >  <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> +216 28 827 941</Lienfootersocialmedia>
             </TextContainer>
+         
           </div>
         </Container2Footer2>
         <Container_1>
@@ -236,3 +244,4 @@ const Footer2: React.FC = () => {
 }
 
 export default Footer2;
+
