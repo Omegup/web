@@ -216,12 +216,7 @@ function NavBar() {
         
         
       </Affiche>
-      <Texte>
-        <h1>
-          Welcome to <Titre1>Omegup</Titre1>:<br />
-          Where <Titre2>Imagination</Titre2> meets <Titre3>Code </Titre3>&lt; / &gt;
-        </h1>
-      </Texte>
+      
     </Container1>
   );
 }
