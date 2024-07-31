@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-var last:Boolean;
+
 
 const Container = styled.div`
     border-radius: 22px;
@@ -179,7 +179,7 @@ const Title21 = styled(Title1)`
 
 // Component
 
-const Objectives: React.FC = () => {
+const Objectives = () => {
   const [panel, setPanel] = useState('panel1');
 
   const handleClick = (panelId: string) => {

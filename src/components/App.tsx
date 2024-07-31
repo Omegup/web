@@ -42,7 +42,7 @@ font-family: 'Quicksand', sans-serif;
 
 const Container1 = styled.div`
   height: 100%;
-  background-color:  #FAF9F6;
+
 `;
 
 const Affiche = styled.div`
@@ -62,6 +62,8 @@ const Affiche = styled.div`
 `;
 
 const Button = styled.button`
+width: 130px;
+height: 40px;
   display: inline;
   font-size: 15px;
   border: 0.5px solid;
@@ -84,7 +86,7 @@ function NavBar() {
       <Affiche>
         <Title>Omegup</Title>
         <Container>
-          <Link href="#home">
+          <Link href="/">
             <Nav>Home</Nav>
           </Link>
           <Link href="#about"  >

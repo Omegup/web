@@ -58,7 +58,10 @@ const Slider = styled.div`
   width: 200%;
   justify-content: space-evenly;
   animation: slide 15s linear infinite;
+ @media (max-width: 1300px) {
+  height: 50px;
 
+ }
   @media (max-width: 768px) {
     margin-left: -20px;
     height: 80px;

@@ -1,9 +1,6 @@
 'use client'
 import styled from "styled-components";
-import Link from "next/link";
-// Styled components
-
-    const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
+const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
    
     font-size: 24px;
     font-weight: 400;

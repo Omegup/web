@@ -27,12 +27,12 @@ grid-template-columns: 1fr 1fr 1fr 1fr ;
   }
 
   @media (max-width: 900px) {
-    margin-left:10%;
+    margin-left:13%;
     width: 80%;
     display: flex;
     flex-wrap: wrap; 
   }
-  @media (max-width: 760px) {
+  @media (max-width: 770px) {
     margin-left:25%;
   }
 `;
@@ -45,7 +45,7 @@ const BoxTitle=styled.h3`
   letter-spacing:-6.4%;
   `
 const Box = styled.div<{ shadowColor: string }>`
-background: #faf9f6;
+ background-color: #FAF9F6;
 width: 286.5px;
 
 border: 1px solid;

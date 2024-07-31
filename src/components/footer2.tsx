@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -52,28 +52,14 @@ const FooterText2 = styled.p`
 const TextFooter2 = styled.div`
   height: 50%;
   width: 30%;
-  font-size: 20px;
   color: #FAF9F6;
   margin-top: 2%;
   margin-left: 10%;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
-    h2{
-    font-family: 'Krona One', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 26.4px;
-    letter-spacing: -6.4%;
-  }
-  p{font-family: 'Quicksand', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 21px;
-    color:#FAF9F6;}
- 
+  line-height: 21px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -82,10 +68,15 @@ const TextFooter2 = styled.div`
     margin-top: 10px;
   }
 `;
-const H2Styled=styled.h2`
+const H2Styled=styled.p`
+
+font-weight: 500;
+line-height: 26.4px;
+letter-spacing: -6.4%;
 margin-bottom:15px;
-@media (max-width: 900px) {
-  
+font-size: 24px;
+@media (max-width: 1000px) {
+  font-size: 20px;
 }`
 
 
@@ -129,7 +120,7 @@ font-family: 'Quicksand', sans-serif;
   }
 `;
 const Lienfooter = styled.div `
-  margin-top:10;
+  margin-top:10px;
   display: flex;
   gap:10px;
   
@@ -145,12 +136,12 @@ const Lienfootersocialmedia = styled.a `
 
 
 `
-const Footer2: React.FC = () => {
+const Footer2 = () => {
   return (
     <>
       <Container>
         <TextFooter2>
-          <h2 style={{marginBottom:'15px'}} >Omegup</h2>
+          <H2Styled>Omegup</H2Styled>
           <p>
             Stay connected and follow Omegup on social media platforms for daily updates, tips, and inspiration related to web development. Let&apos;s engage!
           </p>
@@ -165,14 +156,14 @@ const Footer2: React.FC = () => {
         </TextFooter2>
         <Container2Footer2>
           <div>
-            <h2 style={{marginBottom:'15px'}}>Quick Links</h2>
+            <H2Styled>Quick Links</H2Styled>
             <TextContainer><Link href={'#home'}>Home</Link></TextContainer>
             <TextContainer><Link href={'#about'}>About Us</Link></TextContainer>
             <TextContainer><Link href={'#services'}>Services</Link></TextContainer>
             <TextContainer><Link href={'#contact'}>Get in touch</Link></TextContainer>
           </div>
           <div>
-            <h2 style={{marginBottom:'15px'}} >Services</h2>
+            <H2Styled  >Services</H2Styled>
             <TextContainer><Link href={'#design'}>UX/UI Design</Link></TextContainer>
             <TextContainer><Link href={'#devweb'}>Web development</Link></TextContainer>
             <TextContainer><Link href={'#devmobile'}>Mobile development</Link></TextContainer>
