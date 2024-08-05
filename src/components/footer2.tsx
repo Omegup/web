@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const Container = styled.div`
   width: 100%;
   min-height: 285px;
@@ -14,6 +15,7 @@ const Container = styled.div`
   position: relative;
   bottom: 0;
 
+  
   @media (min-width: 768px) {
     flex-direction: row;
     padding-bottom: 0;
@@ -32,8 +34,11 @@ const Container_1 = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    height : 12%;
+}
   @media (max-width: 768px) {
-    height: auto;
+    height: 10vh;
     padding: 10px 0;
     position: static;
   
@@ -44,9 +49,13 @@ const FooterText2 = styled.p`
   color: #222325;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 11px;
+  }
 `;
 
 const TextFooter2 = styled.div`
@@ -72,14 +81,17 @@ const TextFooter2 = styled.div`
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
-    color:#FAF9F6;}
+    color:#FAF9F6;
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 10px;
+  }}
  
-
+  
   @media (max-width: 768px) {
     width: 100%;
-    margin-left: 0;
-    text-align: center;
     margin-top: 10px;
+    text-align: center;
+    margin-left: 0;
   }
 `;
 const H2Styled=styled.h2`
@@ -96,6 +108,10 @@ h2{    font-family: 'Krona One', sans-serif;
     font-weight: 400;
     line-height: 26.4px;
     letter-spacing: -6.4%;
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 15px;
+  }
 }
 
   line-height: 22px;
@@ -119,17 +135,34 @@ h2{    font-family: 'Krona One', sans-serif;
 const TextContainer = styled.p`
 margin-top:5px;
 color: #999999;
+transition: color 0.5s ease-in-out, scale 0.3s ease-in-out;
+width:auto;
+&:hover  {
+  color: #FAF9F6;
+  scale:1.05;
+  
+  
+  
+  cursor: pointer;
+  
+}
 font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 31px;
+
+
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+      font-size : 11px;
+  }
   @media (max-width: 768px) {
-    text-align: center;
-    margin: 5px 0;
+    
+   
+    
   }
 `;
 const Lienfooter = styled.div `
-  margin-top:10;
+  margin-top:10px;
   display: flex;
   gap:10px;
   
@@ -145,6 +178,17 @@ const Lienfootersocialmedia = styled.a `
 
 
 `
+
+
+const Titrefooter = styled.h2 `
+
+font-size : 30px;
+@media only screen and (min-width: 769px) and (max-width:1300px) {
+  font-size : 15px;
+}
+
+`
+
 const Footer2: React.FC = () => {
   return (
     <>

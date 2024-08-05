@@ -45,7 +45,7 @@ const BoxTitle=styled.h3`
   letter-spacing:-6.4%;
   `
 const Box = styled.div<{ shadowColor: string }>`
-background: #faf9f6;
+background: #FAF9F6;
 width: 286.5px;
 
 border: 1px solid;
@@ -88,10 +88,10 @@ const Button = styled.span<{ secondary: string }>`
   padding: 7px;
   margin: 10px;
   cursor: pointer;
-
+  transition: box-shadow 0.3s ease-out;
   &:hover {
     box-shadow: -4px 4px 0px 0px #222325;
-    transition: 0.3s ease-out;
+    
   }
 
  

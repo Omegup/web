@@ -77,6 +77,7 @@ const Slider = styled.div`
 `;
 
 const SlideItem = styled.div`
+  margin-top : 1.2%;
   height: 100%;
   width: 2.2%;
   background-color: #222325;

@@ -1,0 +1,132 @@
+
+.techno{
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: white;
+    margin-top: 1px;
+}
+.informationcase{
+    position: absolute;
+    width: 481px;
+    height: 277px;
+    gap: 10px;
+    margin-top: 20px;
+    
+    margin-left: 40px;
+    margin-top: 67px;
+}
+.mybutton{
+    width: 161px;
+    height: 44px;
+    background-color: #FEC63A;
+    padding: 10px, 20px, 10px, 20px;
+    gap: 10px;
+    border: 1px;
+    border-radius: 22px;
+    margin-top: 220px;
+    margin-left: 5px;
+    
+    
+}
+.p1{
+    position: absolute;
+    color: white;
+    margin-top: 100px;
+}
+.html{
+  width: 93px;
+  height: 44px;
+  position: absolute;
+  background-color: white;
+  border-radius: 22px;
+  margin-top: 47px;
+}
+.css{
+    width: 93px;
+    height: 44px;
+    position: absolute;
+    background-color: white;
+    border-radius: 22px;
+    margin-top: 47px;
+    margin-left: 99px;
+}
+.react{
+    width: 93px;
+    height: 44px;
+    position: absolute;
+    background-color: white;
+    border-radius: 22px;
+    margin-top: 47px;
+    margin-left: 198px;
+}
+.node{
+    width: 93px;
+    height: 44px;
+    position: absolute;
+    background-color: white;
+    border-radius: 22px;
+    margin-top: 47px;
+    margin-left: 297px;
+}
+.tailwild{
+    width: 93px;
+    height: 44px;
+    position: absolute;
+    background-color: white;
+    border-radius: 22px;
+    margin-top: 47px;
+    margin-left: 400px;
+}
+.par1{
+    position: absolute;
+}
+.description{
+    position: absolute;
+    color:rgb(238, 236, 235);
+    margin-top: 100px;
+    margin-left: 10px;
+}
+.texthtml{
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 10px;
+}
+.textcss{
+    position: absolute;
+    margin-left: 29px;
+    margin-top: 10px;
+}
+.textreact{
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.textnode{
+    position: absolute;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+.texttailwild{
+    position: absolute;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+.a77{
+    color: white;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 30px;
+}
+.school{
+    color: aliceblue;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 30px;
+}
+.dsf{
+    color: aliceblue;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 30px;
+}
