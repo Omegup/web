@@ -30,13 +30,22 @@ const MainContainer = styled.div`
 const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
     align-self: center;
     width: 90%;
-    height: 450px;
+    height: 55vh;
     border: 1px solid #222325;
     border-radius: 30px;
     box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
-   
+
+    @media only screen and (min-width: 1301px) and (max-width:1700px) {
+        margin-bottom:20%;
+        height : 63vh;
+    }
+    @media only screen and (min-width: 769px) and (max-width:1300px) {
+        margin-bottom:20%;
+        height : 68vh;
+    }
     display: ${(props) => (props.isVisible ? 'block' : 'none')};
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+        margin-bottom:20%;
         width: auto;
         height: auto;
     }
@@ -126,7 +135,7 @@ const Button = styled.p<{ bgColor: string }>`
       }
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease-in-out;
-   
+    
 
     &:hover {
         box-shadow: -4px 4px 0px 0px #222325;

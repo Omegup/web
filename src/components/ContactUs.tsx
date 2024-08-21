@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const FormStyled = styled.form`
   position: relative;
-  background-color: white;
+  background-color: #FAF9F6;
   border: solid 1px black;
   border-radius: 20px;
   width: 80%;
@@ -14,6 +14,11 @@ const FormStyled = styled.form`
   margin-top: 60px;
   margin-bottom: 60px;
   box-shadow: -8px 8px black;
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    height : 60vh; 
+  }
+
+  
 
   @media (max-width: 768px) {
     width: 90%;
@@ -64,8 +69,8 @@ border:solid 1px;
   margin: 10px;
   height: 30px;
   width: 90%;
-
-  
+  border : none;
+  border : 1px solid #222325;
   @media (max-width: 768px) {
     width: calc(100% - 20px);
   }
@@ -81,7 +86,7 @@ const StyledLabel = styled.label`
   position: absolute;
   top: -0.1em;
   left: 0.75em;
-  background: white;
+  background: #FAF9F6;
   padding: 0 0.25em;
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
@@ -125,10 +130,18 @@ const StyledDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
+  
+  border : none;
+  
+  border : 1px solid #222325;
+  background-image: url('src/images/image3.png');
+  border : 1px solid #222325;
+  background-image: url('src/images/image3.png');
   background-color: #FAF9F6;
   background-repeat: no-repeat;
   background-image:url('contact.png');
   background-position: left;
+  background-position-x: 8%;
   background-size: 20px;
   border:solid 0.5px;
   border-radius: 20px;
@@ -140,12 +153,15 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
+  transition: box-shadow 0.3s ease, background-image 0.3s ease;
   &:hover {
     box-shadow: -5px 5px black;
-    transition: box-shadow 0.3s ease, background-image 0.3s ease;
+    
     background-image:url('image.png')
   }
-
+  @media only screen and (min-width: 769px) and (max-width:1300px) {
+    left: 38%;
+}
   @media (max-width: 768px) {
     
     margin-left: calc(50% - 95.5px);
@@ -164,6 +180,12 @@ margin-top:10px;
 `;
 const Message=styled.div<{success:boolean}>`
 color:${(props)=>(props.success? "green" : "red")};
+
+`
+
+const Textbutton = styled.div`
+
+  margin-left : 10px;
 
 `
 
@@ -212,7 +234,7 @@ const ContactUS = () => {
       </PStyled>
       <StyledDiv>
         <InputContainer>
-          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='' value={fullname} />
+          <StyledInput type='text'onChange={(e)=>setFullname(e.target.value)} placeholder='Your Name' value={fullname} />
           <StyledLabel htmlFor=''>Full Name</StyledLabel>
         </InputContainer>
         <InputContainer>

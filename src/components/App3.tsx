@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-var last:Boolean;
+
 
 const Container = styled.div`
     border-radius: 22px;

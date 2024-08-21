@@ -1,7 +1,7 @@
 'use client'
-import styled from 'styled-components';
-import Link from 'next/link';
 
+import styled from 'styled-components';
+import { useState } from 'react';
 
 
 const Title = styled.h1`
@@ -13,17 +13,23 @@ const Title = styled.h1`
   
 `
 
-const Container = styled.div`
+const Container = styled.div<{open:boolean}>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    max-height: ${props=> (props.open ? '40vh' : '0' )};
+    transition: max-height 0.6s ease-in-out;
+
   }
+
 `;
 
-const Nav = styled.p`
+
+const Nav = styled.a`
 font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   color: black;
@@ -32,8 +38,14 @@ font-family: 'Quicksand', sans-serif;
   padding: 15px;
   align-self: center;
   font-size:16px;
+  transition: transform 0.3s ease-in-out;
 
-
+  &:hover {
+    
+    
+    transform: scale(1.1);
+    
+  }
 
   @media (max-width: 576px) {
     padding: 10px;
@@ -42,16 +54,18 @@ font-family: 'Quicksand', sans-serif;
 
 const Container1 = styled.div`
   height: 100%;
-  background-color:  #FAF9F6;
+  margin-top: 10px;
 `;
 
 const Affiche = styled.div`
+
   height: 50px;
   position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  
   border-radius: 20px;
 
   @media (max-width: 768px) {
@@ -66,43 +80,155 @@ const Button = styled.button`
   font-size: 15px;
   border: 0.5px solid;
   border-radius: 30px;
-  padding: 5px;
+  padding: 6px;
+  
   cursor: pointer;
+  background-color : #F7F5ED;
+  transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
     box-shadow: -4px 4px 0px 0px #222325;
-    transition: 0.3s ease-in-out;
+    
+  }
+  @media (max-width: 768px) {
+    margin-top:8px;
   }
 
 `;
 
+const Texte = styled.div`
+  text-align: center;
+  font-size: 30px;
+  
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }h1{ font-family: 'Krona One', sans-serif;
+  font-size: 50px;
+ font-weight: 400;
+ 
+ letter-spacing:-6.4%;}
+`;
+
+const Titre1 = styled.span`
+  color: #fc7557;
+
+  font-family: 'Krona One', sans-serif;
+   
+`;
+
+const Titre2 = styled.span`
+  color: #fec63a;
+  font-family: 'Krona One', sans-serif;
+`;
+
+const Titre3 = styled.span`
+  color: #64c67e;
+  font-family: 'Krona One', sans-serif;
+`;
+
+const Buttonnav = styled.button`
+  position:absolute;
+  top:3%;
+  left:3%;
+  border:none;
+  
+  @media (max-width: 768px) {
+        margin-left: 70vh;
+        z-index: 1;
+        position: absolute;
+        border: none;
+        border-radius: 10px;
+        background-color: #222325;
+        transition: background-color 0.3s ease-in-out;
+        height: 35px;
+        width: 35px;
+        left: 7%;
+        cursor: pointer;
+        top: 6.5%;  
+
+
+        &:hover {
+          background-color: #494947;
+        }
+        }
+`
+
+const Traitbutton = styled.div `
+  @media (max-width: 768px) {
+    border-bottom: 5px solid #F7F5ED;
+    border-radius: 10px;
+    margin : 5px 5px 5px 5px;
+    
+    transition: border-bottom 0.3s ease-in-out;
+  }
+
+`
 
 
 function NavBar() {
+  const [nav,setNav] = useState(false)
+
+  const Handleclick = () => {
+    setNav(!nav);
+}
+
+
   return (
+    
     <Container1>
+      <Buttonnav onClick={Handleclick}>
+        
+          <Traitbutton></Traitbutton>
+          <Traitbutton></Traitbutton>
+          <Traitbutton></Traitbutton>
+          
+        </Buttonnav>
       <Affiche>
         <Title>Omegup</Title>
-        <Container>
-          <Link href="#home">
-            <Nav>Home</Nav>
-          </Link>
-          <Link href="#about"  >
-            <Nav>About Us</Nav>
-          </Link>
-          <Link href="#services" >
-            <Nav>Services</Nav>
-          </Link>
-          <Link href="#references" >
-            <Nav>References</Nav>
-          </Link>
+        
+       
+        
+          
+        
+              
+        <Container open={nav}>
+          <Nav href='#home'>Home</Nav>
+          <Nav href='#about'>About Us</Nav>
+          <Nav href='#services'>Services</Nav>
+          <Nav href='#references'>References</Nav>
+          
         </Container>
-        <Button ><Link href={'#contact'}>
-          Get in Touch</Link></Button>
+        <Button id='button'>Get in Touch</Button>
+        
+
+        
+
+
+
+          
+        
+        
+        
+        
+        
       </Affiche>
-    
+      
     </Container1>
   );
 }
 
 export default NavBar;
+
+
+/*<Container>
+          <Nav href='#home'>Home</Nav>
+          <Nav href='#about'>About Us</Nav>
+          <Nav href='#services'>Services</Nav>
+          <Nav href='#references'>References</Nav>
+        </Container>
+        
+        <Button id='button'>Get in Touch</Button>*/
