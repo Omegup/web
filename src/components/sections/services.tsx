@@ -31,8 +31,9 @@ const Intro = styled.p`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 32px;
+  gap: 36px 28px;
+  margin-top: 48px;
+  padding-bottom: 18px;
 
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -40,59 +41,123 @@ const Grid = styled.div`
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 `;
 
-const Card = styled.article<{ $color: string }>`
-  box-sizing: border-box;
+const Wrap = styled.div`
   min-width: 0;
+  border-radius: 30px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:nth-child(1) {
+    transform: rotate(-1.6deg);
+    box-shadow: -8px 8px 0 0 #949cff;
+  }
+
+  &:nth-child(2) {
+    transform: rotate(1.3deg) translateY(22px);
+    box-shadow: -8px 8px 0 0 #fc7557;
+  }
+
+  &:nth-child(3) {
+    transform: rotate(-0.8deg);
+    box-shadow: -8px 8px 0 0 #fec63a;
+  }
+
+  &:hover {
+    transform: rotate(0deg) translateY(-10px);
+    box-shadow: -4px 4px 0 0 #222325;
+  }
+
+  @media (max-width: 720px) {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      transform: none;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+  }
+`;
+
+const Card = styled.article`
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
   background: #faf9f6;
   border: 1px solid #222325;
   border-radius: 30px;
-  padding: 28px 24px 32px;
-  box-shadow: -8px 8px 0 0 ${(props) => props.$color};
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: -4px 4px 0 0 #222325;
-  }
 `;
 
-const Icon = styled.div<{ $color: string }>`
+const Cap = styled.div<{ $color: string }>`
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  min-height: 148px;
+  padding: 56px 22px 18px;
+  overflow: hidden;
+  background: ${(props) => props.$color};
+`;
+
+const Index = styled.span`
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  color: #222325;
+  font-family: "Krona One", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  opacity: 0.22;
+  user-select: none;
+  pointer-events: none;
+`;
+
+const Icon = styled.div`
   display: grid;
   place-items: center;
-  width: 72px;
-  height: 72px;
-  margin-bottom: 20px;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: ${(props) => props.$color}33;
+  background: #f7f5ed;
+  box-shadow: -4px 4px 0 0 #222325;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
   }
 `;
 
 const Title = styled.h3`
-  margin: 0;
+  position: relative;
+  margin: 0 0 6px;
   color: #222325;
   font-family: "Krona One", sans-serif;
   font-size: 22px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.064em;
 `;
 
 const List = styled.ul`
   display: grid;
-  gap: 16px;
-  margin: 20px 0 0;
-  padding: 0;
+  gap: 14px;
+  margin: 0;
+  padding: 22px 22px 26px;
   list-style: none;
 `;
 
 const Item = styled.li`
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: 10px;
   color: #222325;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
@@ -100,13 +165,17 @@ const Item = styled.li`
   line-height: 24px;
 `;
 
+const Pip = styled.span<{ $color: string }>`
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: ${(props) => props.$color};
+  box-shadow: -2px 2px 0 0 #222325;
+`;
+
 const Label = styled.span`
-  display: block;
-  margin-bottom: 2px;
-  font-family: "Krona One", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: -0.04em;
+  font-weight: 700;
 `;
 
 const Services = () => {
@@ -115,21 +184,29 @@ const Services = () => {
       <Heading>{servicesContent.heading}</Heading>
       <Intro>{servicesContent.intro}</Intro>
       <Grid>
-        {servicesContent.items.map((service) => (
-          <Card key={service.id} $color={service.color}>
-            <Icon $color={service.color}>
-              <img src={service.icon} alt="" />
-            </Icon>
-            <Title>{service.title}</Title>
-            <List>
-              {service.points.map((point) => (
-                <Item key={point.label}>
-                  <Label>{point.label}</Label>
-                  {point.body}
-                </Item>
-              ))}
-            </List>
-          </Card>
+        {servicesContent.items.map((service, index) => (
+          <Wrap key={service.id}>
+            <Card>
+              <Cap $color={service.color}>
+                <Index aria-hidden="true">{String(index + 1).padStart(2, "0")}</Index>
+                <Icon>
+                  <img src={service.icon} alt="" />
+                </Icon>
+                <Title>{service.title}</Title>
+              </Cap>
+              <List>
+                {service.points.map((point) => (
+                  <Item key={point.label}>
+                    <Pip $color={service.color} />
+                    <span>
+                      <Label>{point.label}. </Label>
+                      {point.body}
+                    </span>
+                  </Item>
+                ))}
+              </List>
+            </Card>
+          </Wrap>
         ))}
       </Grid>
     </Section>
