@@ -36,12 +36,38 @@ const Grid = styled.div`
   padding-bottom: 18px;
 
   @media (max-width: 1100px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
+
+    > :nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    > :nth-child(2) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      height: auto;
+    }
+
+    > :nth-child(3) {
+      grid-column: 1;
+      grid-row: 2;
+    }
   }
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
     gap: 24px;
+
+    > :nth-child(1),
+    > :nth-child(2),
+    > :nth-child(3) {
+      grid-column: auto;
+      grid-row: auto;
+      align-self: stretch;
+      height: auto;
+    }
   }
 `;
 
@@ -58,6 +84,12 @@ const Wrap = styled.div`
   &:nth-child(2) {
     transform: rotate(1.3deg) translateY(22px);
     box-shadow: -8px 8px 0 0 #fc7557;
+  }
+
+  @media (max-width: 1100px) {
+    &:nth-child(2) {
+      transform: rotate(1.3deg);
+    }
   }
 
   &:nth-child(3) {
