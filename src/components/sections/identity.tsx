@@ -120,7 +120,8 @@ const Button = styled.button<{
     flex: none;
     width: 100%;
     height: auto;
-    max-height: ${(props) => (props.$expanded ? "640px" : "72px")};
+    padding: 56px 12px;
+    max-height: ${(props) => (props.$expanded ? "640px" : "96px")};
     overflow: hidden;
     transition: max-height 0.5s ease;
     border-top-left-radius: ${(props) => (props.$first ? "22px" : "0")};
@@ -154,9 +155,12 @@ const TextContainer = styled.div<{ $expanded: boolean }>`
   }
 
   @media (max-width: 1000px) {
-    top: 64px;
+    position: relative;
+    top: auto;
     bottom: auto;
-    width: 78vw;
+    left: auto;
+    transform: none;
+    width: 100%;
     display: block;
   }
 `;
@@ -176,8 +180,8 @@ const TextOverlay = styled.div<{ $index: number }>`
 
   @media (max-width: 1000px) {
     transform: none;
-    bottom: 0;
-    left: 9%;
+    bottom: 16px;
+    left: 16px;
   }
 `;
 
@@ -193,8 +197,8 @@ const NumberOverlay = styled.div`
   position: absolute;
 
   @media (max-width: 1000px) {
-    left: 10%;
-    top: 10%;
+    left: 16px;
+    top: 16px;
   }
 `;
 
