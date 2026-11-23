@@ -11,3 +11,21 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+#home,
+#about,
+#services,
+#references,
+#contact {
+  scroll-margin-top: 76px;
+}
+
+#contact {
+  scroll-margin-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
