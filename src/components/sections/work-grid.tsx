@@ -55,18 +55,30 @@ const TextImage = styled.div`
     padding: 20px 50px;
 `;
 
-const Img = styled.img`
+const Frame = styled.div`
+    flex: 0 0 300px;
     align-self: center;
-    flex: 0 0 auto;
-    margin: 28px;
-    height: 220px;
-    width: 280px;
-    object-fit: contain;
+    box-sizing: border-box;
+    height: 230px;
+    margin: 28px 8px 28px 28px;
+    padding: 14px;
+    background: #faf9f6;
+    border: 1px solid #222325;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
 
-    @media (max-width: 700px) {
-        margin: 20px auto;
-        height: 180px;
-        width: min(280px, 80%);
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    @media (max-width: 900px) {
+        flex-basis: auto;
+        width: min(300px, calc(100% - 40px));
+        margin: 24px auto 0;
     }
 `;
 
@@ -110,36 +122,41 @@ const ContainerItem = styled.span`
     }
 `;
 
+const Actions = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 22px;
+    margin-top: 22px;
+`;
+
 const Button = styled(Link)<{ bgColor: string }>`
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     background-color: ${(props) => props.bgColor};
     border-radius: 22px;
-    margin-top:20px;
-    border: 1px solid;
-    width: 150px;
-    padding:5px;
-    @media (max-width:800px) {
-        margin-top:${(props)=>( props.bgColor==='#FC7557')?'44px':'20px'};
-      }
-    margin-bottom: 20px;
+    border: 1px solid #222325;
+    padding: 8px 16px;
+    color: ${(props) => (props.bgColor === "#FEC63A" ? "#222325" : "#F7F5ED")};
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
     transition: box-shadow 0.3s ease-in-out;
-    
 
     &:hover {
         box-shadow: -4px 4px 0px 0px #222325;
-        cursor: pointer;
     }
 `;
 
-const StyledLink = styled.p`
+const More = styled(Link)`
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222325;
     text-decoration: none;
-    
-    cursor: pointer;
-    padding-bottom: 5px;
-    width: 150px;
+
     &:hover {
-        border-bottom: 0.5px solid;
+        color: #fc7557;
     }
 `;
 
@@ -180,10 +197,9 @@ const styles = {
 const  Displaycontainer=styled.div`
 display:flex;
 flex-direction: row;
+align-items: center;
 @media (max-width:900px) {
     flex-direction: column;
-  
-    
 }
 `
 
@@ -210,7 +226,9 @@ const Menu_1: React.FC = () => {
                 {projects.map((item, itemIndex) => (
                 <Slide key={item.id} $visible={itemIndex === index}>
                     <Displaycontainer>
-                    <Img src={item.image} alt={item.title} />
+                    <Frame>
+                        <img src={item.image} alt={item.title} />
+                    </Frame>
                     <TextImage>
                         <H3Styled>{item.title}</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
@@ -220,8 +238,10 @@ const Menu_1: React.FC = () => {
                             ))}
                         </Container2>
                         <p style={styles}>{item.summary}</p>
-                        <Button href={`/case-studies/${item.id}`} bgColor={item.color}>View case studies</Button>
-                        <StyledLink><Link href="/case-studies">More case studies</Link></StyledLink>
+                        <Actions>
+                            <Button href={`/case-studies/${item.id}`} bgColor={item.color}>View case studies</Button>
+                            <More href="/case-studies">More case studies</More>
+                        </Actions>
                     </TextImage></Displaycontainer>
                     <Arrows>
                         <ArrowButton type="button" $dir="prev" aria-label="Previous project" onClick={() => step(-1)} />
