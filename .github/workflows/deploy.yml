@@ -10,10 +10,13 @@ env:
   IMAGE: omegup-web
   NAMESPACE: ingress-nginx
   DEPLOYMENT: omegup-tn-site
+  # Same cluster master school CI targets
+  DEPLOY_HOST: 161.97.84.155
+  DEPLOY_USER: admin
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +25,12 @@ jobs:
         run: |
           if [ -z "${DOCKERHUB}" ]; then
             echo "DOCKERHUB=dockerhub.omegup.tn" >> "$GITHUB_ENV"
+          else
+            echo "DOCKERHUB=${DOCKERHUB}" >> "$GITHUB_ENV"
           fi
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to registry
         uses: docker/login-action@v3
@@ -31,24 +39,27 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build image
-        run: |
-          TAG="${GITHUB_SHA}"
-          docker build \
-            -t "${DOCKERHUB}/${IMAGE}:${TAG}" \
-            -t "${DOCKERHUB}/${IMAGE}:latest" \
-            .
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.DOCKERHUB }}/${{ env.IMAGE }}:${{ github.sha }}
+            ${{ env.DOCKERHUB }}/${{ env.IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - name: Push image
-        run: |
-          TAG="${GITHUB_SHA}"
-          docker push "${DOCKERHUB}/${IMAGE}:${TAG}"
-          docker push "${DOCKERHUB}/${IMAGE}:latest"
-
-      - name: Roll out to cluster
-        run: |
-          TAG="${GITHUB_SHA}"
-          kubectl -n "${NAMESPACE}" set image "deployment/${DEPLOYMENT}" \
-            "web=${DOCKERHUB}/${IMAGE}:${TAG}"
-          kubectl -n "${NAMESPACE}" rollout status "deployment/${DEPLOYMENT}" --timeout=180s
-          kubectl -n "${NAMESPACE}" get pods -l app=omegup-tn-site -o wide
+      - name: Roll out on cluster
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.DEPLOY_HOST }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -euo pipefail
+            TAG="${{ github.sha }}"
+            IMAGE="${{ env.DOCKERHUB }}/${{ env.IMAGE }}:${TAG}"
+            kubectl -n ${{ env.NAMESPACE }} set image deployment/${{ env.DEPLOYMENT }} "web=${IMAGE}"
+            kubectl -n ${{ env.NAMESPACE }} rollout status deployment/${{ env.DEPLOYMENT }} --timeout=180s
+            kubectl -n ${{ env.NAMESPACE }} get pods -l app=omegup-tn-site -o wide
