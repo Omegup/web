@@ -34,24 +34,20 @@ const Shell = styled.div<{ $color: string }>`
 `;
 
 const Clip = styled.div`
+    display: grid;
     position: relative;
     overflow: hidden;
     border-radius: 30px;
 `;
 
 const Slide = styled.div<{ $visible: boolean }>`
+    grid-area: 1 / 1;
+    position: relative;
+    padding-bottom: 72px;
     opacity: ${(props) => (props.$visible ? 1 : 0)};
     transform: translateX(${(props) => (props.$visible ? "0" : "36px")});
     transition: opacity 0.45s ease, transform 0.45s ease;
     pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
-    ${(props) =>
-        props.$visible
-            ? ""
-            : `
-        position: absolute;
-        inset: 0;
-        height: max-content;
-    `}
 `;
 
 const TextImage = styled.div`
@@ -147,30 +143,33 @@ const StyledLink = styled.p`
     }
 `;
 
-const ArrowButton = styled.div<{ float: string; marginRight?: string }>`
+const Arrows = styled.div`
+    position: absolute;
+    right: 28px;
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+`;
+
+const ArrowButton = styled.button<{ $dir: "prev" | "next" }>`
     height: 38px;
     width: 38px;
+    padding: 0;
+    border: 0;
     border-radius: 30px;
-    margin-top: 70px;
-    float: ${(props) => props.float};
-    margin-right: ${(props) => props.marginRight || '0'};
-    background-image: url(${(props) => props.marginRight ? 'image-right.png' : 'image-left.png'});
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-
-    transition: background-color 0.3s ease-in-out;
+    background-image: url(${(props) => props.$dir === "next" ? "/image-left.png" : "/image-right.png"});
+    cursor: pointer;
 
     &:hover {
-        background-image: url(${(props) => props.marginRight ? 'image-right-hover.png' : 'image-left-hover.png'});
-        cursor: pointer;
+        background-image: url(${(props) => props.$dir === "next" ? "/image-left-hover.png" : "/image-right-hover.png"});
         background-size: 120% 120%;
     }
-    @media (max-width: 1000px) {
-        margin-top:30px;
-        
-    }
-`
+`;
 const styles = {
     fontFamily: "'Quicksand', sans-serif",
     fontSize: "16px",
@@ -223,9 +222,11 @@ const Menu_1: React.FC = () => {
                         <p style={styles}>{item.summary}</p>
                         <Button href={`/case-studies/${item.id}`} bgColor={item.color}>View case studies</Button>
                         <StyledLink><Link href="/case-studies">More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => step(-1)}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => step(1)}></ArrowButton>
                     </TextImage></Displaycontainer>
+                    <Arrows>
+                        <ArrowButton type="button" $dir="prev" aria-label="Previous project" onClick={() => step(-1)} />
+                        <ArrowButton type="button" $dir="next" aria-label="Next project" onClick={() => step(1)} />
+                    </Arrows>
                 </Slide>
                 ))}
                 </Clip>
