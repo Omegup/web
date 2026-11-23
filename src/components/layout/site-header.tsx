@@ -215,21 +215,21 @@ const useTimedState = <S,>(delay: number) => {
 };
 
 function NavBar() {
-  const [scrolled, setScrolled] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState<number>(0);
   const [active, setActive] = useTimedState<number>(1500);
   const [hovered, setHovered] = useState<number | null>(null);
   const unmounted = useUnmountSignal();
 
   useEffect(() => {
-    const ids = links.map((link) => link.id);
+    const ids = links.map((link, index) => [link.id, index] as const);
 
     const update = () => {
       const line = 88;
-      let current: string | null = null;
-      for (const id of ids) {
+      let current: number = 0;
+      for (const [id, index] of ids) {
         const el = document.getElementById(id);
         if (!el) continue;
-        if (el.getBoundingClientRect().top - line <= 0) current = id;
+        if (el.getBoundingClientRect().top - line <= 0) current = index;
       }
       setScrolled(current);
     };
@@ -242,8 +242,7 @@ function NavBar() {
     window.addEventListener("resize", update, { signal: unmounted });
   }, [unmounted]);
 
-  const scrolledIndex = links.findIndex((link) => link.id === scrolled);
-  const pillIndex = hovered ?? active ?? scrolledIndex;
+  const pillIndex = hovered ?? active ?? scrolled;
 
   return (
     <>
@@ -252,11 +251,11 @@ function NavBar() {
           <Logo href="/">Omegup</Logo>
         </Title>
         <Links aria-label="Primary">
-          {links.map((link) => (
+          {links.map((link, index) => (
             <NavLink
               key={link.id}
               href={link.href}
-              $active={scrolled === link.id}
+              $active={scrolled === index}
             >
               {link.label}
             </NavLink>
@@ -272,7 +271,7 @@ function NavBar() {
             key={link.id}
             href={link.href}
             $active={index === pillIndex}
-            aria-current={scrolled === link.id ? "true" : undefined}
+            aria-current={scrolled === index ? "true" : undefined}
             aria-label={link.label}
             onClick={() => setActive(index)}
             onFocus={() => setActive(index)}
