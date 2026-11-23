@@ -53,8 +53,8 @@ const Text = styled.p`
   position: relative;
 `;
 const Slider = styled.div`
-
   display: flex;
+  align-items: center;
   height: 100px;
   width: 200%;
   justify-content: space-evenly;
@@ -62,7 +62,7 @@ const Slider = styled.div`
 
   @media (max-width: 768px) {
     margin-left: -20px;
-    height: 80px;
+    height: 88px;
   }
 
   @keyframes slide {
@@ -78,14 +78,23 @@ const Slider = styled.div`
 `;
 
 const SlideItem = styled.div`
-  margin-top : 1.2%;
-  height: 100%;
-  width: 2.2%;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  min-width: 0;
+  min-height: 0;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   background-color: #222325;
-  border-radius: 22px;
 
-  @media (max-width: 768px) {
-    width: 3%;
+  img {
+    width: 76px;
+    height: 76px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 `;
 
@@ -121,7 +130,13 @@ const Footer = () => {
         <Slider>
           {images.map((src, index) => (
             <SlideItem key={index}>
-              <Image src={src} alt='' width={70} height={70}/>
+              <Image
+                src={src}
+                alt=""
+                width={76}
+                height={76}
+                style={{ width: "76px", height: "76px", objectFit: "contain" }}
+              />
             </SlideItem>
           ))}
         </Slider>

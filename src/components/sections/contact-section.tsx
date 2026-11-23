@@ -213,7 +213,7 @@ const ContactUS = () => {
           <StyledLabel htmlFor=''>Full Name</StyledLabel>
         </InputContainer>
         <InputContainer>
-          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='...@Gmail.com' value={email} />
+          <StyledInput onChange={e=>setEmail(e.target.value)} type='email' placeholder='...@gmail.com' value={email} />
           <StyledLabel>E-mail</StyledLabel>
         </InputContainer>
         <InputContainer>
