@@ -12,13 +12,9 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: omegup/web
-  NAMESPACE: ingress-nginx
-  DEPLOYMENT: omegup-tn-site
-  DEPLOY_HOST: 161.97.84.155
-  DEPLOY_USER: admin
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,16 +46,3 @@ jobs:
             ${{ steps.meta.outputs.image }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Roll out on cluster
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ env.DEPLOY_HOST }}
-          username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            set -euo pipefail
-            IMAGE="${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }}"
-            kubectl -n ${{ env.NAMESPACE }} set image deployment/${{ env.DEPLOYMENT }} "web=${IMAGE}"
-            kubectl -n ${{ env.NAMESPACE }} rollout status deployment/${{ env.DEPLOYMENT }} --timeout=180s
-            kubectl -n ${{ env.NAMESPACE }} get pods -l app=omegup-tn-site -o wide
