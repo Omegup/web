@@ -199,7 +199,7 @@ const ContactUS = () => {
    const handelSubmit=async(e:FormEvent)=> {
   
    e.preventDefault();
-     const res=await fetch('api/contact',{
+     const res=await fetch('/api/contact',{
       method:"POST",
       headers:{
         "content-type":"application/json",
@@ -252,8 +252,8 @@ const ContactUS = () => {
       </InputContainer>
  
       <div>
-        {error.map((e)=>(
-          <Message success={success}>
+        {error.map((e, index)=>(
+          <Message key={index} success={success}>
             {e}
           </Message>
         ))}

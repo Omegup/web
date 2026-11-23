@@ -1,11 +1,9 @@
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    compiler: {
-      styledComponents: true,
-    },
-    // Other Next.js config options
-  };
-  export default nextConfig;  
-  
+  output: "standalone",
+  compiler: {
+    styledComponents: true,
+  },
+};
+
+export default nextConfig;
