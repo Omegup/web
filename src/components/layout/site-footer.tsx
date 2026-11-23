@@ -76,6 +76,12 @@ const SocialLink = styled.a`
   place-items: center;
   width: 28px;
   height: 28px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
 `;
 
 const Columns = styled.div`

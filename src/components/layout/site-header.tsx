@@ -2,13 +2,25 @@
 
 import Link from "next/link";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import {
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { useUnmountSignal } from "@/lib/unmount";
 
 const links = [
   { href: "/#home", id: "home", label: "Home" },
   { href: "/#about", id: "about", label: "About Us", short: "About" },
   { href: "/#services", id: "services", label: "Services" },
-  { href: "/#references", id: "references", label: "References", short: "Work" },
+  {
+    href: "/#references",
+    id: "references",
+    label: "References",
+    short: "Work",
+  },
 ] as const;
 
 const Bar = styled.header`
@@ -73,7 +85,9 @@ const NavLink = styled(Link)<{ $active: boolean }>`
   color: ${(props) => (props.$active ? "#fc7557" : "#222325")};
   border-radius: 20px;
   padding: 10px 14px;
-  transition: color 0.25s ease, transform 0.3s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.3s ease;
 
   &:hover {
     transform: scale(1.06);
@@ -116,7 +130,16 @@ const DockFade = styled.div`
     right: 0;
     bottom: 0;
     height: calc(78px + env(safe-area-inset-bottom));
-    background: linear-gradient(to top, #ffffff, 40%, #ffffff, 50%, transparent, 60%, transparent);
+    background: linear-gradient(
+      to top,
+      #ffffff,
+      40%,
+      #ffffff,
+      50%,
+      transparent,
+      60%,
+      transparent
+    );
   }
 `;
 
@@ -177,9 +200,25 @@ const DockLink = styled(Link)<{ $active: boolean }>`
   transition: color 0.25s ease;
 `;
 
+const useTimedState = <S,>(delay: number) => {
+  const [state, setRawState] = useState<S | null>(null);
+  const timeout = useRef<NodeJS.Timeout>();
+  const setState = useCallback(
+    (action: SetStateAction<S | null>) => {
+      clearTimeout(timeout.current);
+      setRawState(action);
+      timeout.current = setTimeout(() => setRawState(null), delay);
+    },
+    [delay],
+  );
+  return [state, setState] as const;
+};
+
 function NavBar() {
-  const [active, setActive] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState<string | null>(null);
+  const [active, setActive] = useTimedState<number>(1500);
   const [hovered, setHovered] = useState<number | null>(null);
+  const unmounted = useUnmountSignal();
 
   useEffect(() => {
     const ids = links.map((link) => link.id);
@@ -192,20 +231,19 @@ function NavBar() {
         if (!el) continue;
         if (el.getBoundingClientRect().top - line <= 0) current = id;
       }
-      setActive((prev) => (prev === current ? prev : current));
+      setScrolled(current);
     };
 
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-    };
-  }, []);
+    window.addEventListener("scroll", update, {
+      passive: true,
+      signal: unmounted,
+    });
+    window.addEventListener("resize", update, { signal: unmounted });
+  }, [unmounted]);
 
-  const activeIndex = links.findIndex((link) => link.id === active);
-  const pillIndex = hovered ?? activeIndex;
+  const scrolledIndex = links.findIndex((link) => link.id === scrolled);
+  const pillIndex = hovered ?? active ?? scrolledIndex;
 
   return (
     <>
@@ -215,7 +253,11 @@ function NavBar() {
         </Title>
         <Links aria-label="Primary">
           {links.map((link) => (
-            <NavLink key={link.id} href={link.href} $active={active === link.id}>
+            <NavLink
+              key={link.id}
+              href={link.href}
+              $active={scrolled === link.id}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -223,37 +265,19 @@ function NavBar() {
         <Touch href="/#contact">Get in Touch</Touch>
       </Bar>
       <DockFade aria-hidden="true" />
-      <Dock
-        aria-label="Primary"
-        onMouseOver={(event) => {
-          const item = (event.target as HTMLElement).closest("a");
-          if (!item || !event.currentTarget.contains(item)) return;
-          const index = [...event.currentTarget.querySelectorAll("a")].indexOf(item);
-          if (index < 0) return;
-          setHovered((prev) => (prev === index ? prev : index));
-        }}
-        onFocus={(event) => {
-          const item = (event.target as HTMLElement).closest("a");
-          if (!item || !event.currentTarget.contains(item)) return;
-          const index = [...event.currentTarget.querySelectorAll("a")].indexOf(item);
-          if (index < 0) return;
-          setHovered(index);
-        }}
-        onMouseLeave={() => setHovered(null)}
-        onBlur={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-            setHovered(null);
-          }
-        }}
-      >
+      <Dock aria-label="Primary">
         {pillIndex >= 0 ? <Pill $index={pillIndex} /> : null}
         {links.map((link, index) => (
           <DockLink
             key={link.id}
             href={link.href}
             $active={index === pillIndex}
-            aria-current={active === link.id ? "true" : undefined}
+            aria-current={scrolled === link.id ? "true" : undefined}
             aria-label={link.label}
+            onClick={() => setActive(index)}
+            onFocus={() => setActive(index)}
+            onMouseOver={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
           >
             {"short" in link ? link.short : link.label}
           </DockLink>
