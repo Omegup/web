@@ -157,7 +157,7 @@ const CodeMark = styled.span`
 const Acceuil = () => {
   return (
     <>
-        <Texte>
+        <Texte id="home">
         
         Welcome to <Titre1>Omegup</Titre1>:<br />
         Where <Titre2>Imagination</Titre2> meets <Titre3>Code</Titre3> <CodeMark>&lt;/&gt;</CodeMark>

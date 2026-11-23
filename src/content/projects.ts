@@ -65,7 +65,7 @@ export const projectsContent = {
     {
       id: "abc-school",
       title: "Abc school",
-      image: "/work/abc-school/1.png",
+      image: "/work/abc-school.png",
       shots: shot("abc-school", 7),
       technologies: ["React Js", "Meteor", "MongoDB", "RxJS"],
       summary:
@@ -78,7 +78,7 @@ export const projectsContent = {
     {
       id: "food-delivery",
       title: "Food delivery",
-      image: "/work/food-delivery/1.png",
+      image: "/work/food-delivery.png",
       shots: shot("food-delivery", 7),
       technologies: ["React Js", "Meteor", "MongoDB", "RxJS"],
       summary:
@@ -91,7 +91,7 @@ export const projectsContent = {
     {
       id: "apia",
       title: "Apia",
-      image: "/work/apia/1.png",
+      image: "/work/apia.png",
       shots: shot("apia", 4),
       technologies: ["React Js", ".NET Core", "JavaScript", "RxEntity"],
       summary: "Web application for managing APIA projects and entrepreneurs.",
@@ -101,7 +101,7 @@ export const projectsContent = {
     {
       id: "jupiter",
       title: "Jupiter",
-      image: "/work/jupiter/1.png",
+      image: "/work/jupiter.png",
       shots: shot("jupiter", 6),
       technologies: ["React Js", "Redux", "API Platform", "Symfony"],
       summary:
@@ -114,7 +114,7 @@ export const projectsContent = {
     {
       id: "darinov",
       title: "Darinov",
-      image: "/work/darinov/1.png",
+      image: "/work/darinov.png",
       shots: shot("darinov", 4),
       technologies: ["Angular", "RxJS", "Meteor", "MongoDB"],
       summary:
@@ -127,7 +127,7 @@ export const projectsContent = {
     {
       id: "novnshare",
       title: "Nov'N'Share",
-      image: "/work/novnshare/1.png",
+      image: "/work/novnshare.png",
       shots: shot("novnshare", 5),
       technologies: ["PHP", "SystemPay", "jQuery", "Bootstrap"],
       summary:
@@ -143,7 +143,7 @@ export const projectsContent = {
     {
       id: "didasko",
       title: "Didasko",
-      image: "/work/didasko/1.png",
+      image: "/work/didasko.png",
       shots: shot("didasko", 8),
       technologies: ["Angular", "RxJS", "Meteor", "MongoDB"],
       summary:
@@ -156,7 +156,7 @@ export const projectsContent = {
     {
       id: "wazzta",
       title: "Wazzta",
-      image: "/work/wazzta/1.jpg",
+      image: "/work/wazzta.jpg",
       shots: [
         ...shot("wazzta", 3, "jpg"),
         "/work/wazzta/4.jpeg",

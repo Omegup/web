@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { projectsContent } from "@/content/projects";
 // Styled components
 const ContainerTitle = styled.div`
     margin-top: 100px;
@@ -33,17 +34,24 @@ const Shell = styled.div<{ $color: string }>`
 `;
 
 const Clip = styled.div`
-    display: grid;
+    position: relative;
     overflow: hidden;
     border-radius: 30px;
 `;
 
 const Slide = styled.div<{ $visible: boolean }>`
-    grid-area: 1 / 1;
     opacity: ${(props) => (props.$visible ? 1 : 0)};
     transform: translateX(${(props) => (props.$visible ? "0" : "36px")});
     transition: opacity 0.45s ease, transform 0.45s ease;
     pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
+    ${(props) =>
+        props.$visible
+            ? ""
+            : `
+        position: absolute;
+        inset: 0;
+        height: max-content;
+    `}
 `;
 
 const TextImage = styled.div`
@@ -53,27 +61,17 @@ const TextImage = styled.div`
 
 const Img = styled.img`
     align-self: center;
-    margin: 100px;
-    height: 250px;
+    flex: 0 0 auto;
+    margin: 28px;
+    height: 220px;
     width: 280px;
-    transform: scale(1.5);
-   
-    @media (max-width:1500px) {
-        margin: 30px;
-        height: 200px;
-        width: 220px;
+    object-fit: contain;
+
+    @media (max-width: 700px) {
+        margin: 20px auto;
+        height: 180px;
+        width: min(280px, 80%);
     }
-    @media (max-width:1200px) {
-        margin: 20px;
-        height: 160px;
-        width: 180px;
-    }
-    @media (max-width:500px) {
-        margin: 20px;
-        height: 150px;
-        width: 140px;
-    }
-    
 `;
 
 const Container2 = styled.div`
@@ -193,18 +191,14 @@ flex-direction: row;
     
 }
 `
-const COLORS = {
-    tableau1: "#FEC63A",
-    tableau2: "#949CFF",
-    tableau3: "#FC7557",
-} as const;
-
 const Menu_1: React.FC = () => {
-    const [tableau, setTableau] = useState<keyof typeof COLORS>("tableau1");
-
-    const pivotDroit = (next: keyof typeof COLORS) => {
-        setTableau(next);
+    const projects = projectsContent.items;
+    const [index, setIndex] = useState(0);
+    const project = projects[index];
+    const step = (delta: number) => {
+        setIndex((current) => (current + delta + projects.length) % projects.length);
     };
+
     return (
         <>
             <ContainerTitle id="references">
@@ -215,68 +209,28 @@ const Menu_1: React.FC = () => {
             </ContainerTitle>
 
             <MainContainer>
-                <Shell $color={COLORS[tableau]}>
+                <Shell $color={project.color}>
                 <Clip>
-                <Slide $visible={tableau === "tableau1"}>
+                {projects.map((item, itemIndex) => (
+                <Slide key={item.id} $visible={itemIndex === index}>
                     <Displaycontainer>
-                    <Img src="img1.png" alt="Ateliers - 77" />
+                    <Img src={item.image} alt={item.title} />
                     <TextImage>
-                        <H3Styled>Atéliers-77</H3Styled>
+                        <H3Styled>{item.title}</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
-                            <ContainerItem>HTML5</ContainerItem>
-                            <ContainerItem>CSS3</ContainerItem>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>Tailwind</ContainerItem>
+                            {item.technologies.map((tech) => (
+                                <ContainerItem key={tech}>{tech}</ContainerItem>
+                            ))}
                         </Container2>
-                        <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
-                        <Button href="/case-studies/ateliers-77" bgColor="#FEC63A">View case studies</Button>
-                        <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau3')}></ArrowButton>
+                        <p style={styles}>{item.summary}</p>
+                        <Button href={`/case-studies/${item.id}`} bgColor={item.color}>View case studies</Button>
+                        <StyledLink><Link href="/case-studies">More case studies</Link></StyledLink>
+                        <ArrowButton float="right" onClick={() => step(-1)}></ArrowButton>
+                        <ArrowButton float="right" marginRight="10px" onClick={() => step(1)}></ArrowButton>
                     </TextImage></Displaycontainer>
                 </Slide>
-
-                <Slide $visible={tableau === "tableau2"}>
-                <Displaycontainer> <Img src="pc2.png" alt="School Online Tn" />
-                    <TextImage>
-                        <H3Styled>School Online Tn</H3Styled>
-                        <p style={styles}>Technologies Utilisées :</p>
-                        <Container2>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NextJS</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>MongoDB</ContainerItem>
-                        </Container2>
-                        <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
-                        <Button href="/case-studies/school-online" bgColor="#949CFF">View case studies</Button>
-                        <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau1')}></ArrowButton>
-                    </TextImage></Displaycontainer>
-                </Slide>
-                
-                <Slide $visible={tableau === "tableau3"}>
-                    <Displaycontainer>
-                    <Img src="pc3.png" alt="DSF Fr" />
-                    <TextImage>
-                        <H3Styled>DSF Fr</H3Styled>
-                        <p style={styles}>Technologies Utilisées :</p>
-                        <Container2>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                        </Container2>
-                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </p>
-                   
-                    <Button href="/case-studies/dsf" bgColor="#FC7557">View case studies</Button>
-                    
-                    <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
-                        <ArrowButton float="right" onClick={() => pivotDroit('tableau1')}></ArrowButton>
-                        <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau2')}></ArrowButton>
-                    </TextImage></Displaycontainer>
-                </Slide>
+                ))}
                 </Clip>
                 </Shell>
             </MainContainer>

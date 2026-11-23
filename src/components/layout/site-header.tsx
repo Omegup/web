@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import styled from 'styled-components';
 import { useState } from 'react';
 
@@ -37,7 +38,7 @@ const Container = styled.div<{open:boolean}>`
 `;
 
 
-const Nav = styled.a`
+const Nav = styled(Link)`
 font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   color: black;
@@ -83,8 +84,10 @@ const Affiche = styled.div`
   }
 `;
 
-const Button = styled.button`
-  display: inline;
+const Button = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
   font-size: 15px;
   border: 0.5px solid;
   border-radius: 30px;
@@ -204,13 +207,13 @@ function NavBar() {
         
               
         <Container open={nav}>
-          <Nav href='#home'>Home</Nav>
-          <Nav href='#about'>About Us</Nav>
-          <Nav href='#services'>Services</Nav>
-          <Nav href='#references'>References</Nav>
+          <Nav href='/#home'>Home</Nav>
+          <Nav href='/#about'>About Us</Nav>
+          <Nav href='/#services'>Services</Nav>
+          <Nav href='/#references'>References</Nav>
           
         </Container>
-        <Button id='button'>Get in Touch</Button>
+        <Button id='button' href='/#contact'>Get in Touch</Button>
         
 
         
