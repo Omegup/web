@@ -67,11 +67,16 @@ const Frame = styled.div`
     border-radius: 22px;
     display: grid;
     place-items: center;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
 
     img {
         display: block;
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
         object-fit: contain;
     }
 

@@ -16,38 +16,61 @@ export type ProjectsContent = {
 };
 
 const shot = (folder: string, count: number, ext = "png") =>
-  Array.from({ length: count }, (_, index) => `/work/${folder}/${index + 1}.${ext}`);
+  Array.from(
+    { length: count },
+    (_, index) => `/work/${folder}/${index + 1}.${ext}`,
+  );
 
-export const projectsContent = {
+export const projectsContent1 = {
   heading: "Project Showcase",
   intro:
     "At Omegup, we take pride in our web solutions. Explore our featured projects to see the results of our collaboration with clients who entrusted us with their web development needs.",
   items: [
     {
-      id: "ateliers-77",
-      title: "Atéliers-77",
-      image: "/img1.png",
-      shots: ["/img1.png"],
-      technologies: ["HTML5", "CSS3", "React", "NodeJS", "Tailwind"],
-      summary:
-        "We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.",
-      description: [
-        "We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.",
+      id: "forfellow",
+      title: "Forfellow",
+      image: "/work/forfellow.jpg",
+      shots: [
+        "/work/forfellow/1.jpg",
+        "/work/forfellow/2.jpg",
+        "/work/forfellow/3.png",
+        "/work/forfellow/4.png",
+        "/work/forfellow/5.png",
       ],
-      color: "#FEC63A",
-    },
-    {
-      id: "school-online",
-      title: "School Online Tn",
-      image: "/pc2.png",
-      shots: ["/pc2.png"],
-      technologies: ["React", "NextJS", "NodeJS", "MongoDB"],
+      technologies: ["React", "Meteor", "MongoDB", "RxJS", "React Native"],
       summary:
-        "Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.",
+        "An all-in-one school platform that brings administrators, teachers, parents, and students into one space for courses, timetables, grades, messaging, and billing.",
       description: [
-        "Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.",
+        "Forfellow is an all-in-one application that brings administrators, teachers, parents, and students into the same digital space. Course management, timetables, grade tracking, messaging, and billing sit together, so daily school life is simpler and the people around a student stay in touch.",
+        "Administrators manage schedules, follow students and teachers, control billing, and open reports. Teachers reach their classes, enter grades, share resources, and write to families. Parents follow grades, absences, schedules, and invoices. Students see their courses, timetable, and results.",
+        "The platform works on a computer and on a phone, and it supports more than one language, so each person can reach their school from anywhere.",
       ],
       color: "#949CFF",
+    },
+    {
+      id: "darinov",
+      title: "Darinov",
+      image: "/work/darinov.png",
+      shots: shot("darinov", 4),
+      technologies: ["Angular", "RxJS", "Meteor", "MongoDB"],
+      summary:
+        "Web portal connecting customers, craftsmen, suppliers, and wholesalers in the building trades.",
+      description: [
+        "Web portal connecting customers, craftsmen, suppliers, and wholesalers in the building trades.",
+      ],
+      color: "#949CFF",
+    },
+    {
+      id: "apia",
+      title: "Apia",
+      image: "/work/apia.png",
+      shots: shot("apia", 4),
+      technologies: ["React Js", ".NET Core", "JavaScript", "RxEntity"],
+      summary: "Web application for managing APIA projects and entrepreneurs.",
+      description: [
+        "Web application for managing APIA projects and entrepreneurs.",
+      ],
+      color: "#FC7557",
     },
     {
       id: "dsf",
@@ -63,19 +86,6 @@ export const projectsContent = {
       color: "#FC7557",
     },
     {
-      id: "abc-school",
-      title: "Abc school",
-      image: "/work/abc-school.png",
-      shots: shot("abc-school", 7),
-      technologies: ["React Js", "Meteor", "MongoDB", "RxJS"],
-      summary:
-        "Web site for managing school internal services, including separate spaces for students, parents, and teachers.",
-      description: [
-        "Web site for managing school internal services, including separate spaces for students, parents, and teachers.",
-      ],
-      color: "#FEC63A",
-    },
-    {
       id: "food-delivery",
       title: "Food delivery",
       image: "/work/food-delivery.png",
@@ -87,16 +97,6 @@ export const projectsContent = {
         "Web app for selling food and groceries, tracking deliveries, and managing customer and provider services.",
       ],
       color: "#949CFF",
-    },
-    {
-      id: "apia",
-      title: "Apia",
-      image: "/work/apia.png",
-      shots: shot("apia", 4),
-      technologies: ["React Js", ".NET Core", "JavaScript", "RxEntity"],
-      summary: "Web application for managing APIA projects and entrepreneurs.",
-      description: ["Web application for managing APIA projects and entrepreneurs."],
-      color: "#FC7557",
     },
     {
       id: "jupiter",
@@ -112,17 +112,17 @@ export const projectsContent = {
       color: "#FEC63A",
     },
     {
-      id: "darinov",
-      title: "Darinov",
-      image: "/work/darinov.png",
-      shots: shot("darinov", 4),
-      technologies: ["Angular", "RxJS", "Meteor", "MongoDB"],
+      id: "ateliers-77",
+      title: "Atéliers-77",
+      image: "/img1.png",
+      shots: ["/img1.png"],
+      technologies: ["HTML5", "CSS3", "React", "NodeJS", "Tailwind"],
       summary:
-        "Web portal connecting customers, craftsmen, suppliers, and wholesalers in the building trades.",
+        "We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.",
       description: [
-        "Web portal connecting customers, craftsmen, suppliers, and wholesalers in the building trades.",
+        "We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.",
       ],
-      color: "#949CFF",
+      color: "#FEC63A",
     },
     {
       id: "novnshare",
@@ -160,7 +160,9 @@ export const projectsContent = {
       shots: [
         ...shot("wazzta", 3, "jpg"),
         "/work/wazzta/4.jpeg",
-        ...shot("wazzta", 5, "jpg").map((_, index) => `/work/wazzta/${index + 5}.jpg`),
+        ...shot("wazzta", 5, "jpg").map(
+          (_, index) => `/work/wazzta/${index + 5}.jpg`,
+        ),
       ],
       technologies: ["React Native", "Oracle", "LoopBack"],
       summary:
@@ -172,7 +174,10 @@ export const projectsContent = {
     },
   ],
 } as const satisfies ProjectsContent;
-
+export const projectsContent = {
+  ...projectsContent1,
+  items: projectsContent1.items.slice(0, -3),
+};
 export function projectById(id: string) {
   return projectsContent.items.find((project) => project.id === id);
 }
