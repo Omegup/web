@@ -1,19 +1,38 @@
-"use client"
-import React from 'react';
-import styled from 'styled-components';
-const Container = styled.div`
-  margin-top: 70px;
+"use client";
+
+import styled from "styled-components";
+import { servicesContent } from "@/content/services";
+
+const Section = styled.section`
   width: min(83.75%, calc(100% - 32px));
-  margin-inline: auto;
+  margin: 70px auto 0;
 `;
 
-const Boxing = styled.div`
+const Heading = styled.h3`
+  margin: 0;
+  color: #222325;
+  font-family: "Krona One", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26.4px;
+  letter-spacing: -0.064em;
+`;
+
+const Intro = styled.p`
+  max-width: 46rem;
+  margin: 12px 0 0;
+  color: #222325;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+`;
+
+const Grid = styled.div`
   display: grid;
-  box-sizing: border-box;
-  width: min(83.75%, calc(100% - 32px));
-  margin-inline: auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+  margin-top: 32px;
 
   @media (max-width: 1100px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -24,138 +43,96 @@ const Boxing = styled.div`
   }
 `;
 
-const GridItem = styled.span`
-  min-width: 0;
+const Card = styled.article<{ $color: string }>`
   box-sizing: border-box;
-  padding: 8px 4px 24px;
-`;
+  min-width: 0;
+  background: #faf9f6;
+  border: 1px solid #222325;
+  border-radius: 30px;
+  padding: 28px 24px 32px;
+  box-shadow: -8px 8px 0 0 ${(props) => props.$color};
+  transition: box-shadow 0.3s ease;
 
-const GridItemWithMargin = styled(GridItem)``;
-
-const Title = styled.h3`
-  color: #222325;
-  font-family: 'Krona One', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 26.4px;
-  letter-spacing: -6.4%;
-
-  @media (max-width: 900px) {
-    font-size: 20px;
-    line-height: 22px;
+  &:hover {
+    box-shadow: -4px 4px 0 0 #222325;
   }
 `;
 
-const Text = styled.p`
-  font-family: 'Quicksand', sans-serif;
+const Icon = styled.div<{ $color: string }>`
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: ${(props) => props.$color}33;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+`;
+
+const Title = styled.h3`
+  margin: 0;
+  color: #222325;
+  font-family: "Krona One", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.064em;
+`;
+
+const List = styled.ul`
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+`;
+
+const Item = styled.li`
+  color: #222325;
+  font-family: "Quicksand", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-
- 
 `;
 
-const Circle = styled.div<{ bgColor: string }>`
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-  opacity: 20%;
-  ${({ bgColor }) => `background-color: ${bgColor};`}
-
-  @media (max-width: 900px) {
-    height: 70px;
-    width: 70px;
-  }
+const Label = styled.span`
+  display: block;
+  margin-bottom: 2px;
+  font-family: "Krona One", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
 `;
 
-const Img = styled.img`
-  margin-top: -76px;
-  margin-bottom: 25px;
-  margin-left: 12px;
-  height: 65px;
-  width: 60px;
-
-  @media (max-width: 900px) {
-    margin-top: -60px;
-    height: 50px;
-    width: 45px;
-  }
-`;
-
-const styles = {
-  color: "#222325",
-  fontFamily: "'Krona One', sans-serif",
-  fontSize: "24px",
-  fontWeight: "400",
-  lineHeight: "26.4px",
-  letterSpacing: "-6.4%",
- 
-};
-
-const stylesp = {
-  fontFamily: "'Quicksand', sans-serif",
-  fontSize: "16px",
-  fontWeight: "500",
-  lineHeight: "24px",
- 
-};
-
-const Services: React.FC = () => {
+const Services = () => {
   return (
-    <>
-      
-      <Container id='services'>
-        <h3 style={styles}>Our Services</h3>
-        <p style={stylesp}>At Omegup, we specialize in crafting exceptional digital experiences. Our core services include:</p>
-      </Container>
-      <Boxing>
-        <GridItem>
-          <Circle bgColor="#949CFF"  id='devweb'/>
-          <Img src="image50.png" alt="" />
-          <Title>Web Development.</Title>
-          <Text>
-            🌐 Website Design & Development: Craft 
-            websites that leave a lasting impression and 
-            drive results.<br/>
-            🚀 Web App Development: Build dynamic and 
-            powerful web applications to meet your 
-            unique needs.<br/>
-            📱 Responsive Design: Ensure your web 
-            presence is seamless across all devices.
-          </Text>
-        </GridItem>
-        <GridItemWithMargin>
-          <Circle bgColor="#FC7557" id='design' ></Circle>
-          <Img src="image51.png" alt="" />
-          <Title >UX/UI Design.</Title>
-          <Text>
-            🎨 User-Centric Design: We create intuitive 
-            and visually stunning user interfaces that 
-            captivate and engage.<br/>    
-            🔍 User Research: Uncover insights to inform 
-            design decisions and enhance user 
-            experiences.<br/>
-            🚀 Prototyping & Testing: Refine designs
-            through iterative prototyping and user testing.
-          </Text>
-        </GridItemWithMargin>
-        <GridItemWithMargin>
-          <Circle bgColor="#FEC63A" id='devmobile'></Circle>
-          <Img src="image49.png" alt="" />
-          <Title >Mobile Development .</Title>
-          <Text>
-            📱 iOS & Android Apps: Develop mobile apps 
-            that shine on every platform and provide
-            exceptional user experiences.<br/>
-            💡 Mobile Strategy: Create strategies to 
-            conquer the mobile market and reach your 
-            audience effectively.<br/>
-            🚀 App Optimization: Enhance app 
-            performance.
-          </Text>
-        </GridItemWithMargin>
-      </Boxing>
-    </>
+    <Section id="services">
+      <Heading>{servicesContent.heading}</Heading>
+      <Intro>{servicesContent.intro}</Intro>
+      <Grid>
+        {servicesContent.items.map((service) => (
+          <Card key={service.id} $color={service.color}>
+            <Icon $color={service.color}>
+              <img src={service.icon} alt="" />
+            </Icon>
+            <Title>{service.title}</Title>
+            <List>
+              {service.points.map((point) => (
+                <Item key={point.label}>
+                  <Label>{point.label}</Label>
+                  {point.body}
+                </Item>
+              ))}
+            </List>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
   );
 };
 
