@@ -177,10 +177,6 @@ const styles = {
     fontWeight: "500",
     lineHeight: "24px",
     marginTop: "16px",
-    "@media (max-width: 1000px)":{
-        fontSize:"14px"
-
-    }
 };
 const  Displaycontainer=styled.div`
 display:flex;
@@ -191,6 +187,7 @@ flex-direction: row;
     
 }
 `
+
 const Menu_1: React.FC = () => {
     const projects = projectsContent.items;
     const [index, setIndex] = useState(0);

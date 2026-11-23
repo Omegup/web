@@ -218,15 +218,15 @@ const Footer2: React.FC = () => {
           <Column>
             <h2>Contact</h2>
             <ContactLink href="https://www.google.com/maps/place/OmegUp/@33.4966778,11.1157896,17z" target="_blank">
-              <img src="map.png" alt="" />
+              <img src="/map.png" alt="" />
               <span>10, Cyber Park Zarzis, Medenine</span>
             </ContactLink>
             <ContactLink href="mailto:contact@omegup.tn">
-              <img src="sms-tracking.png" alt="" />
+              <img src="/sms-tracking.png" alt="" />
               <span>contact@omegup.tn</span>
             </ContactLink>
             <ContactLink href="tel:+21628827941">
-              <img src="call-incoming.png" alt="" />
+              <img src="/call-incoming.png" alt="" />
               <span>+216 28 827 941</span>
             </ContactLink>
           </Column>

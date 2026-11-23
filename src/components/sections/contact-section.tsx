@@ -120,7 +120,7 @@ const StyledButton = styled.button`
   background-image: url('src/images/image3.png');
   background-color: #FAF9F6;
   background-repeat: no-repeat;
-  background-image:url('contact.png');
+  background-image:url('/contact.png');
   background-position: left;
   background-position-x: 8%;
   background-size: 20px;
@@ -138,7 +138,7 @@ const StyledButton = styled.button`
   &:hover {
     box-shadow: -5px 5px black;
     
-    background-image:url('image.png')
+    background-image:url('/image.png')
   }
   @media only screen and (min-width: 769px) and (max-width:1300px) {
     left: 38%;
@@ -198,11 +198,7 @@ const ContactUS = () => {
     setMessage("");
   }
   };
- const Img=styled.img`
- position:left;`
 
-
- 
   return (
     <FormStyled onSubmit={e=>handelSubmit(e)} id='contact'>
       <Title >Contact Us - Let&apos;s Start Building Together</Title>
