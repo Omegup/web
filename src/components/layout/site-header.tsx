@@ -104,6 +104,22 @@ const Touch = styled(Link)`
   }
 `;
 
+const DockFade = styled.div`
+  display: none;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    z-index: 49;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(78px + env(safe-area-inset-bottom));
+    background: linear-gradient(to top, #ffffff, 40%, #ffffff, 50%, transparent, 60%, transparent);
+  }
+`;
+
 const Dock = styled.nav`
   display: none;
 
@@ -206,6 +222,7 @@ function NavBar() {
         </Links>
         <Touch href="/#contact">Get in Touch</Touch>
       </Bar>
+      <DockFade aria-hidden="true" />
       <Dock
         aria-label="Primary"
         onMouseOver={(event) => {
