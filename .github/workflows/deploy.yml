@@ -1,0 +1,54 @@
+name: Deploy omegup.tn
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  DOCKERHUB: ${{ vars.DOCKERHUB }}
+  IMAGE: omegup-web
+  NAMESPACE: ingress-nginx
+  DEPLOYMENT: omegup-tn-site
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve registry
+        run: |
+          if [ -z "${DOCKERHUB}" ]; then
+            echo "DOCKERHUB=dockerhub.omegup.tn" >> "$GITHUB_ENV"
+          fi
+
+      - name: Log in to registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.DOCKERHUB }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build image
+        run: |
+          TAG="${GITHUB_SHA}"
+          docker build \
+            -t "${DOCKERHUB}/${IMAGE}:${TAG}" \
+            -t "${DOCKERHUB}/${IMAGE}:latest" \
+            .
+
+      - name: Push image
+        run: |
+          TAG="${GITHUB_SHA}"
+          docker push "${DOCKERHUB}/${IMAGE}:${TAG}"
+          docker push "${DOCKERHUB}/${IMAGE}:latest"
+
+      - name: Roll out to cluster
+        run: |
+          TAG="${GITHUB_SHA}"
+          kubectl -n "${NAMESPACE}" set image "deployment/${DEPLOYMENT}" \
+            "web=${DOCKERHUB}/${IMAGE}:${TAG}"
+          kubectl -n "${NAMESPACE}" rollout status "deployment/${DEPLOYMENT}" --timeout=180s
+          kubectl -n "${NAMESPACE}" get pods -l app=omegup-tn-site -o wide
