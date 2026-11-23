@@ -7,13 +7,15 @@ const ContainerTitle = styled.div`
     margin-top: 100px;
   
      margin-left:10%;
-       width: 80%;`;
+       width: 80%;
+     margin-bottom: 28px;`;
     const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
    
     font-size: 24px;
     font-weight: 400;
     line-height: 26.4px;
-    letter-spacing: -6.4%;`
+    letter-spacing: -6.4%;
+    margin: 0 0 12px;`
     
 
 
@@ -76,7 +78,10 @@ const Img = styled.img`
 
 const Container2 = styled.div`
     display: flex;
-    
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+
 @media (max-width:900px ) {
     flex-wrap:wrap;
 }
@@ -171,6 +176,7 @@ const styles = {
     fontSize: "16px",
     fontWeight: "500",
     lineHeight: "24px",
+    marginTop: "16px",
     "@media (max-width: 1000px)":{
         fontSize:"14px"
 

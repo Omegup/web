@@ -20,7 +20,7 @@ const Heading = styled.h3`
 
 const Intro = styled.p`
   max-width: 46rem;
-  margin: 12px 0 0;
+  margin: 16px 0 0;
   color: #222325;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
@@ -148,7 +148,7 @@ const Title = styled.h3`
 
 const List = styled.ul`
   display: grid;
-  gap: 14px;
+  gap: 20px;
   margin: 0;
   padding: 22px 22px 26px;
   list-style: none;

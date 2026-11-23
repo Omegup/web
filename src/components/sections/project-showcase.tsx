@@ -8,7 +8,8 @@ import Link from "next/link";
     font-size: 24px;
     font-weight: 400;
     line-height: 26.4px;
-    letter-spacing: -6.4%;`
+    letter-spacing: -6.4%;
+    margin: 0 0 12px;`
     
 
 
@@ -69,7 +70,10 @@ const Img = styled.img`
 
 const Container2 = styled.div`
     display: flex;
-    
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+
 @media (max-width:900px ) {
     flex-wrap:wrap;
 }
@@ -108,7 +112,7 @@ background-color:#FAF9F6;
 color:black;
 margin-left:8.125%;
 margin-top:80px;
-margin-bottom:10px;
+margin-bottom:28px;
 width:67%;
 @media (max-width: 900px) {
     width: 90%;
@@ -144,6 +148,7 @@ const styles = {
     fontSize: "16px",
     fontWeight: "500",
     lineHeight: "24px",
+    marginTop: "16px",
     "@media (max-width: 1000px)":{
         fontSize:"14px"
 
@@ -166,7 +171,7 @@ function App4() {
 
   
 
-    <p>
+    <p style={styles}>
     At Omegup, we take pride in our web solutions. 
     Explore our featured projects to see the results of our
      collaboration with clients who entrusted us with their web development needs.

@@ -6,7 +6,7 @@ import { testimonialsContent } from "@/content/testimonials";
 
 // Styled components
 const Container = styled.div`
-
+  margin-top: 56px;
   text-align: left;
 margin-left:10%;
   h3 {
@@ -74,7 +74,7 @@ const BulleContent = styled.div<{ boxShadowColor: string }>`
   height: 35%;
   border-radius: 22px;
   box-shadow: -6px 6px 0 0 ${(props) => props.boxShadowColor};
-  padding: 18px;
+  padding: 24px 22px;
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -130,6 +130,7 @@ const TextCenter = styled.div`
     font-weight: 400;
     line-height:26.4px;
     letter-spacing: -6.4%;
+    margin: 12px 0 0;
   }
   p {
     text-align: center;
@@ -137,6 +138,7 @@ const TextCenter = styled.div`
     font-size: 14px;
     font-weight: 500;
     line-height: 2.1vw;
+    margin: 8px 0 0;
   }
  
   @media (max-width: 600px) {

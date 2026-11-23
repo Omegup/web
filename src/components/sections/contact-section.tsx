@@ -27,8 +27,8 @@ const PStyled = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  margin-top: 5px;
-  margin-bottom:20px;
+  margin-top: 16px;
+  margin-bottom: 28px;
   
   @media (max-width: 768px) {
     font-size: 14px;

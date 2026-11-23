@@ -41,6 +41,7 @@ const BoxTitle=styled.h3`
   font-weight: 400;
   line-height: 26.4px;
   letter-spacing:-6.4%;
+  margin: 0 0 12px;
   `
 const Box = styled.div<{ shadowColor: string }>`
 background: #FAF9F6;
@@ -73,6 +74,7 @@ const Text = styled.p`
     font-weight: 500;
     line-height: 24px;
     text-align: left;
+    margin: 0;
 `;
 
 const Button = styled.span<{ secondary: string }>`
@@ -97,6 +99,7 @@ const Button = styled.span<{ secondary: string }>`
 `;
 
 const Text1 = styled.div`
+ margin-top: 36px;
  font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: 500;

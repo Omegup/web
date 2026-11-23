@@ -133,7 +133,7 @@ h2{    font-family: 'Krona One', sans-serif;
 `;
 
 const TextContainer = styled.p`
-margin-top:5px;
+margin-top:12px;
 color: #999999;
 transition: color 0.5s ease-in-out, scale 0.3s ease-in-out;
 width:auto;
@@ -162,7 +162,7 @@ font-family: 'Quicksand', sans-serif;
   }
 `;
 const Lienfooter = styled.div `
-  margin-top:10px;
+  margin-top:18px;
   display: flex;
   gap:10px;
   
@@ -224,14 +224,14 @@ const Footer2: React.FC = () => {
           </div>
           <div style={{marginLeft:'20px'}}>
             <H2Styled >Contact</H2Styled>
-            <TextContainer style={{position:'relative'}}>
-            <Lienfootersocialmedia href="https://www.google.com/maps/place/OmegUp/@33.4966778,11.1157896,17z/data=!3m1!4b1!4m6!3m5!1s0x13aaefeefabcd13f:0xab85ea46c136a0b8!8m2!3d33.4966778!4d11.1157896!16s%2Fg%2F11s_xqyh7x?entry=ttu"target="_blank"><img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'-12%'}} />  10, Cyber Park Zarzis, Medenine</Lienfootersocialmedia>
+            <TextContainer style={{position:'relative', paddingLeft:'28px'}}>
+            <Lienfootersocialmedia href="https://www.google.com/maps/place/OmegUp/@33.4966778,11.1157896,17z/data=!3m1!4b1!4m6!3m5!1s0x13aaefeefabcd13f:0xab85ea46c136a0b8!8m2!3d33.4966778!4d11.1157896!16s%2Fg%2F11s_xqyh7x?entry=ttu"target="_blank"><img src="map.png" alt="Address"  style={{ position:"absolute", bottom:'5%',left:'0'}} />  10, Cyber Park Zarzis, Medenine</Lienfootersocialmedia>
             </TextContainer>
-            <TextContainer style={{position:'relative'}}>
-            <Lienfootersocialmedia href="mailto:contact@omegup.tn"> <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> contact@omegup.tn</Lienfootersocialmedia>
+            <TextContainer style={{position:'relative', paddingLeft:'28px'}}>
+            <Lienfootersocialmedia href="mailto:contact@omegup.tn"> <img src="sms-tracking.png" alt="Email"style={{ position:"absolute", bottom:'5%',left:'0'}} /> contact@omegup.tn</Lienfootersocialmedia>
             </TextContainer>
-            <TextContainer style={{position:'relative'}}>
-            <Lienfootersocialmedia href="tel:+216 28 827 941" >  <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'-12%'}} /> +216 28 827 941</Lienfootersocialmedia>
+            <TextContainer style={{position:'relative', paddingLeft:'28px'}}>
+            <Lienfootersocialmedia href="tel:+216 28 827 941" >  <img src="call-incoming.png" alt="Phone" style={{ position:"absolute", bottom:'5%',left:'0'}} /> +216 28 827 941</Lienfootersocialmedia>
             </TextContainer>
          
           </div>

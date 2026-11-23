@@ -32,6 +32,7 @@ const Title = styled.h1`
 `;
 
 const Text = styled.p`
+  margin-top: 16px;
   margin-left: 117px;
   color: #faf9f6;
   font-family: 'Quicksand', sans-serif;
