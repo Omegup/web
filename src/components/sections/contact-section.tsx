@@ -5,26 +5,19 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const FormStyled = styled.form`
   position: relative;
+  box-sizing: border-box;
   background-color: #FAF9F6;
   border: solid 1px black;
   border-radius: 20px;
-  width: 80%;
-  height: 434px;
-  margin-left: 10%;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  width: min(80%, calc(100% - 32px));
+  height: auto;
+  margin: 60px auto;
+  padding: 36px 6% 28px;
   box-shadow: -8px 8px black;
-  @media only screen and (min-width: 769px) and (max-width:1300px) {
-    height : 60vh; 
-  }
-
-  
 
   @media (max-width: 768px) {
-    width: 90%;
-    margin-left: 5%;
-    height: auto;
-    padding: 20px;
+    width: min(92%, calc(100% - 24px));
+    padding: 28px 20px 24px;
   }
 `;
 
@@ -50,7 +43,7 @@ const Title = styled.h1`
   line-height: 37.4px;
   letter-spacing: -6.4%;
   text-align: center;
-  margin-top:50px;
+  margin-top: 8px;
   @media (max-width: 1300px) {
     font-size: 28px;
     line-height: 32px;
@@ -64,16 +57,13 @@ const Title = styled.h1`
 `;
 
 const StyledInput = styled.input`
-border:solid 1px;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin: 10px;
-  height: 30px;
-  width: 90%;
-  border : none;
-  border : 1px solid #222325;
-  @media (max-width: 768px) {
-    width: calc(100% - 20px);
-  }
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #222325;
 `;
 
 const GlobalStyles = createGlobalStyle`
@@ -96,35 +86,26 @@ const StyledLabel = styled.label`
 `;
 
 const StyledMessage = styled.textarea`
-margin-top:50px;
-border:solid 1px;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin: 10px;
-  width: 77%;
-  height:10vh;
-  margin-left: 11%;
-
-
+  margin: 0;
+  padding: 12px;
+  width: 100%;
+  min-height: 110px;
+  border: 1px solid #222325;
+  resize: vertical;
 `;
 
-const MessageLabel = styled(StyledLabel)`
-  left: 11.5%;
-
-
-`;
+const MessageLabel = styled(StyledLabel)``;
 
 const StyledDiv = styled.div`
-  width: 80%;
-  
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: 36px;
 
   @media (max-width: 768px) {
-   
-    width: 80%;
-    margin-left: 10%;
     grid-template-columns: 1fr;
   }
 `;
@@ -145,8 +126,8 @@ const StyledButton = styled.button`
   background-size: 20px;
   border:solid 0.5px;
   border-radius: 20px;
-  margin-left:40%;
-  margin-bottom:30px;
+  display: block;
+  margin: 24px auto 0;
   width: 191px;
   height: 44px;
   font-family: 'Quicksand', sans-serif;
@@ -163,9 +144,7 @@ const StyledButton = styled.button`
     left: 38%;
 }
   @media (max-width: 768px) {
-    
-    margin-left: calc(50% - 95.5px);
-    margin-bottom:10px;
+    margin-top: 16px;
   }
 `;
 

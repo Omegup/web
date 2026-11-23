@@ -3,48 +3,34 @@ import React from 'react';
 import styled from 'styled-components';
 const Container = styled.div`
   margin-top: 70px;
-  margin-left: 8.125%;
-
+  width: min(83.75%, calc(100% - 32px));
+  margin-inline: auto;
 `;
 
 const Boxing = styled.div`
   display: grid;
-  width: 83.75%;
- margin-left:8.125%;
- margin-right:8.125%;
-  height: 466px;
-  height: auto;
-  width: auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
+  width: min(83.75%, calc(100% - 32px));
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
-    width: auto;
-   
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 720px) {
     grid-template-columns: 1fr;
-  
   }
 `;
 
 const GridItem = styled.span`
-width: 75%;
-  padding: 20px;
-
-  @media (max-width: 900px) {
-    padding: 10px;
-  }
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 4px 24px;
 `;
 
-const GridItemWithMargin = styled(GridItem)`
-  margin-left: 50px;
-
-  @media (max-width: 900px) {
-    margin-left: 0px;
-  }
-`;
+const GridItemWithMargin = styled(GridItem)``;
 
 const Title = styled.h3`
   color: #222325;

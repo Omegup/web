@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import styled from "styled-components";
+import { testimonialsContent } from "@/content/testimonials";
 
 
 // Styled components
@@ -44,22 +45,25 @@ margin-left:10%;
 `;
 
 const BulleContainer = styled.div`
-  margin: 2vw 10vw ;
+  margin: 2vw auto 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: row;
+  width: min(76%, calc(100% - 32px));
+  overflow: hidden;
 
-  flex-direction:row;
-  width: calc(100% - 24%);
-  height: auto;
+  @media (max-width: 800px) {
+    width: min(94%, calc(100% - 16px));
+  }
 `;
 
 const Bulle = styled.div<{ center: boolean }>`
-  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
-  transform: ${(props) => (props.center ? "translateY(-15%)" : "none")};
-  opacity: ${(props) => (props.center ? 1 : 0.4)};
- 
-
+  flex: 1 1 0;
+  min-width: 0;
+  transition: transform 0.55s ease, opacity 0.55s ease;
+  transform: ${(props) => (props.center ? "translateY(-18px) scale(1.04)" : "translateY(12px) scale(0.94)")};
+  opacity: ${(props) => (props.center ? 1 : 0.55)};
 `;
 
 const BulleContent = styled.div<{ boxShadowColor: string }>`
@@ -149,6 +153,12 @@ const TextCenter = styled.div`
 `;
 
 // Component
+const DOTS = [
+  { small: "48%", medium: "47.3%", portrait: "41.7%" },
+  { small: "48%", medium: "47.3%", portrait: "42%" },
+  { small: "50%", medium: "49%", portrait: "44%" },
+] as const;
+
 const TourneImage: React.FC = () => {
   const [positions, setPositions] = useState(['notCenter', 'center', 'notCenter']);
 
@@ -164,48 +174,24 @@ const TourneImage: React.FC = () => {
     <>
    
       <Container>
-        <h3>What Our Clients Say</h3>
-        <p>Discover why our clients trust us. Read what they have to say about our services, solutions, and dedication to 
-          their success. We take pride in their feedback and look forward to serving you with the same level of excellence.
-        </p>
+        <h3>{testimonialsContent.heading}</h3>
+        <p>{testimonialsContent.intro}</p>
       </Container>
       <BulleContainer>
-        <Bulle center={positions[0] === 'center'}>
-          <BulleContent boxShadowColor="#FC7557">
-            <p>Working with Omegup was a game-changer for our business. Their web development expertise transformed our online presence, making it not only visually stunning but also incredibly user-friendly.</p>
-          </BulleContent>
-          <Circle size="10px" marginleft="48%" backgroundColor="#FC7557" />
-          <Circle size="20px" marginleft="47.3%" backgroundColor="#FC7557" />
-          <Circle size="80px" marginleft="41.7%" bordercolor="#FC7557" backgroundImage="p3.png" backgroundColor="" />
-          <TextCenter>
-            <h3>John Smith</h3>
-            <p>Founder of EcomSolutions</p>
-          </TextCenter>
-        </Bulle>
-        <Bulle center={positions[1] === 'center'}>
-          <BulleContent boxShadowColor="#949CFF">
-            <p>Chez Omegup, we found a team that not only takes pride in their work but also delivers outstanding results. Their innovative solutions and dedication to our project exceeded our expectations.</p>
-          </BulleContent>
-          <Circle size="10px" marginleft="48%" backgroundColor="#949CFF" />
-          <Circle size="20px" marginleft="47.3%" backgroundColor="#949CFF" />
-          <Circle size="80px" marginleft="42%" bordercolor="#949CFF" backgroundImage="p2.png" backgroundColor=""/>
-          <TextCenter>
-            <h3>Sarah Johnson</h3>
-            <p>CEO of TechWizards Inc</p>
-          </TextCenter>
-        </Bulle>
-        <Bulle center={positions[2] === 'center'}>
-          <BulleContent boxShadowColor="#FEC63A">
-            <p>Omegup has been a valuable partner in our online journey. Their web development skills have helped us reach new heights. They designed a website that not only looks fantastic but also performs seamlessly.</p>
-          </BulleContent>
-          <Circle size="10px" marginleft="50%" backgroundColor="#FEC63A" />
-          <Circle size="20px" marginleft="49%" backgroundColor="#FEC63A" />
-          <Circle size="80px" marginleft="44%" bordercolor="#FEC63A" backgroundImage="p1.png" backgroundColor=""/>
-          <TextCenter>
-            <h3>Alex Turner</h3>
-            <p>COO of Streamline Logistics</p>
-          </TextCenter>
-        </Bulle>
+        {testimonialsContent.items.map((item, index) => (
+          <Bulle key={item.id} center={positions[index] === "center"}>
+            <BulleContent boxShadowColor={item.color}>
+              <p>{item.quote}</p>
+            </BulleContent>
+            <Circle size="10px" marginleft={DOTS[index].small} backgroundColor={item.color} />
+            <Circle size="20px" marginleft={DOTS[index].medium} backgroundColor={item.color} />
+            <Circle size="80px" marginleft={DOTS[index].portrait} bordercolor={item.color} backgroundImage={item.portrait} backgroundColor="" />
+            <TextCenter>
+              <h3>{item.name}</h3>
+              <p>{item.role}</p>
+            </TextCenter>
+          </Bulle>
+        ))}
       </BulleContainer>
       <FlecheContainer>
         <FlecheButton backgroundImage="arrow-left.png" onClick={tourneGauche} />

@@ -18,54 +18,42 @@ const ContainerTitle = styled.div`
 
 
 const MainContainer = styled.div`
-    height: 500px;
-    width: 90%;
-    margin-left: 10%;
-    @media (max-width: 900px) {
-    }
-
-
+    width: min(90%, calc(100% - 32px));
+    margin-inline: auto;
+    padding: 4px 8px 14px 12px;
 `;
 
-const Container = styled.div<{ shadowColor: string; isVisible: boolean }>`
-    align-self: center;
-    width: 90%;
-    height: 55vh;
+const Shell = styled.div<{ $color: string }>`
     border: 1px solid #222325;
     border-radius: 30px;
-    box-shadow: -8px 8px 0px 0px ${(props) => props.shadowColor};
-
-    @media only screen and (min-width: 1301px) and (max-width:1700px) {
-        margin-bottom:20%;
-        height : 63vh;
-    }
-    @media only screen and (min-width: 769px) and (max-width:1300px) {
-        margin-bottom:20%;
-        height : 68vh;
-    }
-    display: ${(props) => (props.isVisible ? 'block' : 'none')};
-    @media (max-width: 1000px) {
-        margin-bottom:20%;
-        width: auto;
-        height: auto;
-    }
+    box-shadow: -8px 8px 0px 0px ${(props) => props.$color};
+    transition: box-shadow 0.45s ease;
 `;
 
-const TextImage = styled.div<{ isVisible: boolean }>`
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transition: opacity 1.5s ease-in-out;
+const Clip = styled.div`
+    display: grid;
+    overflow: hidden;
+    border-radius: 30px;
+`;
+
+const Slide = styled.div<{ $visible: boolean }>`
+    grid-area: 1 / 1;
+    opacity: ${(props) => (props.$visible ? 1 : 0)};
+    transform: translateX(${(props) => (props.$visible ? "0" : "36px")});
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: ${(props) => (props.$visible ? "auto" : "none")};
+`;
+
+const TextImage = styled.div`
     overflow: hidden;
     padding: 20px 50px;
 `;
 
-const Img = styled.img<{ isVisible: boolean }>`
+const Img = styled.img`
     align-self: center;
     margin: 100px;
     height: 250px;
     width: 280px;
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    transition: opacity 5s ease;
-
     transform: scale(1.5);
    
     @media (max-width:1500px) {
@@ -197,17 +185,18 @@ flex-direction: row;
     
 }
 `
+const COLORS = {
+    tableau1: "#FEC63A",
+    tableau2: "#949CFF",
+    tableau3: "#FC7557",
+} as const;
+
 const Menu_1: React.FC = () => {
-    const [tableau, setTableau] = useState('tableau1');
+    const [tableau, setTableau] = useState<keyof typeof COLORS>("tableau1");
 
-    const pivotDroit = (tableau: string) => {
-        console.log('Switching to:', tableau); 
-        setTableau(tableau);
+    const pivotDroit = (next: keyof typeof COLORS) => {
+        setTableau(next);
     };
-    const handelClick=()=>{
-
-    }
-
     return (
         <>
             <ContainerTitle id="references">
@@ -218,10 +207,12 @@ const Menu_1: React.FC = () => {
             </ContainerTitle>
 
             <MainContainer>
-                <Container shadowColor="#FEC63A" isVisible={tableau === 'tableau1'}>
+                <Shell $color={COLORS[tableau]}>
+                <Clip>
+                <Slide $visible={tableau === "tableau1"}>
                     <Displaycontainer>
-                    <Img isVisible={tableau === 'tableau1'} src="img1.png" alt="Ateliers - 77" />
-                    <TextImage isVisible={tableau === 'tableau1'}>
+                    <Img src="img1.png" alt="Ateliers - 77" />
+                    <TextImage>
                         <H3Styled>Atéliers-77</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -233,15 +224,15 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
                         <Button bgColor="#FEC63A">View case studies</Button>
-                        <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
+                        <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau3')}></ArrowButton>
                     </TextImage></Displaycontainer>
-                </Container>
+                </Slide>
 
-                <Container shadowColor="#949CFF" isVisible={tableau === 'tableau2'}>
-                <Displaycontainer> <Img isVisible={tableau === 'tableau2'} src="pc2.png" alt="School Online Tn" />
-                    <TextImage isVisible={tableau === 'tableau2'}>
+                <Slide $visible={tableau === "tableau2"}>
+                <Displaycontainer> <Img src="pc2.png" alt="School Online Tn" />
+                    <TextImage>
                         <H3Styled>School Online Tn</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -252,16 +243,16 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
                         <Button bgColor="#949CFF">View case studies</Button>
-                        <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
+                        <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau1')}></ArrowButton>
                     </TextImage></Displaycontainer>
-                </Container>
+                </Slide>
                 
-                <Container shadowColor="#FC7557" isVisible={tableau === 'tableau3'}>
+                <Slide $visible={tableau === "tableau3"}>
                     <Displaycontainer>
-                    <Img isVisible={tableau === 'tableau3'} src="pc3.png" alt="DSF Fr" />
-                    <TextImage isVisible={tableau === 'tableau3'}>
+                    <Img src="pc3.png" alt="DSF Fr" />
+                    <TextImage>
                         <H3Styled>DSF Fr</H3Styled>
                         <p style={styles}>Technologies Utilisées :</p>
                         <Container2>
@@ -273,11 +264,13 @@ const Menu_1: React.FC = () => {
                    
                     <Button bgColor="#FC7557" > View case studies   </Button>
                     
-                    <StyledLink > <Link href={'/page3'}>More case studies</Link></StyledLink>
+                    <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau1')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau2')}></ArrowButton>
                     </TextImage></Displaycontainer>
-                </Container>
+                </Slide>
+                </Clip>
+                </Shell>
             </MainContainer>
         </>
     );

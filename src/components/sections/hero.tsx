@@ -27,13 +27,11 @@ grid-template-columns: 1fr 1fr 1fr 1fr ;
   }
 
   @media (max-width: 900px) {
-    margin-left:10%;
-    width: 80%;
+    width: min(92%, calc(100% - 24px));
+    margin-inline: auto;
     display: flex;
-    flex-wrap: wrap; 
-  }
-  @media (max-width: 760px) {
-    margin-left:25%;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 const BoxTitle=styled.h3`
@@ -46,7 +44,8 @@ const BoxTitle=styled.h3`
   `
 const Box = styled.div<{ shadowColor: string }>`
 background: #FAF9F6;
-width: 286.5px;
+box-sizing: border-box;
+width: min(286.5px, 100%);
 
 border: 1px solid;
 border-radius: 30px;
@@ -119,21 +118,16 @@ const StyledDiv = styled.div`
   }
 `;
 const Texte = styled.div`
-margin-top:90px;
- font-family: 'Krona One', sans-serif;
-   font-size: 48px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding-inline: 16px;
+  box-sizing: border-box;
+  font-family: 'Krona One', sans-serif;
+  font-size: clamp(28px, 4.4vw, 48px);
   font-weight: 400;
-  line-height: 52.8px;
-  letter-spacing:-6.4%;
-  text-align:center;
-  @media (max-width: 768px) {
-    font-size: 25px;
-  }
-margin-bottom:90px;
-  @media (max-width: 576px) {
-    font-size: 20px;
-  }
-
+  line-height: 1.12;
+  letter-spacing: -0.064em;
+  text-align: center;
 `;
 
 const Titre1 = styled.span`
@@ -153,13 +147,17 @@ const Titre3 = styled.span`
   font-family: 'Krona One', sans-serif;
 `;
 
+const CodeMark = styled.span`
+  white-space: nowrap;
+`;
+
 const Acceuil = () => {
   return (
     <>
         <Texte>
         
         Welcome to <Titre1>Omegup</Titre1>:<br />
-        Where <Titre2>Imagination</Titre2> meets <Titre3>Code </Titre3>&lt; / &gt;
+        Where <Titre2>Imagination</Titre2> meets <Titre3>Code</Titre3> <CodeMark>&lt;/&gt;</CodeMark>
       
     </Texte>
     <Container>

@@ -10,7 +10,15 @@ const Title = styled.h1`
   font-weight: 400;
   line-height: 26.4px;
   letter-spacing:-6.4%;
-  
+  margin: 0;
+  user-select: none;
+`
+
+const Logo = styled.a`
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 `
 
 const Container = styled.div<{open:boolean}>`
@@ -137,8 +145,7 @@ const Buttonnav = styled.button`
   border:none;
   
   @media (max-width: 768px) {
-        margin-left: 70vh;
-        z-index: 1;
+        z-index: 2;
         position: absolute;
         border: none;
         border-radius: 10px;
@@ -146,9 +153,10 @@ const Buttonnav = styled.button`
         transition: background-color 0.3s ease-in-out;
         height: 35px;
         width: 35px;
-        left: 7%;
+        left: auto;
+        right: 16px;
         cursor: pointer;
-        top: 6.5%;  
+        top: 18px;  
 
 
         &:hover {
@@ -188,7 +196,7 @@ function NavBar() {
           
         </Buttonnav>
       <Affiche>
-        <Title>Omegup</Title>
+        <Title><Logo href="/">Omegup</Logo></Title>
         
        
         
