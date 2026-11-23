@@ -40,6 +40,18 @@ export const servicesContent = {
           label: "Responsive Design",
           body: "Ensure your web presence is seamless across all devices.",
         },
+        {
+          label: "WordPress & Magento",
+          body: "Design and build on WordPress and Magento, from the front of the site through to the back.",
+        },
+        {
+          label: "Proof of concept & MVP",
+          body: "Launch a proof of concept or a first product quickly, then scale it with a stronger team.",
+        },
+        {
+          label: "SEO & hosting",
+          body: "Cover search visibility, social presence, email, and the hosting that keeps the product online.",
+        },
       ],
     },
     {
@@ -59,6 +71,10 @@ export const servicesContent = {
         {
           label: "Prototyping & Testing",
           body: "Refine designs through iterative prototyping and user testing.",
+        },
+        {
+          label: "Brand identity",
+          body: "Shape the logo, the visual identity, and the photography so the brand stays consistent.",
         },
       ],
     },

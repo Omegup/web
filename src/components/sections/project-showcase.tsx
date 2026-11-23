@@ -1,6 +1,6 @@
 'use client'
 import styled from "styled-components";
-import Link from "next/link";
+import { projectsContent } from "@/content/projects";
 // Styled components
 
     const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
@@ -54,6 +54,7 @@ const Img = styled.img`
     margin: 100px;
     height: 250px;
     width: 280px;
+    object-fit: contain;
  
     @media (max-width:1500px) {
         margin: 20px;
@@ -164,81 +165,43 @@ flex-direction: row;
 }
 `
 function App4() {
+  const projects = projectsContent.items;
   return (
     <>
-    <Texttitle>
-    <H3Styled>Project Showcase</H3Styled>
-
-  
-
-    <p style={styles}>
-    At Omegup, we take pride in our web solutions. 
-    Explore our featured projects to see the results of our
-     collaboration with clients who entrusted us with their web development needs.
-    </p>  
-    </Texttitle>
+      <Texttitle>
+        <H3Styled>{projectsContent.heading}</H3Styled>
+        <p style={styles}>{projectsContent.intro}</p>
+      </Texttitle>
       <MainContainer>
-                <Container >
-                    <Displaycontainer>
-                    <Img src="img1.png" alt="Ateliers - 77" />
-                    <TextImage style={{borderTopRightRadius:'20px'}} >
-                        <H3Styled>Atéliers-77</H3Styled>
-                        <p style={styles}>Technologies Utilisées :</p>
-                        <Container2>
-                            <ContainerItem>HTML5</ContainerItem>
-                            <ContainerItem>CSS3</ContainerItem>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>Tailwind</ContainerItem>
-                        </Container2>
-                        <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
-                        <Button bgColor="#FEC63A">View case studies</Button>
-                        
-                      
-                    </TextImage></Displaycontainer>
-                </Container>
-
-                <Container  >
-                <Displaycontainer> <Img src="pc2.png" alt="School Online Tn" />
-                    <TextImage>
-                        <H3Styled>School Online Tn</H3Styled>
-                        <p style={styles}>Technologies Utilisées :</p>
-                        <Container2>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NextJS</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>MongoDB</ContainerItem>
-                        </Container2>
-                        <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
-                        <Button bgColor="#949CFF">View case studies</Button>
-                        
-                       
-                    </TextImage></Displaycontainer>
-                </Container>
-                
-                <Container style={{borderBottom:'0px'}} >
-                    <Displaycontainer>
-                    <Img  src="pc3.png" alt="DSF Fr" />
-                    <TextImage style={{borderBottomRightRadius:'20px'}}>
-                        <H3Styled>DSF Fr</H3Styled>
-                        <p style={styles}>Technologies Utilisées :</p>
-                        <Container2>
-                            <ContainerItem>React</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                            <ContainerItem>NodeJS</ContainerItem>
-                        </Container2>
-                        <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </p>
-                   
-                    <Button bgColor="#FC7557" > View case studies   </Button>
-                    
-                    
-                       
-                    </TextImage></Displaycontainer>
-                </Container>
-            </MainContainer>
-            
+        {projects.map((project, index) => (
+          <Container key={project.id} style={index === projects.length - 1 ? { borderBottom: "0px" } : undefined}>
+            <Displaycontainer>
+              <Img src={project.image} alt={project.title} />
+              <TextImage
+                style={
+                  index === 0
+                    ? { borderTopRightRadius: "20px" }
+                    : index === projects.length - 1
+                      ? { borderBottomRightRadius: "20px" }
+                      : undefined
+                }
+              >
+                <H3Styled>{project.title}</H3Styled>
+                <p style={styles}>Technologies Utilisées :</p>
+                <Container2>
+                  {project.technologies.map((tech) => (
+                    <ContainerItem key={tech}>{tech}</ContainerItem>
+                  ))}
+                </Container2>
+                <p style={styles}>{project.summary}</p>
+                <Button bgColor={project.color}>View case studies</Button>
+              </TextImage>
+            </Displaycontainer>
+          </Container>
+        ))}
+      </MainContainer>
     </>
-  )
+  );
 }
 
 export default App4;
