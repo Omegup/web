@@ -10,28 +10,21 @@ const Container = styled.div`
 `;
 
 const Container2 = styled.div`
-width: 80%;
-margin-left:10%;
-height: 49.5%;
-
+  box-sizing: border-box;
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
   display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
 
-
-  @media (max-width: 1700px) {
-    margin-left:20%;
-    width: 70%;
-   display: grid;
-
-    grid-template-columns: 2fr 2fr ;
+  @media (max-width: 1270px) {
+    width: min(680px, calc(100% - 32px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (max-width: 900px) {
-    width: min(92%, calc(100% - 24px));
-    margin-inline: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  @media (max-width: 640px) {
+    width: min(360px, calc(100% - 24px));
+    grid-template-columns: minmax(0, 1fr);
   }
 `;
 const BoxTitle=styled.h3`
@@ -46,26 +39,14 @@ const BoxTitle=styled.h3`
 const Box = styled.div<{ shadowColor: string }>`
 background: #FAF9F6;
 box-sizing: border-box;
-width: min(286.5px, 100%);
-
+width: 100%;
+margin: 0;
 border: 1px solid;
 border-radius: 30px;
 padding: 20px;
 align-self: flex-start;
 
 box-shadow: ${props => props.shadowColor ? props.shadowColor : 'none'};
-  margin: 2% 0.5%; 
-  gap: 10px;
-  @media (max-width: 1300px) {
-    
-   
-  }
-  @media (max-width: 1000px) {
-    margin: 2% 1%;
-  }
-  @media (max-width: 768px) {
-    margin: 2% 3%;
-  }
 `;
 
 const Text = styled.p`
