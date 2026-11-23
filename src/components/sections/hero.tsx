@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background: #22232508;
+  background: linear-gradient(0deg, rgba(34, 35, 37, 0.03), transparent);
   margin-top: 10px;
   height:50%;
   border-bottom: 0.5px solid #999999;

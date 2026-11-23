@@ -8,7 +8,6 @@ const Container = styled.footer`
   width: 100%;
   border-radius: 22px;
   background-color: #222325;
-  overflow: hidden;
 `;
 
 const Top = styled.div`

@@ -163,6 +163,7 @@ const DockLink = styled(Link)<{ $active: boolean }>`
 
 function NavBar() {
   const [active, setActive] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   useEffect(() => {
     const ids = links.map((link) => link.id);
@@ -188,6 +189,7 @@ function NavBar() {
   }, []);
 
   const activeIndex = links.findIndex((link) => link.id === active);
+  const pillIndex = hovered ?? activeIndex;
 
   return (
     <>
@@ -204,13 +206,35 @@ function NavBar() {
         </Links>
         <Touch href="/#contact">Get in Touch</Touch>
       </Bar>
-      <Dock aria-label="Primary">
-        {activeIndex >= 0 ? <Pill $index={activeIndex} /> : null}
-        {links.map((link) => (
+      <Dock
+        aria-label="Primary"
+        onMouseOver={(event) => {
+          const item = (event.target as HTMLElement).closest("a");
+          if (!item || !event.currentTarget.contains(item)) return;
+          const index = [...event.currentTarget.querySelectorAll("a")].indexOf(item);
+          if (index < 0) return;
+          setHovered((prev) => (prev === index ? prev : index));
+        }}
+        onFocus={(event) => {
+          const item = (event.target as HTMLElement).closest("a");
+          if (!item || !event.currentTarget.contains(item)) return;
+          const index = [...event.currentTarget.querySelectorAll("a")].indexOf(item);
+          if (index < 0) return;
+          setHovered(index);
+        }}
+        onMouseLeave={() => setHovered(null)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+            setHovered(null);
+          }
+        }}
+      >
+        {pillIndex >= 0 ? <Pill $index={pillIndex} /> : null}
+        {links.map((link, index) => (
           <DockLink
             key={link.id}
             href={link.href}
-            $active={active === link.id}
+            $active={index === pillIndex}
             aria-current={active === link.id ? "true" : undefined}
             aria-label={link.label}
           >
