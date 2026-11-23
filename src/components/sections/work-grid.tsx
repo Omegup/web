@@ -116,7 +116,9 @@ const ContainerItem = styled.span`
     }
 `;
 
-const Button = styled.p<{ bgColor: string }>`
+const Button = styled(Link)<{ bgColor: string }>`
+    display: inline-block;
+    text-decoration: none;
     background-color: ${(props) => props.bgColor};
     border-radius: 22px;
     margin-top:20px;
@@ -229,7 +231,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>Tailwind</ContainerItem>
                         </Container2>
                         <p style={styles}>We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.</p>
-                        <Button bgColor="#FEC63A">View case studies</Button>
+                        <Button href="/case-studies/ateliers-77" bgColor="#FEC63A">View case studies</Button>
                         <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau2')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau3')}></ArrowButton>
@@ -248,7 +250,7 @@ const Menu_1: React.FC = () => {
                             <ContainerItem>MongoDB</ContainerItem>
                         </Container2>
                         <p style={styles}>Solution School is the comprehensive answer to the management needs of private schools. Our platform provides a suite of robust tools and features that enable educational institutions to efficiently manage all aspects of their operations.</p>
-                        <Button bgColor="#949CFF">View case studies</Button>
+                        <Button href="/case-studies/school-online" bgColor="#949CFF">View case studies</Button>
                         <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau3')}></ArrowButton>
                         <ArrowButton float="right" marginRight="10px" onClick={() => pivotDroit('tableau1')}></ArrowButton>
@@ -268,7 +270,7 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}> DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals. </p>
                    
-                    <Button bgColor="#FC7557" > View case studies   </Button>
+                    <Button href="/case-studies/dsf" bgColor="#FC7557">View case studies</Button>
                     
                     <StyledLink > <Link href="/case-studies">More case studies</Link></StyledLink>
                         <ArrowButton float="right" onClick={() => pivotDroit('tableau1')}></ArrowButton>

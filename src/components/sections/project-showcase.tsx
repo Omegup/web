@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import styled from "styled-components";
 import { projectsContent } from "@/content/projects";
 // Styled components
@@ -27,46 +28,35 @@ const MainContainer = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    height: 450px;
-    border-bottom:1px solid;
-    @media (max-width:1500px) {
-        width: auto;
-        height: auto;
-    }
+    height: auto;
+    border-bottom: 1px solid #222325;
 `;
 
 const TextImage = styled.div`
-background-color:#222325;
-
-    overflow: hidden;
-    padding: 20px 50px;
+    flex: 1 1 auto;
+    min-width: 0;
+    background-color: #222325;
+    overflow: visible;
+    padding: 28px 40px 12px;
     color: white;
-    border-bottom:solid 1px white;
-    @media (max-width:1500px) {
-       
-        height: 100%;
-        width: 100%;
+    @media (max-width: 700px) {
+        padding: 24px 20px 8px;
     }
 `;
 
 const Img = styled.img`
     align-self: center;
-    margin: 100px;
-    height: 250px;
+    flex: 0 0 auto;
+    margin: 28px;
+    height: 220px;
     width: 280px;
     object-fit: contain;
- 
-    @media (max-width:1500px) {
-        margin: 20px;
-        height: 250px;
-        width: 280px;
-    }
-    @media (max-width:700px) {
-        margin: 20px;
+
+    @media (max-width: 700px) {
+        margin: 20px auto;
         height: 180px;
-        width: 200px;
+        width: min(280px, 80%);
     }
-    
 `;
 
 const Container2 = styled.div`
@@ -119,13 +109,16 @@ width:67%;
     width: 90%;
     
 }`
-const Button = styled.p<{ bgColor: string }>`
+const Button = styled(Link)<{ bgColor: string }>`
+    display: inline-block;
+    text-decoration: none;
     background-color: ${(props) => props.bgColor};
     border-radius: 22px;
     margin-top:20px;
     border:none;
     width: 150px;
     padding:5px;
+    text-align: center;
     color: ${(props)=>( props.bgColor=== '#FEC63A')?'#222325':'#F7F5ED'};
     @media (max-width:800px) {
         margin-top:${(props)=>( props.bgColor==='#FC7557')?'44px':'20px'};
@@ -158,10 +151,9 @@ const styles = {
 const  Displaycontainer=styled.div`
 display:flex;
 flex-direction: row;
+align-items: stretch;
 @media (max-width:900px) {
     flex-direction: column;
-  
-    
 }
 `
 function App4() {
@@ -194,7 +186,7 @@ function App4() {
                   ))}
                 </Container2>
                 <p style={styles}>{project.summary}</p>
-                <Button bgColor={project.color}>View case studies</Button>
+                <Button href={`/case-studies/${project.id}`} bgColor={project.color}>View project</Button>
               </TextImage>
             </Displaycontainer>
           </Container>
