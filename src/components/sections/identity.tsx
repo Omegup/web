@@ -42,6 +42,12 @@ const Heading = styled.h1`
   line-height: 26.4px;
   letter-spacing: -0.064em;
 
+  @media (min-width: 1400px) {
+    margin-top: 22px;
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
   @media (max-width: 1000px) {
     font-size: 20px;
     line-height: 22px;
@@ -71,6 +77,14 @@ const ButtonsContainer = styled.div`
   display: flex;
   border-radius: 22px;
   overflow: hidden;
+
+  @media (min-width: 1400px) {
+    height: 560px;
+  }
+
+  @media (min-width: 1800px) {
+    height: 640px;
+  }
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -130,9 +144,20 @@ const TextContainer = styled.div<{ $expanded: boolean }>`
   transition: opacity 0.45s ease;
   pointer-events: none;
 
+  @media (min-width: 1400px) {
+    top: 96px;
+    bottom: 40px;
+    width: min(48vw, 760px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   @media (max-width: 1000px) {
     top: 64px;
+    bottom: auto;
     width: 78vw;
+    display: block;
   }
 `;
 
@@ -182,6 +207,15 @@ const PanelTitle = styled.h2<{ $color: string }>`
   line-height: 37.4px;
   letter-spacing: -0.064em;
 
+  @media (min-width: 1400px) {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 56px;
+  }
+
   @media (max-width: 1000px) {
     font-size: 28px;
     line-height: 30px;
@@ -197,6 +231,14 @@ const Subtitle = styled.h3`
   line-height: 26.4px;
   letter-spacing: -0.064em;
 
+  @media (min-width: 1400px) {
+    margin-top: 36px;
+  }
+
+  @media (min-width: 1800px) {
+    margin-top: 44px;
+  }
+
   @media (max-width: 1000px) {
     font-size: 20px;
     line-height: 22px;
@@ -211,6 +253,17 @@ const Body = styled.p`
   font-weight: 500;
   line-height: 24px;
   overflow-wrap: anywhere;
+
+  @media (min-width: 1400px) {
+    margin-top: 56px;
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 1800px) {
+    margin-top: 68px;
+    font-size: 24px;
+  }
 `;
 
 const Objectives = () => {
