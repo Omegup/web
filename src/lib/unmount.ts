@@ -12,7 +12,6 @@ export function useUnmountSignal(): AbortSignal {
 
   useEffect(() => {
     return () => {
-      console.log('unmounting')
       controller.abort("Component unmounted");
     };
   }, [controller]);
