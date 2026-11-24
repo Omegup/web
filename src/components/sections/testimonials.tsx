@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { testimonialsContent } from "@/content/testimonials";
+import { colorAt } from "@/components/colors";
 
 
 // Styled components
@@ -182,12 +183,12 @@ const TourneImage: React.FC = () => {
       <BulleContainer>
         {testimonialsContent.items.map((item, index) => (
           <Bulle key={item.id} center={positions[index] === "center"}>
-            <BulleContent boxShadowColor={item.color}>
+            <BulleContent boxShadowColor={colorAt(index)}>
               <p>{item.quote}</p>
             </BulleContent>
-            <Circle size="10px" marginleft={DOTS[index].small} backgroundColor={item.color} />
-            <Circle size="20px" marginleft={DOTS[index].medium} backgroundColor={item.color} />
-            <Circle size="80px" marginleft={DOTS[index].portrait} bordercolor={item.color} backgroundImage={item.portrait} backgroundColor="" />
+            <Circle size="10px" marginleft={DOTS[index].small} backgroundColor={colorAt(index)} />
+            <Circle size="20px" marginleft={DOTS[index].medium} backgroundColor={colorAt(index)} />
+            <Circle size="80px" marginleft={DOTS[index].portrait} bordercolor={colorAt(index)} backgroundImage={item.portrait} backgroundColor="" />
             <TextCenter>
               <h3>{item.name}</h3>
               <p>{item.role}</p>

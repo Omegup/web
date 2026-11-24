@@ -6,7 +6,6 @@ export type Project = {
   technologies: readonly string[];
   summary: string;
   description: readonly string[];
-  color: "#FEC63A" | "#949CFF" | "#FC7557";
 };
 
 export type ProjectsContent = {
@@ -21,11 +20,7 @@ const shot = (folder: string, count: number, ext = "png") =>
     (_, index) => `/work/${folder}/${index + 1}.${ext}`,
   );
 
-export const projectsContent1 = {
-  heading: "Project Showcase",
-  intro:
-    "At Omegup, we take pride in our web solutions. Explore our featured projects to see the results of our collaboration with clients who entrusted us with their web development needs.",
-  items: [
+const projectItems = [
     {
       id: "forfellow",
       title: "Forfellow",
@@ -45,7 +40,6 @@ export const projectsContent1 = {
         "Administrators manage schedules, follow students and teachers, control billing, and open reports. Teachers reach their classes, enter grades, share resources, and write to families. Parents follow grades, absences, schedules, and invoices. Students see their courses, timetable, and results.",
         "The platform works on a computer and on a phone, and it supports more than one language, so each person can reach their school from anywhere.",
       ],
-      color: "#949CFF",
     },
     {
       id: "darinov",
@@ -58,7 +52,6 @@ export const projectsContent1 = {
       description: [
         "Web portal connecting customers, craftsmen, suppliers, and wholesalers in the building trades.",
       ],
-      color: "#949CFF",
     },
     {
       id: "apia",
@@ -70,7 +63,6 @@ export const projectsContent1 = {
       description: [
         "Web application for managing APIA projects and entrepreneurs.",
       ],
-      color: "#FC7557",
     },
     {
       id: "dsf",
@@ -83,7 +75,6 @@ export const projectsContent1 = {
       description: [
         "DSF Déménagement Services France is your trusted partner for all your moving needs in France. With many years of experience, we provide tailor-made moving solutions for businesses and individuals.",
       ],
-      color: "#FC7557",
     },
     {
       id: "food-delivery",
@@ -96,7 +87,6 @@ export const projectsContent1 = {
       description: [
         "Web app for selling food and groceries, tracking deliveries, and managing customer and provider services.",
       ],
-      color: "#949CFF",
     },
     {
       id: "jupiter",
@@ -109,7 +99,6 @@ export const projectsContent1 = {
       description: [
         "A complete web-based business management solution, designed and developed for day-to-day operations.",
       ],
-      color: "#FEC63A",
     },
     {
       id: "ateliers-77",
@@ -122,7 +111,6 @@ export const projectsContent1 = {
       description: [
         "We have developed a stylish and functional website for Atelier-77 to showcase their expertise in signage and digital printing. The website provides an intuitive user experience and highlights their impressive portfolio of projects.",
       ],
-      color: "#FEC63A",
     },
     {
       id: "novnshare",
@@ -138,7 +126,6 @@ export const projectsContent1 = {
         "Nov'N'Link: a mini-social network to bring innovators together with investors and other collaborators.",
         "Nov'N'Shop: an online sales area.",
       ],
-      color: "#FC7557",
     },
     {
       id: "didasko",
@@ -151,7 +138,6 @@ export const projectsContent1 = {
       description: [
         "A tool for identifying training needs intended for SMEs in Abitibi-Témiscamingue that employ 10 to 100 employees. This is a pilot tool deployed with 50 companies from November 2021 to January 2022.",
       ],
-      color: "#FEC63A",
     },
     {
       id: "wazzta",
@@ -170,10 +156,15 @@ export const projectsContent1 = {
       description: [
         "A social network mobile application that helps students build their careers with the collaboration of universities, clubs, and other partners.",
       ],
-      color: "#949CFF",
     },
-  ],
-} as const satisfies ProjectsContent;
+  ] as const;
+
+export const projectsContent1 = {
+  heading: "Project Showcase",
+  intro:
+    "At Omegup, we take pride in our web solutions. Explore our featured projects to see the results of our collaboration with clients who entrusted us with their web development needs.",
+  items: projectItems,
+} satisfies ProjectsContent;
 export const projectsContent = {
   ...projectsContent1,
   items: projectsContent1.items.slice(0, -3),

@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import styled from 'styled-components';
+import { colors } from '@/components/colors';
 
 const Container = styled.div`
   background: linear-gradient(0deg, rgba(34, 35, 37, 0.03), transparent);
@@ -64,7 +65,7 @@ const Button = styled.span<{ secondary: string }>`
     font-weight: 500;
     line-height: 24px;
     text-align: left;
-  background: ${props => props.secondary === 'true' ? '#FEC63A' : '#FAF9F6'};
+  background: ${props => props.secondary === 'true' ? colors[0] : '#FAF9F6'};
   border: 0.5px solid;
   border-radius: 30px;
   padding: 7px;
@@ -115,19 +116,19 @@ const Texte = styled.div`
 `;
 
 const Titre1 = styled.span`
-  color: #fc7557;
+  color: ${colors[1]};
 
   font-family: 'Krona One', sans-serif;
    
 `;
 
 const Titre2 = styled.span`
-  color: #fec63a;
+  color: ${colors[0]};
   font-family: 'Krona One', sans-serif;
 `;
 
 const Titre3 = styled.span`
-  color: #64c67e;
+  color: ${colors[3]};
   font-family: 'Krona One', sans-serif;
 `;
 
@@ -147,24 +148,24 @@ const Acceuil = () => {
     <Container>
   
       <Container2>
-        <Box shadowColor="-8px 8px 0px 0px #FEC63A">
+        <Box shadowColor={`-8px 8px 0px 0px ${colors[0]}`}>
           <BoxTitle>💡 Innovate & <br />Create :</BoxTitle>
           <Text>Our team of tech visionaries <br />thrives on innovation, crafting<br /> cutting-edge websites that lead <br /> the way in your industry.</Text>
         </Box>
 
-        <Box shadowColor="-8px 8px 0px 0px #FC7557">
-          <BoxTitle>🤝 Partners in <br />Success :</BoxTitle>
-          <Text>Your success is our mission. We <br /> collaborate closely with you, <br /> ensuring our solutions align <br /> perfectly with your goals</Text>
+        <Box shadowColor={`-8px 8px 0px 0px ${colors[1]}`}>
+          <BoxTitle>🎨 Design <br />Brilliance :</BoxTitle>
+          <Text>Our UX/UI designs aren&apos;t just <br /> visually stunning: they&apos;re user-<br /> centric masterpieces that <br /> captivate your audience.</Text>
         </Box>
 
-        <Box shadowColor="-8px 8px 0px 0px #949CFF">
+        <Box shadowColor={`-8px 8px 0px 0px ${colors[2]}`}>
           <BoxTitle>🚀 Code that <br />Performs :</BoxTitle>
           <Text>Behind every stunning website <br /> and mobile app lies impeccable <br /> code. We engineer seamless <br /> experiences that set you apart.</Text>
         </Box>
 
-        <Box shadowColor="-8px 8px 0px 0px #64C67E">
-          <BoxTitle>🎨 Design <br />Brilliance :</BoxTitle>
-          <Text>Our UX/UI designs aren&apos;t just <br /> visually stunning: they&apos;re user-<br /> centric masterpieces that <br /> captivate your audience.</Text>
+        <Box shadowColor={`-8px 8px 0px 0px ${colors[3]}`}>
+          <BoxTitle>🤝 Partners in <br />Success :</BoxTitle>
+          <Text>Your success is our mission. We <br /> collaborate closely with you, <br /> ensuring our solutions align <br /> perfectly with your goals</Text>
         </Box>
       </Container2>
 

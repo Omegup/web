@@ -6,6 +6,7 @@ import {
   identityContent,
   type IdentityPanelId,
 } from "@/content/identity";
+import { colorAt } from "@/components/colors";
 
 const Title = styled.div`
   width: min(83.75%, 100%);
@@ -298,7 +299,7 @@ const Objectives = () => {
               <NumberOverlay>{String(index + 1).padStart(2, "0")}</NumberOverlay>
               <TextOverlay $index={index + 1}>{panel.objective}</TextOverlay>
               <TextContainer $expanded={expanded}>
-                <PanelTitle $color={panel.color}>{panel.title}</PanelTitle>
+                <PanelTitle $color={colorAt(index)}>{panel.title}</PanelTitle>
                 <Subtitle>{panel.subtitle}</Subtitle>
                 <Body>{panel.body}</Body>
               </TextContainer>

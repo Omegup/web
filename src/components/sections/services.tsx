@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { servicesContent } from "@/content/services";
+import { colorAt } from "@/components/colors";
 
 const Section = styled.section`
   width: min(83.75%, calc(100% - 32px));
@@ -71,19 +72,18 @@ const Grid = styled.div`
   }
 `;
 
-const Wrap = styled.div`
+const Wrap = styled.div<{ $color: string }>`
   min-width: 0;
   border-radius: 30px;
+  box-shadow: -8px 8px 0 0 ${(props) => props.$color};
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
   &:nth-child(1) {
     transform: rotate(-1.6deg);
-    box-shadow: -8px 8px 0 0 #949cff;
   }
 
   &:nth-child(2) {
     transform: rotate(1.3deg) translateY(22px);
-    box-shadow: -8px 8px 0 0 #fc7557;
   }
 
   @media (max-width: 1100px) {
@@ -94,7 +94,6 @@ const Wrap = styled.div`
 
   &:nth-child(3) {
     transform: rotate(-0.8deg);
-    box-shadow: -8px 8px 0 0 #fec63a;
   }
 
   &:hover {
@@ -217,9 +216,9 @@ const Services = () => {
       <Intro>{servicesContent.intro}</Intro>
       <Grid>
         {servicesContent.items.map((service, index) => (
-          <Wrap key={service.id}>
+          <Wrap key={service.id} $color={colorAt(index)}>
             <Card>
-              <Cap $color={service.color}>
+              <Cap $color={colorAt(index)}>
                 <Index aria-hidden="true">{String(index + 1).padStart(2, "0")}</Index>
                 <Icon>
                   <img src={service.icon} alt="" />
@@ -229,7 +228,7 @@ const Services = () => {
               <List>
                 {service.points.map((point) => (
                   <Item key={point.label}>
-                    <Pip $color={service.color} />
+                    <Pip $color={colorAt(index)} />
                     <span>
                       <Label>{point.label}. </Label>
                       {point.body}

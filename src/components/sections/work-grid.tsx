@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { projectsContent } from "@/content/projects";
+import { colorAt } from "@/components/colors";
 // Styled components
 const ContainerTitle = styled.div`
     margin-top: 100px;
@@ -226,7 +227,7 @@ const Menu_1: React.FC = () => {
             </ContainerTitle>
 
             <MainContainer>
-                <Shell $color={project.color}>
+                <Shell $color={colorAt(index)}>
                 <Clip>
                 {projects.map((item, itemIndex) => (
                 <Slide key={item.id} $visible={itemIndex === index}>
@@ -244,7 +245,7 @@ const Menu_1: React.FC = () => {
                         </Container2>
                         <p style={styles}>{item.summary}</p>
                         <Actions>
-                            <Button href={`/case-studies/${item.id}`} bgColor={item.color}>View case studies</Button>
+                            <Button href={`/case-studies/${item.id}`} bgColor={colorAt(itemIndex)}>View case studies</Button>
                             <More href="/case-studies">More case studies</More>
                         </Actions>
                     </TextImage></Displaycontainer>

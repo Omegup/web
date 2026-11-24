@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { projectsContent } from "@/content/projects";
+import { colorAt } from "@/components/colors";
 // Styled components
 
     const H3Styled=styled.h3`font-family: 'Krona One', sans-serif;
@@ -182,7 +183,7 @@ function App4() {
                   ))}
                 </Container2>
                 <p style={styles}>{project.summary}</p>
-                <Button href={`/case-studies/${project.id}`} bgColor={project.color}>View project</Button>
+                <Button href={`/case-studies/${project.id}`} bgColor={colorAt(index)}>View project</Button>
               </TextImage>
             </Displaycontainer>
           </Container>
