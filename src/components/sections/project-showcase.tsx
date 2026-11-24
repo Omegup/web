@@ -52,10 +52,10 @@ const Img = styled.img`
     width: 280px;
     object-fit: contain;
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+        width: calc(100% - 40px);
+        height: auto;
         margin: 20px auto;
-        height: 180px;
-        width: min(280px, 80%);
     }
 `;
 
