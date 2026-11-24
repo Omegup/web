@@ -186,10 +186,10 @@ const ArrowButton = styled.button<{ $dir: "prev" | "next" }>`
     background-position: center;
     background-image: url(${(props) => props.$dir === "next" ? "/image-left.png" : "/image-right.png"});
     cursor: pointer;
+    transition: background-image 0.3s ease-in-out;
 
     &:hover {
         background-image: url(${(props) => props.$dir === "next" ? "/image-left-hover.png" : "/image-right-hover.png"});
-        background-size: 120% 120%;
     }
 `;
 const styles = {
@@ -248,12 +248,12 @@ const Menu_1: React.FC = () => {
                             <More href="/case-studies">More case studies</More>
                         </Actions>
                     </TextImage></Displaycontainer>
-                    <Arrows>
-                        <ArrowButton type="button" $dir="prev" aria-label="Previous project" onClick={() => step(-1)} />
-                        <ArrowButton type="button" $dir="next" aria-label="Next project" onClick={() => step(1)} />
-                    </Arrows>
                 </Slide>
                 ))}
+                <Arrows>
+                    <ArrowButton type="button" $dir="prev" aria-label="Previous project" onClick={() => step(-1)} />
+                    <ArrowButton type="button" $dir="next" aria-label="Next project" onClick={() => step(1)} />
+                </Arrows>
                 </Clip>
                 </Shell>
             </MainContainer>
